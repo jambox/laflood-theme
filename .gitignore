@@ -8,3 +8,5 @@ backups
 build
 releases
 deployconfig.json
+
+*.sublime-*
