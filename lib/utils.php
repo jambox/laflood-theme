@@ -70,8 +70,8 @@ function get_child_categories( $parent_cat_id = 0 ) {
   if( !$parent_cat_id ) return false;
 
   $args = array(
-    'parent' => $parent_cat_id
-     // 'post_type' => THEME_PREFIX . '_projects'
+    'parent' => $parent_cat_id,
+    'post_type' => get_resource_cpt_name()
   );
 
   $child_cats = get_categories( $args );

@@ -2,9 +2,6 @@
   "name": "laflood-theme",
   "version": "0.1.0",
   "author": "Caliper <info@madebycaliper.com>",
-  "scripts": {
-    "postinstall": "node node_modules/bower/bin/bower install"
-  },
   "engines": {
     "node": ">= 0.10.0"
   },

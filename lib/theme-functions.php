@@ -102,6 +102,13 @@ function responsive_acf_image( $acf_field = 0, $args ) {
 } // END responsive_acf_image()
 
 
+function get_category_link_by_slug( $slug = 0 ) {
+  if( !$slug ) return false;
+  $idObj = get_category_by_slug( $slug ); 
+  return get_category_link( $idObj->term_id );
+}
+
+
 function caliper_resource_archive_query( $query ) {
   if ( is_resource_archive() && $query->is_main_query() && !is_admin() ) {
     set_query_var('post_parent', 0 );
@@ -213,4 +220,34 @@ function bolt_wp_title( $title, $sep ) {
 
 } // end bolt_wp_title
 add_filter( 'wp_title', 'bolt_wp_title', 10, 2 );
+
+
+function get_sub_categories_by_name( $cat_name = 0 ) {
+  if( !$cat_name ) return false;
+
+  $r = '';
+
+  $subcats = get_child_categories( $cat_name );
+  $subcat_links = array();
+
+  if ( !$subcats ) return false; 
+
+  foreach ( $subcats as $cat ) {
+    $parent_cat_slug = sanitize_title( $cat_name );
+    $subcat_links[] = $cat->name;
+  }
+
+  foreach( $subcat_links as $link ) {
+    
+  }
+
+  $r .= "<span class='parent-cat-name'>{$cat_name}: </span>";
+  $r .= "<span class='subcats'>" . implode( ', ', $subcat_links ) . "</span>";
+  $r = "<li class='top-level-cat'>{$r}</li>";
+
+  return $r;
+
+} // END get_sub_categories_by_name()
+
+
 ?>
