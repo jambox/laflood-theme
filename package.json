@@ -1,0 +1,21 @@
+{
+  "name": "laflood-theme",
+  "version": "0.1.0",
+  "author": "Caliper <info@madebycaliper.com>",
+  "scripts": {
+    "postinstall": "node node_modules/bower/bin/bower install"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bower": "^1.7.9",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-compress": "~0.12.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-wordpress-deploy": "git://github.com/madebycaliper/grunt-wordpress-deploy.git",
+    "load-grunt-config": "~0.7.1"
+  }
+}

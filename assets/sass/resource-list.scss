@@ -1,0 +1,14 @@
+.resource-list {
+  list-style:none;
+  margin:0;
+  padding:0;
+  // flex-wrap:wrap;
+  // flex-flow: row wrap;
+  .resource-tile {
+    padding:20px 10px;
+    margin-bottom:10px;
+    text-align:center;
+    // flex-basis:30%;
+    // flex:1;
+  }
+}

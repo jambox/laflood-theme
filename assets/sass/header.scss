@@ -1,0 +1,14 @@
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  text-align:center;
+  text-transform:uppercase;
+  font-weight: bold;
+  .header-msg-wrap {
+    padding:20px;
+    background:#af3131;
+    color:white;
+  }
+}
