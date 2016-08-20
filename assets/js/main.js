@@ -1,19 +1,3 @@
-/*=========================================================================
-
-Inline includes for CodeKit:
-
-Prepends
-------------------------
-
-// @codekit-prepend 'vendor/modernizr.js';
-// @codekit-prepend '../vendor/imagesloaded-packaged/imagesloaded.pkgd.min.js';
-// @codekit-prepend '../vendor/bootstrap/js/modal.js';
-// @codekit-prepend '../vendor/parsleyjs/dist/parsley.min.js';
-// @codekit-prepend 'plugins/offcanvas-menu.js';
-
-=========================================================================*/
-
-
 jQuery.fn.exists = function(){return this.length>0;};
 var $ = jQuery;
 
