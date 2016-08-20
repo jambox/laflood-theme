@@ -14,7 +14,7 @@ function bolt_custom_post_types() {
       'plural' => 'Resources',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
-      'taxonomies' => array('post_tag','category'),
+      'taxonomies' => array('post_tag','category', 'organization'),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
