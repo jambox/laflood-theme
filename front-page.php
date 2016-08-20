@@ -7,7 +7,7 @@
     </div>
 
     <div class="row-fluid">
-      <?php get_template_part('partials/resource-list'); ?>
+      <?php get_template_part('partials/resource-category-list'); ?>
     </div>
   </div>
 <?php endwhile; ?>
