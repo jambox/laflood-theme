@@ -16,6 +16,12 @@
       ],
       "main": true
     },
+    "admin.css": {
+      "files": [
+        "sass/admin.scss"
+      ],
+      "main": true
+    },
     "customizer.js": {
       "files": [
         "js/customizer.js"
