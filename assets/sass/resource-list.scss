@@ -14,7 +14,7 @@
 
   .resource-category, .resource-card {
     padding:6px 10px;
-    @include breakpoint {
+    @include breakpoint($breakpoint-md) {
       padding:20px 10px;
     }
     margin-bottom:10px;
@@ -24,7 +24,7 @@
       @include flex-container(wrap, center, center);
       transition: all $default-transition;
       padding:1.5rem .7rem;
-      @include breakpoint {
+      @include breakpoint($breakpoint-md) {
         padding:3rem .7rem;
       }
       width:100%;

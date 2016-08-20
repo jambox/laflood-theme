@@ -2,6 +2,8 @@
 @import 'colors';
 
 $default-transition: .3s ease;
+$breakpoint-sm: 34.75rem; //556 px
+$breakpoint-md: 47.9375rem; //767 px
 
 body,html {
   height:100%;
@@ -27,7 +29,7 @@ h {
     @extend .Raleway-header;
     color:$blue;
     margin-bottom: 30px;
-    @include breakpoint {
+    @include breakpoint($breakpoint-sm) {
       line-height:1.4;
       margin-bottom: 10px;
     }
@@ -48,7 +50,7 @@ h {
 .content-wrap {
   flex: 1 0 auto;
   text-align: center;
-  @include breakpoint {
+  @include breakpoint($breakpoint-sm) {
     text-align: left;
   }
 }

@@ -7,7 +7,7 @@
       // color:white;
       // background:$teal;
       padding:25px 10px 10px;
-      @include breakpoint {
+      @include breakpoint($breakpoint-sm) {
         padding-top: 40px;
       }
     }
