@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <h4 class="resource-list--title">Ways to contribute <?php echo get_queried_object()->name; ?> to the Louisiana relief effort.</h4>
+  <h4 class="resource-list--title">How to contribute to the Louisiana flood relief effort.</h4>
 
 <?php 
 $queried_object = get_queried_object(); 
