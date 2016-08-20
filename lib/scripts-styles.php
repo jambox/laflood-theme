@@ -8,7 +8,7 @@ function client_scripts($hook) {
     // Main Client Script
     wp_enqueue_script(
       THEME_PREFIX .'-main-js',
-      THEME_URL . 'assets/js/main.js',
+      THEME_URL . 'dist/scripts/main.js',
       array('jquery','underscore'),
       $ver = get_bloginfo('version'),
       $in_footer = true
@@ -33,7 +33,7 @@ function client_styles() {
     global $wp_styles;
 
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'assets/css/laflood.css' );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'dist/styles/laflood.css' );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
     // Icomoon
@@ -41,7 +41,7 @@ function client_styles() {
     // wp_enqueue_style( 'icomoon-css' );
 
     // wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ie.css", array( THEME_PREFIX . '-theme' )  );
-    // $wp_styles->add_data( THEME_PREFIX . '-ie', 'conditional', 'IE' );    
+    // $wp_styles->add_data( THEME_PREFIX . '-ie', 'conditional', 'IE' );
 
 }
 add_action( 'wp_enqueue_scripts', 'client_styles' );
