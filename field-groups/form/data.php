@@ -103,9 +103,9 @@ $group = array (
         'class' => '',
         'id' => '',
       ),
-      'center_lat' => '30.450746',
-      'center_lng' => '-91.154551',
-      'zoom' => 14,
+      'center_lat' => '30.344436',
+      'center_lng' => '-90.925598',
+      'zoom' => 10,
       'height' => 400,
     ),
     5 => 
@@ -197,7 +197,10 @@ $group = array (
   'style' => 'default',
   'label_placement' => 'top',
   'instruction_placement' => 'label',
-  'hide_on_screen' => '',
+  'hide_on_screen' => 
+  array (
+    0 => 'the_content',
+  ),
   'active' => 1,
   'description' => '',
 );
