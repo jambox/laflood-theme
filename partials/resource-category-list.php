@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <h3 class="resource-category-list--title">I'd like to contribute my...</h3>
+  <h3 class="resource-category-list--title">I'd like to contribute...</h3>
   <ul class="resource-category-list">
     <?php
     $cats = get_terms( 'category', array('hide_empty' => false ) );

@@ -40,8 +40,11 @@
     }
   } // .resource-tile
 
-  .resource-tile {
+  .resource-card {
     @extend .resource-category;
+    @include flex-container(wrap, center, center);
+    border:2px $gray solid;
+    text-align:left;
 
   }
 
