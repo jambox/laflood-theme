@@ -8,6 +8,7 @@
   list-style:none;
   margin:0;
   padding:0;
+  @include flex-container(wrap);
 
 
   .resource-tile {
@@ -16,6 +17,7 @@
     text-align:center;
     overflow: hidden;
     &--link {
+      @include flex-container(wrap, center, center);
       transition: all $default-transition;
       padding:3rem .7rem;
       width:100%;

@@ -25,8 +25,10 @@ h {
   }
   &2{
     @extend .Raleway-header;
-    line-height:1.4;
     color:$blue;
+    @media (min-width: 40.375rem) {
+      line-height:1.4;
+    }
   }
   &3{
     @extend .Raleway-header;
