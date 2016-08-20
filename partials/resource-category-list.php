@@ -1,6 +1,6 @@
 <div class="col-md-12">
-  <h3 class="resource-list--title">I'd like to contribute my...</h3>
-  <ul class="resource-list">
+  <h3 class="resource-category-list--title">I'd like to contribute my...</h3>
+  <ul class="resource-category-list">
     <?php
     $cat = get_term_by('slug', 'ways-to-help', 'category');
     $child_cats = get_child_categories( $cat->term_id );  
