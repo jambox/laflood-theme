@@ -1,10 +1,10 @@
 <?php
-if(!is_admin()){ exit; }
-/**
- * Inject <style> into TinyMCE <iframe> <head> to fix infinite-height bug
- * Append classes to TinyMCE <iframe> body to target article styles
- */
-function my_tinymce_iframe_injections() {
+if(is_admin()){
+	/**
+	 * Inject <style> into TinyMCE <iframe> <head> to fix infinite-height bug
+	 * Append classes to TinyMCE <iframe> body to target article styles
+	 */
+	function my_tinymce_iframe_injections() {
 ?>
 <script>
 	var theFrame;
@@ -29,5 +29,6 @@ function my_tinymce_iframe_injections() {
 	};
 </script>
 <?php
+	}
+	add_action('admin_head', 'my_tinymce_iframe_injections', 99, 1);
 }
-add_action('admin_head', 'my_tinymce_iframe_injections', 99, 1);
