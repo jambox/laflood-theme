@@ -1,9 +1,12 @@
+.resource-list--title {
+  padding:0 10px;
+}
+
 .resource-list {
   list-style:none;
   margin:0;
   padding:0;
-  // flex-wrap:wrap;
-  // flex-flow: row wrap;
+
   .resource-tile {
     padding:20px 10px;
     margin-bottom:10px;
@@ -14,7 +17,6 @@
       padding:3rem .7rem;
       width:100%;
       height:100%;
-      vertical-align: middle;
     }
   }
 }

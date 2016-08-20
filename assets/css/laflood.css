@@ -3372,6 +3372,9 @@ footer {
   line-height: 1.3;
   padding: 20px 0; }
 
+.resource-list--title {
+  padding: 0 20px; }
+
 .resource-list {
   list-style: none;
   margin: 0;
@@ -3383,5 +3386,4 @@ footer {
     .resource-list .resource-tile--link {
       padding: 3rem .7rem;
       width: 100%;
-      height: 100%;
-      vertical-align: middle; }
+      height: 100%; }
