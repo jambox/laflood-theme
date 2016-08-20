@@ -29,6 +29,10 @@
 
       $title = get_queried_object()->name;
       ?>
-      <?php if ( !is_front_page() ) {?>
+      <?php
+      if ( !is_front_page() ) {
+        if( is_category() ): 
+          $title = "$title Resources"; 
+        endif; ?>
         <h1 class="page-title"><?php echo $title; ?></h1>
       <?php } ?>
