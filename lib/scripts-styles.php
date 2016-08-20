@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 'client_styles' );
 
 
 function laflood_admin_styles() {
-    wp_register_style( 'admin',  THEME_URL . '/assets/css/admin.css', false );
+    wp_register_style( 'admin',  THEME_URL . '/dist/styles/admin.css', false );
     wp_enqueue_style( 'admin' );
 }
 add_action('admin_enqueue_scripts', 'laflood_admin_styles');
