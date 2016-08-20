@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import "https://fonts.googleapis.com/css?family=Raleway";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -3291,12 +3292,29 @@ input[type="button"].btn-block {
         -ms-flex: 1;
             flex: 1; }
 
+.Raleway, .Raleway-header, h1, h2, h3 {
+  font-family: 'Raleway', sans-serif; }
+
+body, html {
+  height: 100%; }
+
 body {
   font-size: 16px;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
 
+.Raleway-header, h1, h2, h3 {
+  font-weight: bold;
+  letter-spacing: .05em; }
+
+h2 {
+  line-height: 1.4;
+  color: #10b2e8; }
+
 .app-wrap {
-  padding: 80px 20px; }
+  position: relative;
+  padding: 40px 20px;
+  min-height: 100%;
+  border-top: 24px solid #10b2e8; }
 
 a {
   -webkit-transition: color 0.3s ease;
@@ -3309,7 +3327,7 @@ a {
     text-decoration: none; }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -3318,11 +3336,11 @@ header {
   font-weight: bold; }
   header .header-msg-wrap {
     padding: 20px;
-    background: #af3131;
+    background: #79d4be;
     color: white; }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -3331,33 +3349,28 @@ footer {
     padding: 20px;
     background: #79d4be;
     color: white; }
+  footer a {
+    border-bottom: 1px solid white; }
+    footer a:link, footer a:visited {
+      color: white; }
+    footer a:hover {
+      border-bottom: none; }
 
-.main-page-wrap {
+.front-page-wrap {
   height: 100%; }
-  .main-page-wrap .main-page-section {
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-                -ms-grid-row-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    text-align: center; }
-  .main-page-wrap .intro--wrap {
-    text-align: center; }
-    .main-page-wrap .intro--wrap .intro {
-      color: white;
-      background: #79d4be;
-      padding: 60px 30px; }
-  .main-page-wrap .main-page-link {
+  .front-page-wrap .intro--wrap .intro {
+    padding: 40px 10px 0px; }
+  .front-page-wrap .main-page-link {
     padding: 80px;
     font-size: 4rem;
     text-transform: uppercase; }
 
 .archive .page-prompt, .archive .page-title {
   text-align: center; }
+.archive .page-prompt {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  padding: 20px 0; }
 
 .resource-list {
   list-style: none;

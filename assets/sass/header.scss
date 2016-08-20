@@ -1,5 +1,5 @@
 header {
-  position:fixed;
+  position:absolute;
   top:0;
   left:0;
   right:0;
@@ -8,7 +8,7 @@ header {
   font-weight: bold;
   .header-msg-wrap {
     padding:20px;
-    background:$red-warning;
+    background:$teal;
     color:white;
   }
 }

@@ -16,10 +16,11 @@
 </head>
 <body <?php body_class(); ?>>
   <div class="app-wrap">
-    <header class="flex">
-      <div class="header-msg-wrap flex-box">If this is an emergency please call 911 – <a class="btn btn-default" href="tel:911">Click to call 911</a></div>
+<!--     <header class="flex">
+      <div class="header-msg-wrap flex-box"></div>
     </header>
-    <div class="content-wrap container">
+ --> 
+   <div class="content-wrap container">
       <main class="content row main" role="main">
       <?php
       if ( !is_front_page() && function_exists('yoast_breadcrumb') ) {
