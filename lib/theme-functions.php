@@ -250,4 +250,14 @@ function get_sub_categories_by_name( $cat_name = 0 ) {
 } // END get_sub_categories_by_name()
 
 
+function my_kses_post( $value ) {
+  if( is_array($value) ) {
+    return array_map('my_kses_post', $value);
+  }
+  return wp_kses_post( $value );
+}
+
+add_filter('acf/update_value', 'my_kses_post', 10, 1);
+
+
 ?>

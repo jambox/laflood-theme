@@ -3,26 +3,33 @@
  * Template Name: Submissions Form
  */
 ?>
-<?php acf_form_head() ?>
+<?php acf_form_head(); ?>
 <?php get_header(); ?>
 
-	<div id="primary">
-		<div id="content" role="main">
+	<div class="row-fluid">
+		<main class="col-md-8 col-md-offset-2">
 
-			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<h1><?php the_title(); ?></h1>
 
 				<?php the_content(); ?>
 
-				<p>My custom field: <?php the_field('name'); ?></p>
-
-				<?php acf_form(); ?>
+				<?php acf_form(array(
+					'id'           => 'resource-submission-form',
+					'post_id'      => 'new_post',
+					'new_post'     => array(
+						'post_type'   =>  get_resource_cpt_name(),
+						'post_status' => 'draft'
+					),
+					'field_groups' => array(71),
+					'submit_value' => 'Submit a resource'
+				)); ?>
 
 			<?php endwhile; ?>
 
-		</div><!-- #content -->
+		</main><!-- #content -->
 	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
