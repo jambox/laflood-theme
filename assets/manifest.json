@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "js/main.js",
+        "js/plugins/offcanvas-menu.js"
+      ],
+      "vendor": [
+        "vendor/some/path/file.js"
+      ],
+      "main": true
+    },
+    "laflood.css": {
+      "files": [
+        "sass/laflood.scss"
+      ],
+      "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "js/customizer.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://laflood.dev"
+  }
+}
