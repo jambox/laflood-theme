@@ -2,6 +2,10 @@
 /**
  * Bolt initial setup and constants
  */
+
+define('GOOGLE_MAPS_API_KEY', 'AIzaSyDUC_JWLxIKRQbQbDJlV8qIYxLts0FGx2c');
+
+
 function bolt_setup() {
   // Make theme available for translation
   // @TODO add correct .pot file n stuff
@@ -62,7 +66,7 @@ add_action('widgets_init', 'bolt_widgets_init');
 
 function my_acf_init() {
   
-  acf_update_setting('google_api_key', 'AIzaSyDUC_JWLxIKRQbQbDJlV8qIYxLts0FGx2c');
+  acf_update_setting('google_api_key', GOOGLE_MAPS_API_KEY);
 }
 
 add_action('acf/init', 'my_acf_init');

@@ -1,5 +1,6 @@
 .resource-category-list--title, .resource-list--title {
   padding:0 10px;
+  margin:20px 0;
   text-align:center;
   font-size:3rem;
 }
@@ -45,6 +46,14 @@
     @include flex-container(wrap, center, center);
     border:2px $gray solid;
     text-align:left;
+    border-radius:4px;
+    padding:20px;
+    .resource-name {
+      a {
+        color:$blue;
+        line-height:1.5;
+      }
+    }
 
   }
 

@@ -23,6 +23,8 @@ function client_scripts($hook) {
       )
     );
 
+    wp_enqueue_script( THEME_PREFIX .'-google-maps', "https://maps.googleapis.com/maps/api/js?" . GOOGLE_MAPS_API_KEY );
+
     
 }
 add_action( 'wp_enqueue_scripts', 'client_scripts' );
