@@ -71,7 +71,8 @@ function get_child_categories( $parent_cat_id = 0 ) {
 
   $args = array(
     'parent' => $parent_cat_id,
-    'post_type' => get_resource_cpt_name()
+    'hide_empty' => false
+    // 'post_type' => get_resource_cpt_name()
   );
 
   $child_cats = get_categories( $args );

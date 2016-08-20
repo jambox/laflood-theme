@@ -3329,7 +3329,7 @@ footer {
   text-align: center; }
   footer .footer-msg-wrap {
     padding: 20px;
-    background: #5bceb2;
+    background: #79d4be;
     color: white; }
 
 .main-page-wrap {
@@ -3345,12 +3345,18 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center; }
+  .main-page-wrap .intro--wrap {
+    text-align: center; }
+    .main-page-wrap .intro--wrap .intro {
+      color: white;
+      background: #79d4be;
+      padding: 60px 30px; }
   .main-page-wrap .main-page-link {
     padding: 80px;
     font-size: 4rem;
     text-transform: uppercase; }
 
-.page-template-tmpl-resource-bucket .page-prompt, .page-template-tmpl-resource-bucket .page-title {
+.archive .page-prompt, .archive .page-title {
   text-align: center; }
 
 .resource-list {

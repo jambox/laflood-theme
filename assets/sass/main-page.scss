@@ -5,6 +5,16 @@
     justify-content: center;
     text-align: center;
   }
+  
+  .intro--wrap {
+    text-align:center;
+    .intro {
+      color:white;
+      background:$teal;
+      padding:60px 30px;
+    }
+  }
+
   .main-page-link {
     padding:80px;
     font-size:4rem;

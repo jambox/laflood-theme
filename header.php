@@ -17,7 +17,7 @@
 <body <?php body_class(); ?>>
   <div class="app-wrap">
     <header class="flex">
-      <div class="header-msg-wrap flex-box">If this is an emergency please <a class="btn btn-default" href="tel:911">call 911</a>.</div>
+      <div class="header-msg-wrap flex-box">If this is an emergency please call 911 – <a class="btn btn-default" href="tel:911">Click to call 911</a></div>
     </header>
     <div class="content-wrap container">
       <main class="content row main" role="main">
@@ -25,8 +25,9 @@
       if ( !is_front_page() && function_exists('yoast_breadcrumb') ) {
            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
       }
+
+      $title = get_queried_object()->name;
       ?>
       <?php if ( !is_front_page() ) {?>
-      <h1 class="page-title"><?php the_title(); ?></h1>
-        
+        <h1 class="page-title"><?php echo $title; ?></h1>
       <?php } ?>
