@@ -132,6 +132,53 @@ $group = array (
       'return_format' => 'id',
       'multiple' => 0,
     ),
+    6 => 
+    array (
+      'key' => 'field_57b7f18f6735a',
+      'label' => 'Is Drop-off Location?',
+      'name' => 'drop_off_location',
+      'type' => 'true_false',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => '',
+      'default_value' => 0,
+    ),
+    7 => 
+    array (
+      'key' => 'field_57b7f1aa6735b',
+      'label' => 'Also a Distribution Center?',
+      'name' => 'distribution_center',
+      'type' => 'true_false',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'field' => 'field_57b7f18f6735a',
+            'operator' => '==',
+            'value' => '1',
+          ),
+        ),
+      ),
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'message' => '',
+      'default_value' => 0,
+    ),
   ),
   'location' => 
   array (
