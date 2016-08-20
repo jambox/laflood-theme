@@ -6,7 +6,10 @@
     .intro {
       // color:white;
       // background:$teal;
-      padding:40px 10px 10px;
+      padding:25px 10px 10px;
+      @include breakpoint {
+        padding-top: 40px;
+      }
     }
   }
   .main-page-link {
