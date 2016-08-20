@@ -10,3 +10,4 @@ releases
 deployconfig.json
 
 *.sublime-*
+npm-debug.log
