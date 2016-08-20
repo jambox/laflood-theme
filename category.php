@@ -18,7 +18,7 @@ $items =  get_field('items', 'category_' .$queried_object->term_id);
 if ( $items ): ?>
   
 <div class="row-fluid">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1 priorities--wrap">
     <ul class="priority-items">
       <h4 class="priority-items--title">When giving, please prioritize these things:</h4>
       <?php while(  have_rows('items', 'category_' .$queried_object->term_id ) ) : the_row();?>
