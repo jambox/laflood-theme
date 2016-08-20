@@ -1,17 +1,17 @@
-.resource-category-list--title {
+.resource-category-list--title, .resource-list--title {
   padding:0 10px;
   text-align:center;
   font-size:3rem;
 }
 
-.resource-category-list {
+.resource-category-list, .resource-list {
   list-style:none;
   margin:0;
   padding:0;
   @include flex-container(wrap);
 
 
-  .resource-tile {
+  .resource-category, .resource-card {
     padding:20px 10px;
     margin-bottom:10px;
     text-align:center;
@@ -38,5 +38,13 @@
         background:$blue;
       }
     }
+  } // .resource-tile
+
+  .resource-tile {
+    @extend .resource-category;
+
   }
-}
+
+  
+
+} // .resource-category-list, .resource-list
