@@ -1,0 +1,45 @@
+//
+// Flex
+//
+// Flex Container
+@mixin flex-container($flex-wrap: null, $justify-content: null, $align-items: null, $align-content: null, $flex-direction: null) {
+  display: flex;
+  // Flex Wrap (_: nowrap)
+  @if $flex-wrap { flex-wrap: $flex-wrap; }
+  // Justify Content (_: flex-start)
+  @if $justify-content { justify-content: $justify-content; }
+  // Align Items (_: stretch)
+  @if $align-items { align-items: $align-items; }
+  // Align Content (_: stretch)
+  @if $align-content { align-content: $align-content; }
+  // Flex Direction (_: row)
+  @if $flex-direction { flex-direction: $flex-direction; }
+}
+
+// Flex-Item
+// width can be a whole number or a fraction
+@mixin flex-item($width: null, $align: null, $order: null, $grow: null, $shrink: null) {
+  @if $width == auto {
+    // Flex Grow (_: 0)
+    @if $grow { flex-grow: $grow; }
+    // Flex Shrink (_: 1)
+    @if $shrink { flex-shrink: $shrink; }
+    // Flex Basis (_: auto)
+    flex-basis: auto;
+  } @elseif $width {
+    // Make fraction a percent
+    @if $width < 1 { $width: $width *100; }
+    // Flex Grow (_: 0)
+    @if $grow { flex-grow: $grow; }
+    // Flex Shrink (_: 1)
+    @if $shrink { flex-shrink: $shrink; } @else { flex-shrink: 0; }
+    // Flex Basis (_: auto)
+    flex-basis: ($width + 0%);
+    // Fix for IE10+ and Firefox.
+    max-width: ($width + 0%);
+  }
+  // Align Self (_: auto)
+  @if $align { align-self: $align; }
+  // Flex Order (_: 0)
+  @if $order { order: $order; }
+}
