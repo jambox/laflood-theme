@@ -16,10 +16,10 @@
 </head>
 <body <?php body_class(); ?>>
   <div class="app-wrap">
-<!--     <header class="flex">
-      <div class="header-msg-wrap flex-box"></div>
+    <header class="flex">
+      <div class="header-msg-wrap flex-box"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h1><?php bloginfo( 'name' ) ?></h1></a></div>
     </header>
- --> 
+
    <div class="content-wrap container">
       <main class="content row main" role="main">
       <?php

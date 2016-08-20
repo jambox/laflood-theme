@@ -30,7 +30,7 @@
 								'post_status' => 'draft'
 							),
 							'field_groups' => array($form_ID),
-							'submit_value' => 'Submit a resource'
+							'submit_value' => 'Submit resource'
 						));
 					}
 				?>
