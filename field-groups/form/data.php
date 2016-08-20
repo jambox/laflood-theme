@@ -6,9 +6,51 @@ $group = array (
   array (
     0 => 
     array (
-      'key' => 'field_57b7dcb23b6f1',
-      'label' => 'Name',
-      'name' => 'name',
+      'key' => 'field_57b7dd82d44a7',
+      'label' => 'Organization',
+      'name' => 'organization',
+      'type' => 'taxonomy',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'taxonomy' => 'organization',
+      'field_type' => 'multi_select',
+      'allow_null' => 0,
+      'add_term' => 1,
+      'save_terms' => 1,
+      'load_terms' => 1,
+      'return_format' => 'id',
+      'multiple' => 0,
+    ),
+    1 => 
+    array (
+      'key' => 'field_57b7dd3e3b6f4',
+      'label' => 'Website',
+      'name' => 'url',
+      'type' => 'url',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+    ),
+    2 => 
+    array (
+      'key' => 'field_57b7f2d063b47',
+      'label' => 'Phone Number',
+      'name' => 'phone_number',
       'type' => 'text',
       'instructions' => '',
       'required' => 0,
@@ -25,31 +67,7 @@ $group = array (
       'append' => '',
       'maxlength' => '',
     ),
-    1 => 
-    array (
-      'key' => 'field_57b7dd82d44a7',
-      'label' => 'Organization',
-      'name' => 'organization',
-      'type' => 'taxonomy',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'taxonomy' => 'organization',
-      'field_type' => 'select',
-      'allow_null' => 0,
-      'add_term' => 1,
-      'save_terms' => 1,
-      'load_terms' => 1,
-      'return_format' => 'id',
-      'multiple' => 0,
-    ),
-    2 => 
+    3 => 
     array (
       'key' => 'field_57b7dcff3b6f2',
       'label' => 'Description',
@@ -69,24 +87,6 @@ $group = array (
       'maxlength' => 300,
       'rows' => '',
       'new_lines' => 'wpautop',
-    ),
-    3 => 
-    array (
-      'key' => 'field_57b7dd3e3b6f4',
-      'label' => 'Website',
-      'name' => 'url',
-      'type' => 'url',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '',
-      'placeholder' => '',
     ),
     4 => 
     array (
@@ -124,7 +124,7 @@ $group = array (
         'id' => '',
       ),
       'taxonomy' => 'category',
-      'field_type' => 'select',
+      'field_type' => 'multi_select',
       'allow_null' => 0,
       'add_term' => 0,
       'save_terms' => 1,
