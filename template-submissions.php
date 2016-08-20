@@ -15,21 +15,29 @@
 
 				<?php the_content(); ?>
 
-				<?php acf_form(array(
-					'id'           => 'resource-submission-form',
-					'post_id'      => 'new_post',
-					'new_post'     => array(
-						'post_type'   =>  get_resource_cpt_name(),
-						'post_status' => 'draft'
-					),
-					'field_groups' => array(71),
-					'submit_value' => 'Submit a resource'
-				)); ?>
+				<?php
+					$form_object =  get_page_by_title( 'Form', null, 'acf-field-group' );
+					$form_ID = $form_object->ID;
+
+					if( $form_ID ) {
+
+
+						acf_form(array(
+							'id'           => 'resource-submission-form',
+							'post_id'      => 'new_post',
+							'new_post'     => array(
+								'post_type'   =>  get_resource_cpt_name(),
+								'post_status' => 'draft'
+							),
+							'field_groups' => array($form_ID),
+							'submit_value' => 'Submit a resource'
+						));
+					}
+				?>
 
 			<?php endwhile; ?>
 
-		</main><!-- #content -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
