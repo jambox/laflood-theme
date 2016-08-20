@@ -3,13 +3,41 @@
 
 $default-transition: .3s ease;
 
+body,html {
+  height:100%;
+}
+
+
 body {
   font-size:16px;
   font-family:'Open Sans', Helvetica, Arial, sans-serif;
 }
 
+.Raleway-header {
+  @extend .Raleway;  
+  font-weight:bold;
+  letter-spacing: .05em;
+}
+
+h {
+  &1{
+    @extend .Raleway-header;
+  }
+  &2{
+    @extend .Raleway-header;
+    line-height:1.4;
+    color:$blue;
+  }
+  &3{
+    @extend .Raleway-header;
+  }
+}
+
 .app-wrap {
-  padding:80px 20px;
+  position:relative;
+  padding:40px 20px;
+  min-height:100%;
+  border-top:24px solid $blue;
 }
 
 // main.content {

@@ -9,7 +9,9 @@ if( is_page() ) {
 
 ?>
 
-<h2 class="page-prompt"><?php echo $prompt; ?></h2>
+<div class="row-fluid">
+  <div class="page-prompt col-md-6 col-md-offset-3"><?php echo $prompt; ?></div>
+</div>
 
 <?php get_template_part('partials/resource-list' ); ?>
 
