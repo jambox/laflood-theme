@@ -1,6 +1,4 @@
-$breakpoint: 34.75rem; //556 px
-
-@mixin breakpoint() {
+@mixin breakpoint($breakpoint) {
 	@media (min-width: $breakpoint) {
 		@content;
 	}
