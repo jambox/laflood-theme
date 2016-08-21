@@ -17,7 +17,10 @@
 <body <?php body_class(); ?>>
   <div class="app-wrap">
     <header class="flex">
-      <div class="header-msg-wrap flex-box"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h1><?php bloginfo( 'name' ) ?></h1></a></div>
+      <div class="header-msg-wrap flex-box">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h1 class="site-title"><?php bloginfo( 'name' ) ?></h1></a>
+        <p class="site-tagline">How to contribute to the Louisiana flood relief effort</p>
+      </div>
     </header>
 
    <div class="content-wrap container">
@@ -32,7 +35,7 @@
       <?php
       if ( !is_front_page() ) {
         if( is_category() ): 
-          $title = "Ways to give $title"; 
+          $title = "How to Provide $title"; 
         endif; ?>
         <h1 class="page-title"><?php echo $title; ?></h1>
       <?php } ?>

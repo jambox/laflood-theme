@@ -2,7 +2,7 @@
   <h3 class="resource-category-list--title">I'd like to contribute...</h3>
   <ul class="resource-category-list">
     <?php
-    $cats = get_terms( 'category', array('hide_empty' => false ) );
+    $cats = get_terms( 'category', array('hide_empty' => false, 'parent'=>0 ) );
     foreach( $cats as $cat ) :
       if ( $cat->term_id == 1 ) continue;
     ?>

@@ -1,10 +1,18 @@
 <?php get_header(); ?>
-
-  <h4 class="resource-list--title">How to contribute to the Louisiana flood relief effort.</h4>
-
-<?php 
+<?php
 $queried_object = get_queried_object(); 
 $prompt = $queried_object->description;
+$guidelines = get_field('guidelines', 'category_' .$queried_object->term_id );
+
+if ( $guidelines ): ?>
+  <div class="row-fluid">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>Please Give Thoughtfully</h3>
+      <p><?php the_field('guidelines', 'category_' .$queried_object->term_id ) ?></p>
+    </div>
+  </div>  
+<?php endif; ?>
+<?php 
 
 if( $prompt ) : ?>
 <div class="row-fluid">

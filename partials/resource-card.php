@@ -1,5 +1,5 @@
-<li class="resource-card list-inline col-lg-4 col-md-6 col-sm-6 col-xs-12">
-  <div class="resource-card--header">
+<li class="resource-card list-inline col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="resource-card--header flex-box">
     <h4 class="resource-name"><a href="<?php the_field('url') ?>"><?php the_title(); ?></a></h4>
   </div>
   <div class="resource-card--body">

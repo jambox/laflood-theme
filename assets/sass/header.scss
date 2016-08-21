@@ -4,17 +4,35 @@ header {
   font-weight: bold;
   @extend .Raleway-header;
   .header-msg-wrap {
-    padding:20px;
+    padding:10px;
     background: $blue;
     color:white;
+    .site-tagline {
+      font-size:1.7rem;
+      font-weight:normal;
+      text-transform:none;
+      letter-spacing:0;
+    }
   }
   a {
     color: #FFF;
+
+    .site-title {
+      font-size:2.4rem;
+      display:inline-block;
+      border-bottom:1px solid transparent;  
+      padding-bottom:4px;
+      margin-bottom:5px;  
+    }
+
     &:active,
     &:focus,
     &:hover {
-      text-decoration: none;
-      color: #FAFAFA;
+      color: white;
+      border-bottom:none;
+      .site-title {
+        border-bottom:1px dotted white;
+      }
     }
   }
 }

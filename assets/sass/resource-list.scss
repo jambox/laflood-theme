@@ -1,3 +1,8 @@
+.top-five-header {
+  text-align:center;
+  font-weight:bold;
+}
+
 .resource-category-list--title, .resource-list--title {
   padding:0 10px;
   margin:20px 0;
@@ -10,7 +15,6 @@
   margin:0;
   padding:0;
   @include flex-container(wrap);
-
 
   .resource-category, .resource-card {
     padding:6px 10px;
@@ -48,12 +52,19 @@
 
   .resource-card {
     @extend .resource-category;
-    @include flex-container(wrap, center, center);
-    border:2px $gray solid;
+    @include flex-container(wrap, left, center);
     text-align:left;
-    border-radius:4px;
-    padding:20px;
+    padding:20px 40px;
+    .resource-card--header {
+      border-bottom:1px $gray solid;
+      margin-bottom:10px;
+    }
     .resource-name {
+      font-size:2rem;
+      font-weight:bold;
+      @include breakpoint($breakpoint-md) {
+        font-size:4rem;
+      }
       a {
         color:$blue;
         line-height:1.5;

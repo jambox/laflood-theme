@@ -16,4 +16,7 @@ footer {
     }
     
   }
-}
+  .disclaimer {
+    @extend .small;
+  }
+} // footer
