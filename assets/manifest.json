@@ -3,7 +3,9 @@
     "main.js": {
       "files": [
         "js/main.js",
-        "js/plugins/offcanvas-menu.js"
+        "js/plugins/offcanvas-menu.js",
+        "../bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js",
+        "js/org-modal.js"        
       ],
       "vendor": [
         "vendor/some/path/file.js"

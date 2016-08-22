@@ -26,14 +26,10 @@ $(function () {
   //   });
 
   // Initialize Offcanvas Menu
-  Engine.ui.offcanvas();
+  // Engine.ui.offcanvas();
 
 
 
 
 }); // jQuery document ready
-
-
-function reset_contact_form () {
-} // reset_contact_form
 

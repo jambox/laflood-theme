@@ -40,4 +40,5 @@
 		</main>
 	</div>
 
+	<?php get_template_part('partials/org-modal'); ?>
 <?php get_footer(); ?>
