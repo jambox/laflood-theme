@@ -4,10 +4,6 @@ add_action( 'init', 'bolt_add_custom_taxonomies', 0 );
 function bolt_add_custom_taxonomies() {
 
   $custom_taxonomies = array(
-    'organization' => array(
-      'plural' => 'Organizations',
-      'singular' => 'Organization'
-    )
   );
 
 
@@ -46,7 +42,7 @@ function bolt_add_custom_taxonomies() {
       'show_in_nav_menus'          => true,
       'show_tagcloud'              => true,
     );
-    register_taxonomy( $db_tax_name , array('post',THEME_PREFIX . '_' . RESOURCE_CPT_NAME ), $args );
+    //register_taxonomy( $db_tax_name , array('post',THEME_PREFIX . '_' . RESOURCE_CPT_NAME ), $args );
 
   endforeach;
 
