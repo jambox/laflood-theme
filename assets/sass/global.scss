@@ -37,8 +37,9 @@ h {
   }
   &3{
     @extend .Raleway-header;
+    font-size:3rem;
     font-weight:bold;    
-    line-height:1.3;
+    line-height:1.4;
   }
 }
 
@@ -87,3 +88,8 @@ a {
 .button-primary {
   @extend .btn-primary;
 }
+
+input[type=search] {
+  border:0;
+}
+
