@@ -1,6 +1,6 @@
 <?php
 
-define('RESOURCE_CPT_NAME', 'resource');
+define('LOCATION_CPT_NAME', 'resource');
 define('ORGANIZATION_CPT_NAME', 'organization');
 
 // Define array of Custom Post Types and register each
@@ -8,18 +8,18 @@ define('ORGANIZATION_CPT_NAME', 'organization');
 add_action( 'init', 'bolt_custom_post_types' );
 
 function bolt_custom_post_types() {
-  
+
   $cpts = array(
-    RESOURCE_CPT_NAME => array(
-      'singular' => 'Resource',
-      'plural' => 'Resources',
+    LOCATION_CPT_NAME => array(
+      'singular' => 'Location',
+      'plural' => 'Locations',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
-      'taxonomies' => array('post_tag','category', 'organization'),
+      'taxonomies' => array('post_tag','category'),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
-      'rewrite_slug' => 'resource'
+      'rewrite_slug' => 'location'
     ),
 
     ORGANIZATION_CPT_NAME => array(
@@ -27,7 +27,7 @@ function bolt_custom_post_types() {
       'plural' => 'Organizations',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
-      'taxonomies' => array('post_tag','category', 'organization'),
+      'taxonomies' => array('post_tag','category'),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
