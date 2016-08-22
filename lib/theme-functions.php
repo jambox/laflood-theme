@@ -157,7 +157,7 @@ function is_resource_archive() {
 } // is_resource_archive()
 
 
-function get_resource_cpt_name() {
+function get_location_cpt_name() {
   return THEME_PREFIX . '_' . RESOURCE_CPT_NAME;
 } // END get_resource_cpt_name()
 
