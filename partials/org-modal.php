@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row">
 
-          <div class="modal-title-caliper">Add Organization</div>
+          <h3 class="modal-title">Add Organization</h3>
 
         <?php
           $form_object =  get_page_by_title( 'Organization Submission', null, 'acf-field-group' );
@@ -17,6 +17,7 @@
               'id'           => 'org-submission-form',
               'post_id'      => 'new_post',
               'post_title' => true,
+              'return' => '%post_url%',
               'new_post'     => array(
                 'post_type'   =>  get_org_cpt_name(),
                 'post_status' => 'draft'

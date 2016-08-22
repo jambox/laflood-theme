@@ -8,8 +8,12 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+// Bootstrap Overrides
+@import 'modals';
+
 @import 'flex-box';
 @import 'global';
+
 
 @import 'header';
 @import 'footer';
