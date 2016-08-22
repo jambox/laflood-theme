@@ -26,7 +26,7 @@
 							'id'           => 'resource-submission-form',
 							'post_id'      => 'new_post',
 							'new_post'     => array(
-								'post_type'   =>  get_resource_cpt_name(),
+								'post_type'   =>  get_location_cpt_name(),
 								'post_status' => 'draft'
 							),
 							'field_groups' => array($form_ID),
