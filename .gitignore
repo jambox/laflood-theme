@@ -1,9 +1,5 @@
 assets/sass/.sass-cache
 node_modules
-grunt/clean.coffee
-grunt/compress.coffee
-grunt/copy.coffee
-grunt/wordpressdeploy.coffee
 backups
 build
 releases
