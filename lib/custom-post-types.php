@@ -1,6 +1,6 @@
 <?php
 
-define('LOCATION_CPT_NAME', 'resource');
+define('LOCATION_CPT_NAME', 'location');
 define('ORGANIZATION_CPT_NAME', 'organization');
 
 // Define array of Custom Post Types and register each
