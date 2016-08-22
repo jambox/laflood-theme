@@ -179,12 +179,14 @@ function loader_title() {
 define( 'AJAX', 'wp_ajax_');
 define( 'AJAX_PUBLIC', 'wp_ajax_nopriv_');
 
-function ajax_submit_contact_form() {
-} // END ajax_submit_contact_form()
+function ajax_acf_save_new_org() {
+  $data = $_POST;
+  return json_encode($_POST);
+} // END ajax_acf_save_new_org()
 
 
-add_action( AJAX_PUBLIC . 'submit_contact_form', 'ajax_submit_contact_form' );
-add_action( AJAX . 'submit_contact_form', 'ajax_submit_contact_form' );
+add_action( AJAX_PUBLIC . 'acf_save_new_org', 'ajax_acf_save_new_org' );
+add_action( AJAX . 'acf_save_new_org', 'ajax_acf_save_new_org' );
 
 
 /**
