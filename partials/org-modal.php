@@ -20,7 +20,7 @@
               'return' => '%post_url%',
               'new_post'     => array(
                 'post_type'   =>  get_org_cpt_name(),
-                'post_status' => 'draft'
+                'post_status' => 'publish'
               ),
               'field_groups' => array($form_ID),
               'submit_value' => 'Add Organization'
