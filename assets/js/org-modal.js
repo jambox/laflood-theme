@@ -20,7 +20,7 @@
   //       .height( $('.contact-form .form-buttons').height() )
   //       .find('button').fadeOut();
 
-  //     $('.modal-title-caliper').text('Sending...');
+  //     $('.modal-title').text('Submitting...');
 
 
   //     $.ajax({
@@ -32,6 +32,8 @@
   //           action : 'submit_contact_form'
   //         },
   //         complete: function (data, status) {
+
+
   //           var response = data.responseJSON;
   //           $('.contact-form .in-progress-anim').fadeOut('normal', function() {
   //             if( response.code == 200 ) {

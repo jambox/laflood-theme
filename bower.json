@@ -11,7 +11,8 @@
   "overrides": {
     "bootstrap-sass": {
       "main": [
-        "./assets/stylesheets/_bootstrap.scss"
+        "./assets/stylesheets/_bootstrap.scss",
+        "./assets/javascripts/bootstrap/modal.js"
       ]
     }
   }
