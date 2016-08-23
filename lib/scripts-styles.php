@@ -49,6 +49,23 @@ function client_styles() {
 add_action( 'wp_enqueue_scripts', 'client_styles' );
 
 
+/*----------  Typekit  ----------*/
+
+function laflood_typekit() {
+    wp_enqueue_script( 'laflood_typekit', '//use.typekit.net/ekj1nib.js', '', false);
+}
+add_action( 'wp_enqueue_scripts', 'laflood_typekit' );
+
+
+function laflood_typekit_inline() {
+  if ( wp_script_is( 'laflood_typekit', 'done' ) ) { ?>
+    <script>try{Typekit.load();}catch(e){}</script>
+  <?php }
+}
+add_action( 'wp_head', 'laflood_typekit_inline' );
+
+
+
 function laflood_admin_styles() {
     wp_register_style( 'admin',  THEME_URL . '/dist/styles/admin.css', false );
     wp_enqueue_style( 'admin' );

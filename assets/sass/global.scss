@@ -22,12 +22,21 @@ body {
   letter-spacing: .03em;
 }
 
+.Clarendon-header {
+  @extend .Clarendon;  
+  // letter-spacing: .03em;
+}
+
+.header-font {
+  @extend .Clarendon-header;
+}
+
 h {
   &1{
-    @extend .Raleway-header;
+    @extend .header-font;
   }
   &2{
-    @extend .Raleway-header;
+    @extend .header-font;
     color:$blue;
     margin-bottom: 30px;
     @include breakpoint($breakpoint-sm) {
@@ -36,7 +45,7 @@ h {
     }
   }
   &3{
-    @extend .Raleway-header;
+    @extend .header-font;
     font-size:3rem;
     font-weight:bold;    
     line-height:1.4;
