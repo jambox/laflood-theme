@@ -1,5 +1,5 @@
 <div class="org-modal modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-med">
     <div class="modal-content">
       <div class="container-fluid">
         <div class="row">
