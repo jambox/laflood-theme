@@ -62,7 +62,7 @@ module.exports =
 
 
   dev:
-    title: "dev.lafloodrecovery.com"
+    title: "dev.lafloodrecovery.org"
     database: "laflood-dev"
     table_prefix: "wp_"
     table_exclusions : [
@@ -71,7 +71,7 @@ module.exports =
     user: "<%= deployconfig.dev.db_user %>"
     pass: "<%= deployconfig.dev.db_pass %>"
     host: "127.0.0.1"
-    url: "//dev.lafloodrecovery.com"
+    url: "//dev.lafloodrecovery.org"
     path:
       theme   : "<%= deployconfig.dev.wp_content_path %>/themes/<%= theme_name %>/"
       uploads : "<%= deployconfig.dev.wp_content_path %>/uploads/"
@@ -88,7 +88,7 @@ module.exports =
     user: "<%= deployconfig.prod.db_user %>"
     pass: "<%= deployconfig.prod.db_pass %>"
     host: "127.0.0.1"
-    url: "//lafloodrecovery.com"
+    url: "//lafloodrecovery.org"
     path:
       theme   : "<%= deployconfig.prod.wp_content_path %>/themes/<%= theme_name %>/"
       uploads : "<%= deployconfig.prod.wp_content_path %>/uploads/"
