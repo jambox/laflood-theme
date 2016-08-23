@@ -72,13 +72,15 @@ function get_child_categories( $parent_cat_id = 0 ) {
   $args = array(
     'parent' => $parent_cat_id,
     'hide_empty' => false
-    // 'post_type' => get_resource_cpt_name()
+    // 'post_type' => get_org_cpt_name()
   );
 
   $child_cats = get_categories( $args );
   return $child_cats;
 
-} // END get_child_categories() 
+} // END get_child_categories()
+
+
 
 function get_category_items_from_parent_name( $parent_cat_name = 0 ) {
   if( !$parent_cat_name ) return false;
