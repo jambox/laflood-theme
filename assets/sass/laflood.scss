@@ -8,19 +8,21 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-// Bootstrap Overrides
-@import 'layouts/modals';
-
+// Common
 @import 'common/flex-box';
 @import 'common/global';
 
+// Bootstrap Overrides
+@import 'overrides/modals';
+
+// Layouts
 @import 'layouts/header';
 @import 'layouts/footer';
-
 @import 'layouts/landing-page';
 @import 'layouts/category-page';
-
 @import 'layouts/page-submissions';
-
 @import 'layouts/resource-bucket';
 @import 'layouts/resource-list';
+
+// TinyMCE
+@import "overrides/tinymce";
