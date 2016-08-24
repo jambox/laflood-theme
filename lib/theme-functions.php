@@ -109,39 +109,39 @@ function get_category_link_by_slug( $slug = 0 ) {
 }
 
 
-function laflood_org_archive_query( $query ) {
-  if ( is_org_archive() && $query->is_main_query() && !is_admin() ) {
+function laflood_service_archive_query( $query ) {
+  if ( is_service_archive() && $query->is_main_query() && !is_admin() ) {
     set_query_var('post_parent', 0 );
     set_query_var('post_status', array('publish') );
     set_query_var('orderby', 'menu_order' );
   }
-} // END laflood_org_archive_query()
+} // END laflood_service_archive_query()
 
-add_action('pre_get_posts','laflood_org_archive_query');
+add_action('pre_get_posts','laflood_service_archive_query');
 
 
-function laflood_add_org_category_archive( $query ) {
+function laflood_add_service_category_archive( $query ) {
   if( is_category() && $query->is_main_query() ) {
     $post_type = get_query_var('post_type');
-    $proj_cpt = get_org_cpt_name();
+    $proj_cpt = get_services_cpt_name();
     $post_type = $post_type ? array($post_type, $proj_cpt) : array($proj_cpt);
     $query->set('post_type',$post_type);
   }
     return $query;   
 
-} // END laflood_add_org_category_archive()
+} // END laflood_add_service_category_archive()
 
-add_action('pre_get_posts','laflood_add_org_category_archive');
+add_action('pre_get_posts','laflood_add_service_category_archive');
 
 
-function laflood_only_allow_search_for_org( $query ) {
+function laflood_only_allow_search_for_service( $query ) {
   if ($query->is_search) {
-      $query->set( 'post_type', get_org_cpt_name() );
+      $query->set( 'post_type', get_services_cpt_name() );
   };
   return $query;   
 
-} // END laflood_add_org_category_archive()
-add_action('pre_get_posts','laflood_only_allow_search_for_org');
+} // END laflood_add_service_category_archive()
+add_action('pre_get_posts','laflood_only_allow_search_for_service');
 
 
 function is_laflood_cpt_archive( $cpt_name = 0 ) {
@@ -152,20 +152,31 @@ function is_laflood_cpt_archive( $cpt_name = 0 ) {
 } // END is_laflood_cpt_archive()
 
 
-function is_org_archive() {
-  return is_laflood_cpt_archive( LOCATION_CPT_NAME );
-} // is_org_archive()
+function is_resource_archive() {
+  return is_laflood_cpt_archive( RESOURCES_CPT_NAME );
+} // is_resource_archive()
+
+function get_resource_cpt_name() {
+  return THEME_PREFIX . '_' . RESOURCES_CPT_NAME;
+} // END get_resource_cpt_name()
 
 
-function get_org_cpt_name() {
-  return THEME_PREFIX . '_' . ORGANIZATION_CPT_NAME;
-} // END get_org_cpt_name()
+
+function is_service_archive() {
+  return is_laflood_cpt_archive( SERVICES_CPT_NAME );
+} // is_service_archive()
+
+function get_services_cpt_name() {
+  return THEME_PREFIX . '_' . SERVICES_CPT_NAME;
+} // END get_services_cpt_name()
 
 
-function get_location_cpt_name() {
-  return THEME_PREFIX . '_' . LOCATION_CPT_NAME;
-} // END get_org_cpt_name()
-
+function get_lfr_cpt_names_array() {
+  return array(
+    get_services_cpt_name(),
+    get_resource_cpt_name()
+  );
+} // get_lfr_cpt_names_array
 
 function loader_title() {
  $titles = array('Loading', 'One sec', 'Hold on', 'One Moment');
@@ -175,14 +186,14 @@ function loader_title() {
 } // END loader_title()
 
 
-function ajax_acf_save_new_org() {
+function ajax_acf_save_new_service() {
   $data = $_POST;
   return json_encode($_POST);
-} // END ajax_acf_save_new_org()
+} // END ajax_acf_save_new_service()
 
 
-add_action( AJAX_PUBLIC . 'acf_save_new_org', 'ajax_acf_save_new_org' );
-add_action( AJAX . 'acf_save_new_org', 'ajax_acf_save_new_org' );
+add_action( AJAX_PUBLIC . 'acf_save_new_service', 'ajax_acf_save_new_service' );
+add_action( AJAX . 'acf_save_new_service', 'ajax_acf_save_new_service' );
 
 
 /**

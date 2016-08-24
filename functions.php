@@ -11,16 +11,16 @@
  */
 $bolt_includes = array(
   'lib/define.php',             // Helper Functions
-  'lib/utils.php',             // Helper Functions
-  'lib/init.php',              // Initial theme setup and constants
-  'lib/logging.php',           // Debugging / Kenny loggins stuff
-  'lib/scripts-styles.php',    // JS & CSS Enqueuing for WP
-  'lib/nav-menu-walker.php',   // Custom Nav Walker
-  'lib/custom-post-types.php', // Define Custom Post Types
-  // 'lib/custom-taxonomies.php', // Custom Taxonomies
-  '/lib/relative-urls.php',    // Root relative URLs
-  'lib/theme-functions.php',   // Theme-specific functions
-  'lib/admin.php'              // Admin functions
+  'lib/utils.php',              // Helper Functions
+  'lib/init.php',               // Initial theme setup and constants
+  'lib/logging.php',            // Debugging / Kenny loggins stuff
+  'lib/scripts-styles.php',     // JS & CSS Enqueuing for WP
+  'lib/nav-menu-walker.php',    // Custom Nav Walker
+  'lib/custom-post-types.php',  // Define Custom Post Types
+  'lib/custom-taxonomies.php',  // Custom Taxonomies
+  '/lib/relative-urls.php',     // Root relative URLs
+  'lib/theme-functions.php',    // Theme-specific functions
+  'lib/admin.php'               // Admin functions
   // 'lib/widgets.php',           // Theme-specific widgets
   // 'lib/shortcodes.php',        // Theme-specific shortcodes
 );

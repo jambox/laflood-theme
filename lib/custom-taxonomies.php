@@ -6,8 +6,19 @@ function bolt_add_custom_taxonomies() {
   $custom_taxonomies = array(
     ORG_TAX_NAME => array(
       'plural' => 'Organizations',
-      'singular' => 'Organization'
-    )    
+      'singular' => 'Organization',
+      'post_types' => array( get_services_cpt_name() )
+    ),
+    VISITOR_TYPE_TAX_NAME => array(
+      'plural' => 'Visitor Types',
+      'singular' => 'Visitor Type',
+      'post_types' => array( get_resource_cpt_name() )
+    ),
+    RESOURCE_TYPE_TAX_NAME => array(
+      'plural' => 'Resource Types',
+      'singular' => 'Resource Type',
+      'post_types' => array( get_resource_cpt_name() )
+    ),
   );
 
 
@@ -18,6 +29,7 @@ function bolt_add_custom_taxonomies() {
 
     $singular = $tax['singular'];
     $plural = $tax['plural'];
+    $post_types = $tax['post_types'];
 
 
     $labels = array(
@@ -46,7 +58,8 @@ function bolt_add_custom_taxonomies() {
       'show_in_nav_menus'          => true,
       'show_tagcloud'              => true,
     );
-    //register_taxonomy( $db_tax_name , array('post',THEME_PREFIX . '_' . RESOURCE_CPT_NAME ), $args );
+
+    register_taxonomy( $db_tax_name , $post_types, $args );
 
   endforeach;
 

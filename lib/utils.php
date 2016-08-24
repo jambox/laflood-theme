@@ -34,7 +34,7 @@ function get_category_link_list( $class='' ) {
 
   if( !$post ) return false;
 
-  $loc_parent_cat = get_category_by_slug('location');
+  $loc_parent_cat = get_category_by_slug('resource');
 
   $post_categories = wp_get_post_categories( $post->ID );
   $cats = array();
@@ -42,7 +42,7 @@ function get_category_link_list( $class='' ) {
   foreach($post_categories as $cat_id ){
     $cat = get_category( $cat_id );
     
-    // Exclude Location Cats
+    // Exclude Resource Cats
     if( cat_is_ancestor_of( $loc_parent_cat, $cat_id ) ) continue;
 
     $cats[] = array(

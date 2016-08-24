@@ -7,29 +7,29 @@ add_action( 'init', 'bolt_custom_post_types' );
 function bolt_custom_post_types() {
 
   $cpts = array(
-    LOCATION_CPT_NAME => array(
-      'singular' => 'Location',
-      'plural' => 'Locations',
+    SERVICES_CPT_NAME => array(
+      'singular' => 'Service',
+      'plural' => 'Services',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
-      'taxonomies' => array('post_tag','category'),
+      'taxonomies' => array('post_tag','category', 'lfr_organization'),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
-      'rewrite_slug' => 'location'
+      'rewrite_slug' => 'services'
     ),
-
-    ORGANIZATION_CPT_NAME => array(
-      'singular' => 'Organization',
-      'plural' => 'Organizations',
+    RESOURCES_CPT_NAME => array(
+      'singular' => 'Resource',
+      'plural' => 'Resources',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
       'taxonomies' => array('post_tag','category'),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
-      'rewrite_slug' => 'organization'
+      'rewrite_slug' => 'resources'
     )
+
   );
 
 
