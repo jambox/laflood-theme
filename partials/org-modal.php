@@ -4,10 +4,10 @@
       <div class="container-fluid">
         <div class="row">
 
-          <h3 class="modal-title">Add Services</h3>
+          <h3 class="modal-title">Add Organizations</h3>
 
         <?php
-          $form_object =  get_page_by_title( 'Services Submission', null, 'acf-field-group' );
+          $form_object =  get_page_by_title( 'Organizations Submission', null, 'acf-field-group' );
           $form_ID = $form_object->ID;
 
           if( $form_ID ) {
@@ -23,7 +23,7 @@
                 'post_status' => 'publish'
               ),
               'field_groups' => array($form_ID),
-              'submit_value' => 'Add Services'
+              'submit_value' => 'Add Organizations'
             ));
           }
         ?>

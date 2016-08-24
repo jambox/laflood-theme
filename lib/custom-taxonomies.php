@@ -4,17 +4,16 @@ add_action( 'init', 'bolt_add_custom_taxonomies', 0 );
 function bolt_add_custom_taxonomies() {
 
   $custom_taxonomies = array(
-    ORG_TAX_NAME => array(
-      'plural' => 'Organizations',
-      'singular' => 'Organization',
-      'post_types' => array( get_services_cpt_name() )
+    PARENT_ORG_TAX => array(
+      'plural' => 'Parent Orgs',
+      'singular' => 'Parent Org',
+      'post_types' => array( get_org_cpt_name() ),
     ),
     VISITOR_TYPE_TAX_NAME => array(
       'plural' => 'Visitor Types',
       'singular' => 'Visitor Type',
-      'post_types' => array( get_services_cpt_name() ),
+      'post_types' => array( get_org_cpt_name() ),
       'hierarchical' => true,
-      'show_ui' => false
     ),
     RESOURCE_TYPE_TAX_NAME => array(
       'plural' => 'Resource Types',
@@ -27,7 +26,7 @@ function bolt_add_custom_taxonomies() {
   // Register Custom Taxonomy
   foreach ( $custom_taxonomies as $key => $tax ) :
 
-    $db_tax_name = $key;
+    $db_tax_name = THEME_PREFIX . "_$key";
 
     $singular = $tax['singular'];
     $plural = $tax['plural'];

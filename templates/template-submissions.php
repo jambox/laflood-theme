@@ -16,19 +16,19 @@
 				<?php the_content(); ?>
 
 				<?php
-					$form_object =  get_page_by_title( 'Service Fields', null, 'acf-field-group' );
+					$form_object =  get_page_by_title( 'Organizations Fields', null, 'acf-field-group' );
 					$form_ID = $form_object->ID;
 
 					if( $form_ID ) {
 						acf_form(array(
-							'id'           => 'service-submission-form',
+							'id'           => 'org-submission-form',
 							'post_id'      => 'new_post',
 							'new_post'     => array(
-								'post_type'   =>  get_services_cpt_name(),
+								'post_type'   =>  get_org_cpt_name(),
 								'post_status' => 'draft'
 							),
 							'field_groups' => array($form_ID),
-							'submit_value' => 'Submit Service'
+							'submit_value' => 'Add This Organization'
 						));
 					}
 				?>

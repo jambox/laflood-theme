@@ -20,14 +20,14 @@ define('GOOGLE_MAPS_API_KEY', 'AIzaSyDUC_JWLxIKRQbQbDJlV8qIYxLts0FGx2c');
 =========================================*/
 
 define('RESOURCES_CPT_NAME', 'resource');
-define('SERVICES_CPT_NAME', 'service');
+define('ORG_CPT_NAME', 'org');
 
 
 /*=========================================
 =            Custom Taxonomies            =
 =========================================*/
 
-define('ORG_TAX_NAME', 'organization');
+define('PARENT_ORG_TAX', 'parent_org');
 define('RESOURCE_TYPE_TAX_NAME', 'resource_type');
 define('VISITOR_TYPE_TAX_NAME', 'visitor_type');
 

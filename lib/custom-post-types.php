@@ -7,16 +7,16 @@ add_action( 'init', 'bolt_custom_post_types' );
 function bolt_custom_post_types() {
 
   $cpts = array(
-    SERVICES_CPT_NAME => array(
-      'singular' => 'Service',
-      'plural' => 'Services',
+    ORG_CPT_NAME => array(
+      'singular' => 'Organization',
+      'plural' => 'Organizations',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
-      'taxonomies' => array('post_tag','category', get_visitor_type_tax_name(), get_org_tax_name() ),
+      'taxonomies' => array('post_tag','category', get_visitor_type_tax_name(), get_parent_org_tax_name() ),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
-      'rewrite_slug' => 'services'
+      'rewrite_slug' => 'orgs'
     ),
     RESOURCES_CPT_NAME => array(
       'singular' => 'Resource',
