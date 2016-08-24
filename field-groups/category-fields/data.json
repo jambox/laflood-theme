@@ -40,13 +40,13 @@
                 "id": ""
             },
             "choices": {
-                "volunteer": "I need help",
-                "client": "I want to help"
+                "need-help": "I need help",
+                "want-to-help": "I want to help"
             },
             "default_value": [],
             "layout": "vertical",
             "toggle": 1,
-            "return_format": "label"
+            "return_format": "array"
         },
         {
             "key": "field_57b900218bd9f",

@@ -48,15 +48,15 @@ $group = array (
       ),
       'choices' => 
       array (
-        'volunteer' => 'I need help',
-        'client' => 'I want to help',
+        'need-help' => 'I need help',
+        'want-to-help' => 'I want to help',
       ),
       'default_value' => 
       array (
       ),
       'layout' => 'vertical',
       'toggle' => 1,
-      'return_format' => 'label',
+      'return_format' => 'array',
     ),
     2 => 
     array (

@@ -7,7 +7,7 @@ $group = array (
     0 => 
     array (
       'key' => 'field_57bd3306fd853',
-      'label' => 'Category',
+      'label' => 'What type of services are provided?',
       'name' => 'org_category',
       'type' => 'taxonomy',
       'instructions' => '',
@@ -22,7 +22,7 @@ $group = array (
       'taxonomy' => 'category',
       'field_type' => 'select',
       'allow_null' => 0,
-      'add_term' => 1,
+      'add_term' => 0,
       'save_terms' => 1,
       'load_terms' => 1,
       'return_format' => 'id',
@@ -46,7 +46,7 @@ $group = array (
       'taxonomy' => 'lfr_parent_org',
       'field_type' => 'select',
       'allow_null' => 1,
-      'add_term' => 1,
+      'add_term' => 0,
       'save_terms' => 1,
       'load_terms' => 1,
       'return_format' => 'object',
@@ -55,7 +55,7 @@ $group = array (
     2 => 
     array (
       'key' => 'field_57ba95ce43391',
-      'label' => 'Services Offered',
+      'label' => 'Services/Goods Offered',
       'name' => 'org_services',
       'type' => 'taxonomy',
       'instructions' => 'Start typing to search for existing services. Enter as many as you\'d like.',
@@ -111,7 +111,7 @@ $group = array (
       'name' => 'org_location',
       'type' => 'google_map',
       'instructions' => '',
-      'required' => 1,
+      'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => 
       array (
@@ -196,10 +196,51 @@ $group = array (
         'class' => '',
         'id' => '',
       ),
-      'default_value' => 'http://',
+      'default_value' => '',
       'placeholder' => '',
     ),
     8 => 
+    array (
+      'key' => 'field_57ba942a7b8f7',
+      'label' => 'Main Phone Number',
+      'name' => 'org_main_phone',
+      'type' => 'text',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '555-123-4567',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+    ),
+    9 => 
+    array (
+      'key' => 'field_57ba94b54ae5c',
+      'label' => 'Main Email Address',
+      'name' => 'org_main_email',
+      'type' => 'email',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => 'address@example.com',
+      'prepend' => '',
+      'append' => '',
+    ),
+    10 => 
     array (
       'key' => 'field_57ba950f57456',
       'label' => 'Contact Person(s)',
@@ -305,47 +346,6 @@ $group = array (
           'append' => '',
         ),
       ),
-    ),
-    9 => 
-    array (
-      'key' => 'field_57ba942a7b8f7',
-      'label' => 'Phone Number',
-      'name' => 'org_main_phone',
-      'type' => 'text',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '',
-      'placeholder' => '555-123-4567',
-      'prepend' => '',
-      'append' => '',
-      'maxlength' => '',
-    ),
-    10 => 
-    array (
-      'key' => 'field_57ba94b54ae5c',
-      'label' => 'Email Address',
-      'name' => 'org_main_email',
-      'type' => 'email',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => 
-      array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '',
-      'placeholder' => 'address@example.com',
-      'prepend' => '',
-      'append' => '',
     ),
   ),
   'location' => 
