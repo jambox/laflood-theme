@@ -3,8 +3,8 @@
 
     <footer class="flex">
       <div class="footer-msg-wrap flex-box">
-        <p>See something missing from this list? Submit a resource on the <a href="<?php permalink_by_title('Submissions'); ?>" class="submit-resource-link">Submissions Page</a>.</p>
-        <p class="disclaimer">This site is not for profit. It was put together quickly to try to help and it's probably not perfect. We hope it's helpful.</p>
+        <p>See something missing from this list? Submit an organization on the <a href="<?php permalink_by_title('Add An Organization'); ?>" class="submit-org-link">Submissions Page</a>.</p>
+        <p class="disclaimer">This site is not for profit. It was put together quickly to try to help and it's probably not perfect. We hope you find it useful.</p>
 
       </div>
     </footer>
