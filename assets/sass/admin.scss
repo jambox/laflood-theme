@@ -1,1 +1,19 @@
 .fixed .column-categories{width:33%}
+
+
+//
+// ACF
+//
+.acf-taxonomy-field .acf-icon {
+  border-color: #b4b9be;
+  background: #b4b9be;
+  color: #fff;
+  visibility: visible;
+  opacity: 1;
+}
+
+.acf-taxonomy-field .acf-icon:hover {
+  border-color: #b4b9be;
+  background: #FFF;
+  color: #b4b9be;
+}
