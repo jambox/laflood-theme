@@ -65,7 +65,7 @@ add_action('acf/init', 'laflood_acf_init');
 
 // Create custom rewrite rules for visitor type
 function laflood_custom_rewrite() {
-  add_rewrite_tag('%visitor_type%', '([^&]+)');
+  add_rewrite_tag('%assistance_type%', '([^&]+)');
 }
 add_action('init', 'laflood_custom_rewrite', 10, 0);
 
