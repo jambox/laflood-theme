@@ -43,7 +43,7 @@ module.exports =
       "!*.zip"
       "!*.map"
       # Add excludes for this project..
-      "!_Project images/**"      
+      "!_Design/**"      
       "!assets/**"      
     ]
     dest: "build/"
