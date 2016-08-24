@@ -57,15 +57,17 @@ function bolt_widgets_init() {
 }
 add_action('widgets_init', 'bolt_widgets_init');
 
-
-
-function laflood_acf_init() {
-  
+// Set google map API key for ACF
+function laflood_acf_init() { 
   acf_update_setting('google_api_key', GOOGLE_MAPS_API_KEY);
 }
-
 add_action('acf/init', 'laflood_acf_init');
 
+// Create custom rewrite rules for visitor type
+function laflood_custom_rewrite() {
+  add_rewrite_tag('%visitor_type%', '([^&]+)');
+}
+add_action('init', 'laflood_custom_rewrite', 10, 0);
 
 // filter the taxonomy shown in the admin area to children of a specific parent
 function laflood_limit_acf_taxonomies( $args, $field ) {
