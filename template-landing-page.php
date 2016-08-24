@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Submissions Form
+ * Template Name: Landing Page
  */
 ?>
 <?php get_header(); ?>
