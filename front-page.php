@@ -13,7 +13,7 @@
     </div>
 
     <div class="row-fluid">
-      <?php get_template_part('partials/resource-category-list'); ?>
+      <?php get_template_part('partials/volunteer-category-list'); ?>
     </div>
 
     <div class="row-fluid">

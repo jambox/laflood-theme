@@ -1,0 +1,23 @@
+.page-template-template-submissions {
+  
+  .add-org-msg--wrap {
+    text-align:center;
+    .acf-label {
+      display:inline-block;
+      label {
+        padding:10px 20px;
+        font-size:16px;
+      }
+    }
+    .acf-input {
+      display:inline-block;
+    }
+    .add-org-btn {
+      a {
+        @extend .btn;
+        @extend .btn-info;
+      }
+    }
+  }
+
+}

@@ -64,9 +64,17 @@ add_action('widgets_init', 'bolt_widgets_init');
 
 
 
-function my_acf_init() {
+function laflood_acf_init() {
   
   acf_update_setting('google_api_key', GOOGLE_MAPS_API_KEY);
 }
 
-add_action('acf/init', 'my_acf_init');
+add_action('acf/init', 'laflood_acf_init');
+
+
+// filter the taxonomy shown in the admin area to children of a specific parent
+function laflood_limit_acf_taxonomies( $args, $field ) {
+  $args['parent'] = 0;
+  return $args;
+}
+add_filter('acf/fields/taxonomy/wp_list_categories', 'laflood_limit_acf_taxonomies', 10, 2);

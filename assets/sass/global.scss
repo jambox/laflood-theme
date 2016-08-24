@@ -28,7 +28,8 @@ body {
 }
 
 .header-font {
-  @extend .Clarendon-header;
+  // @extend .Clarendon-header;
+  @extend .Raleway-header;
 }
 
 h {
