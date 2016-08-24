@@ -8,20 +8,21 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+// Common
+@import 'common/flex-box';
+@import 'common/global';
+
 // Bootstrap Overrides
-@import 'modals';
+@import 'overrides/modals';
 
-@import 'flex-box';
-@import 'global';
+// Layouts
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/landing-page';
+@import 'layouts/category-page';
+@import 'layouts/page-submissions';
+@import 'layouts/resource-bucket';
+@import 'layouts/resource-list';
 
-
-@import 'header';
-@import 'footer';
-
-@import 'front-page';
-@import 'category-page';
-
-@import 'page-submissions';
-
-@import 'resource-bucket';
-@import 'resource-list';
+// TinyMCE
+@import "overrides/tinymce";
