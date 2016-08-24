@@ -17,10 +17,10 @@
 <body <?php body_class(); ?>>
   <div class="app-wrap">
     <header class="flex">
-      <div class="header-msg-wrap flex-box">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h1 class="site-title"><?php bloginfo( 'name' ) ?></h1></a>
+      <nav class="header nav flex-box">
+        <a class="site-title--link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h1 class="site-title"><?php bloginfo( 'name' ) ?></h1></a>
         <p class="site-tagline">How to contribute to the Louisiana flood relief effort</p>
-      </div>
+      </nav>
     </header>
 
    <div class="content-wrap container">
