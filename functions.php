@@ -3,7 +3,7 @@
  * This is for things like CPT generation
  * where we need to namespace stuff
  */
-define('THEME_PREFIX', 'laflood');
+define('THEME_PREFIX', 'lfr');
 
 /**
  * Bolt includes
