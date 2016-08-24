@@ -14,6 +14,8 @@
 			// Skip 'uncategorized' term
 			if( $cat->term_id == 1) continue;
 			$visitor_types = get_field('cat_visitor_type', $cat);
+			if ( !is_array($visitor_types) ) continue;
+
 			foreach ( $visitor_types as $visitor_type ) {
 				$slug = $visitor_type['value'];
 				$services[$slug]['title'] = $visitor_type['label'];
