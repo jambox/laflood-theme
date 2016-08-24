@@ -34,9 +34,9 @@ $group = array (
     1 => 
     array (
       'key' => 'field_57bd06d2b212b',
-      'label' => 'User Type',
-      'name' => 'cat_type',
-      'type' => 'radio',
+      'label' => 'Visitor Type',
+      'name' => 'cat_visitor_type',
+      'type' => 'checkbox',
       'instructions' => '',
       'required' => 1,
       'conditional_logic' => 0,
@@ -48,15 +48,15 @@ $group = array (
       ),
       'choices' => 
       array (
-        'I want to help' => 'I want to help',
-        'I need help' => 'I need help',
+        'volunteer' => 'I need help',
+        'client' => 'I want to help',
       ),
-      'allow_null' => 0,
-      'other_choice' => 0,
-      'save_other_choice' => 0,
-      'default_value' => '',
+      'default_value' => 
+      array (
+      ),
       'layout' => 'vertical',
-      'return_format' => 'value',
+      'toggle' => 1,
+      'return_format' => 'label',
     ),
     2 => 
     array (
@@ -145,5 +145,4 @@ $group = array (
   'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
-  'local' => 'php',
 );
