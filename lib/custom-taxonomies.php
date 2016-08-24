@@ -12,7 +12,9 @@ function bolt_add_custom_taxonomies() {
     VISITOR_TYPE_TAX_NAME => array(
       'plural' => 'Visitor Types',
       'singular' => 'Visitor Type',
-      'post_types' => array( get_services_cpt_name() )
+      'post_types' => array( get_services_cpt_name() ),
+      'hierarchical' => true,
+      'show_ui' => false
     ),
     RESOURCE_TYPE_TAX_NAME => array(
       'plural' => 'Resource Types',
@@ -30,6 +32,9 @@ function bolt_add_custom_taxonomies() {
     $singular = $tax['singular'];
     $plural = $tax['plural'];
     $post_types = $tax['post_types'];
+
+    $hierarchical = isset($tax['hierarchical']) ? $tax['hierarchical'] : false;
+    $show_ui = isset($tax['show_ui']) ? $tax['show_ui'] : true;
 
 
     $labels = array(
@@ -51,9 +56,9 @@ function bolt_add_custom_taxonomies() {
     );
     $args = array(
       'labels'                     => $labels,
-      'hierarchical'               => false,
+      'hierarchical'               => $hierarchical,
       'public'                     => true,
-      'show_ui'                    => true,
+      'show_ui'                    => $show_ui,
       'show_admin_column'          => true,
       'show_in_nav_menus'          => true,
       'show_tagcloud'              => true,
