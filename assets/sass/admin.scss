@@ -4,6 +4,15 @@
 //
 // ACF
 //
+.acf-taxonomy-field[data-type="select"] {
+	.acf-icon {
+		top: 3px;
+		right: -5px;
+	}	
+	.select2-container {
+		width: calc(100% - 20px)!important;
+	}
+}
 .acf-taxonomy-field .acf-icon {
   border-color: #b4b9be;
   background: #b4b9be;
