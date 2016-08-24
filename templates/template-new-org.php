@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Submissions Form
+ * Template Name: New Org Form
  */
 ?>
 <?php acf_form_head(); ?>
