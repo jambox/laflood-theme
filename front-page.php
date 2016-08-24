@@ -25,18 +25,25 @@
 
 	}
 
-	foreach ( $services as $service => $service_details ) {
-		echo '<h2>', esc_attr($service_details['title']), '.</h2>';
-		echo '<p>', $service == 'need-help' ? 'Find ' : 'Give ';
+	foreach ( $services as $service => $service_details ) :
+		?>
+			<h2><?php echo esc_attr($service_details['title']) ?></h2>
+			<div>
+				<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
+				<?php
+					$cat_obj = $service_details['cat'];
+					foreach ( $cat_obj as $cat ) :
+						$cat_url = $service . '/' . $cat->slug;
+						?>
+						<a href="<?php echo site_url($cat_url) . '/'; ?>"><?php echo strtolower($cat->name); ?></a>
+						
+						<?php
+					endforeach; ?>
 
-		$cat_obj = $service_details['cat'];
-		foreach ( $cat_obj as $cat ) {
-			$cat_url = $service . '/' . $cat->slug;
-			echo '<a href="', site_url($cat_url), '/' ,'">', strtolower($cat->name), '</a>, ';
-		}
-
-		echo 'or <a href="',site_url($service),'">something else</a>.</p>';
-	}
+				or <a href="<?php echo site_url($service); ?>">something else</a>.
+			</div>
+  <?php
+  endforeach;
 
 ?>
 <?php get_footer(); ?>
