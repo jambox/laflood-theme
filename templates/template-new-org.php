@@ -24,12 +24,14 @@
 							'id'           => 'org-submission-form',
 							'post_id'      => 'new_post',
 							'post_title'   => true,
+							'post_content' => true,
 							'new_post'     => array(
 								'post_type'   =>  get_org_cpt_name(),
 								'post_status' => 'draft'
 							),
 							'field_groups' => array($form_ID),
-							'submit_value' => 'Add New Organization'
+							'submit_value' => 'Add New Organization',
+							'updated_message' => 'Thank you for your submission'
 						));
 					}
 				?>
