@@ -145,4 +145,5 @@ $group = array (
   'hide_on_screen' => '',
   'active' => 1,
   'description' => '',
+  'local' => 'php',
 );
