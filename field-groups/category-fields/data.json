@@ -3,9 +3,57 @@
     "title": "Category Fields",
     "fields": [
         {
+            "key": "field_57bd056469291",
+            "label": "Archive Display",
+            "name": "cat_archive_display",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Short List": "Short List",
+                "Long List": "Long List"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57bd06d2b212b",
+            "label": "User Type",
+            "name": "cat_type",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "I want to help": "I want to help",
+                "I need help": "I need help"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
             "key": "field_57b900218bd9f",
             "label": "Giving Guidelines",
-            "name": "guidelines",
+            "name": "cat_guidelines",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -24,7 +72,7 @@
         {
             "key": "field_57b7ed84dfef8",
             "label": "Items",
-            "name": "items",
+            "name": "cat_items",
             "type": "repeater",
             "instructions": "",
             "required": 0,
