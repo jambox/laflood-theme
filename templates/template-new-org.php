@@ -31,7 +31,8 @@
 							),
 							'field_groups' => array($form_ID),
 							'submit_value' => 'Add New Organization',
-							'updated_message' => 'Thank you for your submission'
+							'updated_message' => 'Thank you for your submission',
+							'return'       => '?success=true'
 						));
 					}
 				?>
