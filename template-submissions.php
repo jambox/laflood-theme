@@ -16,19 +16,19 @@
 				<?php the_content(); ?>
 
 				<?php
-					$form_object =  get_page_by_title( 'Location Submission', null, 'acf-field-group' );
+					$form_object =  get_page_by_title( 'Service Fields', null, 'acf-field-group' );
 					$form_ID = $form_object->ID;
 
 					if( $form_ID ) {
 						acf_form(array(
-							'id'           => 'location-submission-form',
+							'id'           => 'service-submission-form',
 							'post_id'      => 'new_post',
 							'new_post'     => array(
-								'post_type'   =>  get_location_cpt_name(),
+								'post_type'   =>  get_service_cpt_name(),
 								'post_status' => 'draft'
 							),
 							'field_groups' => array($form_ID),
-							'submit_value' => 'Submit location'
+							'submit_value' => 'Submit Service'
 						));
 					}
 				?>
