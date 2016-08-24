@@ -5,26 +5,35 @@
 		'hide_empty' => false,
 		'parent'=>0
 	);
+
 	$cats = get_terms('category', $args);
 	if( !empty($cats) ){
+
 		$services = [];
 		foreach ( $cats as $cat ) {
 			// Skip 'uncategorized' term
 			if( $cat->term_id == 1) continue;
 			$visitor_types = get_field('cat_visitor_type', $cat);
 			foreach ( $visitor_types as $visitor_type ) {
-				$services[$visitor_type][] = $cat;
+				$slug = $visitor_type['value'];
+				$services[$slug]['title'] = $visitor_type['label'];
+				$services[$slug]['cat'][] = $cat;
 			}
 		}
+
 	}
 
-	foreach ( $services as $service => $cat_obj ) {
-		echo '<h2>', esc_attr($service), '.</h2>';
-		echo '<p>', $service == 'I need help' ? 'Find ' : 'Give ';
+	foreach ( $services as $service => $service_details ) {
+		echo '<h2>', esc_attr($service_details['title']), '.</h2>';
+		echo '<p>', $service == 'need-help' ? 'Find ' : 'Give ';
+
+		$cat_obj = $service_details['cat'];
 		foreach ( $cat_obj as $cat ) {
-			echo '<a href="#">', strtolower($cat->name), '</a>, ';
+			$cat_url = $service . '/' . $cat->slug;
+			echo '<a href="', site_url($cat_url), '/' ,'">', strtolower($cat->name), '</a>, ';
 		}
-		echo 'or <a href="#">something else</a>.</p>';
+
+		echo 'or <a href="',site_url($service),'">something else</a>.</p>';
 	}
 
 ?>
