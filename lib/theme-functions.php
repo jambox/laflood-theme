@@ -144,6 +144,19 @@ function laflood_only_allow_search_for_service( $query ) {
 add_action('pre_get_posts','laflood_only_allow_search_for_service');
 
 
+/*===================================
+=            CPT Helpers            =
+===================================*/
+
+
+function get_lfr_cpt_names_array() {
+  return array(
+    get_services_cpt_name(),
+    get_resource_cpt_name()
+  );
+} // get_lfr_cpt_names_array
+
+
 function is_laflood_cpt_archive( $cpt_name = 0 ) {
   if( !$cpt_name ) return false;
 
@@ -171,12 +184,26 @@ function get_services_cpt_name() {
 } // END get_services_cpt_name()
 
 
-function get_lfr_cpt_names_array() {
-  return array(
-    get_services_cpt_name(),
-    get_resource_cpt_name()
-  );
-} // get_lfr_cpt_names_array
+
+/*========================================
+=            Taxonomy Helpers            =
+========================================*/
+
+
+function get_visitor_type_tax_name() {
+  return THEME_PREFIX . '_' . VISITOR_TYPE_TAX_NAME;
+} // END get_visitor_type_tax_name()
+
+
+function get_org_tax_name() {
+  return THEME_PREFIX . '_' . ORG_TAX_NAME;
+} // END get_org_tax_name()
+
+
+function get_resource_type_tax_name() {
+  return THEME_PREFIX . '_' . RESOURCE_TYPE_TAX_NAME;
+} // END get_resource_type_tax_name()
+
 
 function loader_title() {
  $titles = array('Loading', 'One sec', 'Hold on', 'One Moment');

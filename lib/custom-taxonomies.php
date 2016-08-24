@@ -12,7 +12,7 @@ function bolt_add_custom_taxonomies() {
     VISITOR_TYPE_TAX_NAME => array(
       'plural' => 'Visitor Types',
       'singular' => 'Visitor Type',
-      'post_types' => array( get_resource_cpt_name() )
+      'post_types' => array( get_services_cpt_name() )
     ),
     RESOURCE_TYPE_TAX_NAME => array(
       'plural' => 'Resource Types',
