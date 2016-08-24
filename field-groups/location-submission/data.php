@@ -46,7 +46,7 @@ $group = array (
         'class' => 'add-org-msg--wrap',
         'id' => '',
       ),
-      'message' => '<div class="add-org-btn"><a href="#" class="add-org-btn--link">Add your organization</a></div>',
+      'message' => '<div class="add-org-btn"><a href="#" class="add-org-btn--link">Add An Organization</a></div>',
       'new_lines' => 'wpautop',
       'esc_html' => 0,
     ),
@@ -95,10 +95,10 @@ $group = array (
     4 => 
     array (
       'key' => 'field_57bcc4c77f58b',
-      'label' => 'Does this location accept and/or distribute good or supplies?',
+      'label' => 'Does this location accept and/or distribute goods and supplies?',
       'name' => 'location_handles_goods',
       'type' => 'true_false',
-      'instructions' => '',
+      'instructions' => 'Check this off if the Location offers or accepts food, cleaning supplies, clothing, etc.',
       'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => 
