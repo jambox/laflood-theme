@@ -9,6 +9,8 @@
 	if( !empty($cats) ){
 		$services = [];
 		foreach ( $cats as $cat ) {
+			// Skip 'uncategorized' term
+			if( $cat->term_id == 1) continue;
 			$visitor_types = get_field('cat_visitor_type', $cat);
 			foreach ( $visitor_types as $visitor_type ) {
 				$services[$visitor_type][] = $cat;
