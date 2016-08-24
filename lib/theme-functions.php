@@ -205,6 +205,11 @@ function get_resource_type_tax_name() {
 } // END get_resource_type_tax_name()
 
 
+function get_service_tax_name() {
+  return THEME_PREFIX . '_' . SERVICE_TAX_NAME;
+} // END get_service_tax_name()
+
+
 function loader_title() {
  $titles = array('Loading', 'One sec', 'Hold on', 'One Moment');
  shuffle( $titles );

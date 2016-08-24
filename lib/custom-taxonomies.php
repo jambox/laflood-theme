@@ -15,6 +15,12 @@ function bolt_add_custom_taxonomies() {
       'post_types' => array( get_org_cpt_name() ),
       'hierarchical' => true,
     ),
+    SERVICE_TAX_NAME => array(
+      'plural' => 'Services',
+      'singular' => 'Service',
+      'post_types' => array( get_org_cpt_name() ),
+      'hierarchical' => true,
+    ),
     RESOURCE_TYPE_TAX_NAME => array(
       'plural' => 'Resource Types',
       'singular' => 'Resource Type',
