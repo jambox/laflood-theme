@@ -1,9 +1,4 @@
 <?php
-/**
- * Bolt initial setup and constants
- */
-
-define('GOOGLE_MAPS_API_KEY', 'AIzaSyDUC_JWLxIKRQbQbDJlV8qIYxLts0FGx2c');
 
 
 function bolt_setup() {

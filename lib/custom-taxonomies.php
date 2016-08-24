@@ -4,6 +4,10 @@ add_action( 'init', 'bolt_add_custom_taxonomies', 0 );
 function bolt_add_custom_taxonomies() {
 
   $custom_taxonomies = array(
+    ORG_TAX_NAME => array(
+      'plural' => 'Organizations',
+      'singular' => 'Organization'
+    )    
   );
 
 

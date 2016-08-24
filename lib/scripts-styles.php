@@ -1,7 +1,5 @@
 <?php
 
-define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
-
 
 function client_scripts($hook) {
 

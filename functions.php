@@ -1,9 +1,4 @@
 <?php
-/**
- * This is for things like CPT generation
- * where we need to namespace stuff
- */
-define('THEME_PREFIX', 'lfr');
 
 /**
  * Bolt includes
@@ -15,6 +10,7 @@ define('THEME_PREFIX', 'lfr');
  *
  */
 $bolt_includes = array(
+  'lib/define.php',             // Helper Functions
   'lib/utils.php',             // Helper Functions
   'lib/init.php',              // Initial theme setup and constants
   'lib/logging.php',           // Debugging / Kenny loggins stuff

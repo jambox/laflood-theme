@@ -175,10 +175,6 @@ function loader_title() {
 } // END loader_title()
 
 
-
-define( 'AJAX', 'wp_ajax_');
-define( 'AJAX_PUBLIC', 'wp_ajax_nopriv_');
-
 function ajax_acf_save_new_org() {
   $data = $_POST;
   return json_encode($_POST);
