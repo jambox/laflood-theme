@@ -9,19 +9,18 @@
 // endbower
 
 // Bootstrap Overrides
-@import 'modals';
+@import 'layouts/modals';
 
-@import 'flex-box';
-@import 'global';
+@import 'common/flex-box';
+@import 'common/global';
 
+@import 'layouts/header';
+@import 'layouts/footer';
 
-@import 'header';
-@import 'footer';
+@import 'layouts/landing-page';
+@import 'layouts/category-page';
 
-@import 'front-page';
-@import 'category-page';
+@import 'layouts/page-submissions';
 
-@import 'page-submissions';
-
-@import 'resource-bucket';
-@import 'resource-list';
+@import 'layouts/resource-bucket';
+@import 'layouts/resource-list';
