@@ -1,28 +1,17 @@
 body.home {
 
   .home-page-section {
+
+    margin:3rem 0 5rem;
+
     &--title {
-     font-size:6rem;
+     font-size:8rem;
      color:black;
     }
 
-    a {
-      border-bottom-width:2px;
-    }
-
-    &--need-help {
-      a {
-        color:$brand-color;
-        border-bottom-color:$brand-color;
-        &:hover {
-          border-bottom-color:transparent;
-        }
-      }
-    }
-    &--want-to-help {
-      a {
-        color:$secondary-color;
-      }
+    .home-page-ctas--wrap {
+      font-size:5rem;
+      color:$light-gray;
     }
 
     .home-page-ctas--list {
@@ -33,10 +22,29 @@ body.home {
       }
     }
 
-    .home-page-ctas--wrap {
-      font-size:4rem;
-      color:$light-gray;
+    a {
+      border-bottom-width:3px;
+      box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $brand-color;      
+      &:hover {
+        box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 transparent;
+      }      
     }
+
+    &--need-help {
+      a {
+        color:$brand-color;
+        border-bottom:0;
+        // border-bottom-color:$brand-color;
+      }
+    }
+    &--want-to-help {
+      a {
+        color:$secondary-color;
+        border-bottom:0;        
+        box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $secondary-color;        
+      }
+    }
+
 
 
   } // .home-page-section
