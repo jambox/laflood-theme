@@ -13,11 +13,10 @@ if ( ! defined ( 'ABSPATH' ) ) {
 if ( !class_exists('widget_social_icons') ) {
 
 	//Register Widget
-  add_action('widgets_init', 'load_widget_social_icons');
-
   function load_widget_social_icons() {
     register_widget( 'widget_social_icons' );
   }
+  add_action('widgets_init', 'load_widget_social_icons');
 
   // Set up available accounts
   $widgetSocialAccounts = array(
