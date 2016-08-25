@@ -14,7 +14,16 @@
 
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<?php
+  // Add classes to body
+  $body_classes = [];
+
+  $visitor_type = $wp_query->query_vars['lfr_visitor_type'];
+
+  $body_classes[] = $visitor_type;
+
+?>
+<body <?php body_class($body_classes); ?>>
   <div class="app-wrap">
     <header class="flex">
       <nav class="header nav flex-box">
