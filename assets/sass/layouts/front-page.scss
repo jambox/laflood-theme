@@ -11,7 +11,7 @@ body.home {
     }
 
     .home-page-ctas--list {
-      @extend h3;
+      @extend h2;
       @extend .Clarendon--light;
       .large-link {
         @extend .Clarendon;
@@ -50,12 +50,13 @@ body.home {
         color: black;
       }
 
+      $arrow-padding-init:.5em;
       a,
       &:hover, &:focus, &:active {
         color:rgba(black, .7);
         box-shadow: none;
         i {
-          padding-left: 0.33em;
+          padding-left: $arrow-padding-init + .3em;
           color: #DFDFDF;
         }
       }
@@ -64,7 +65,7 @@ body.home {
         border-bottom:0;
         text-decoration:none;
         i {
-          padding-left: 0.1em;
+          padding-left: $arrow-padding-init;
           padding-bottom: 0.3em;
           color: #ECECEC;
           font-size: 0.5em;
