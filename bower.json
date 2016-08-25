@@ -6,13 +6,20 @@
   ],
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "3.3.7"
+    "bootstrap-sass": "3.3.7",
+    "font-awesome": "latest"
   },
   "overrides": {
     "bootstrap-sass": {
       "main": [
         "./assets/stylesheets/_bootstrap.scss",
         "./assets/javascripts/bootstrap/modal.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
       ]
     }
   }
