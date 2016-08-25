@@ -15,10 +15,6 @@
       <?php get_template_part('partials/category-list'); ?>
     </div>
 
-    <div class="row-fluid">
-      <?php get_template_part('partials/search-bar'); ?>
-    </div>
-
   </div>
 <?php endwhile; ?>
 

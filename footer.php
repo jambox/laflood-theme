@@ -1,7 +1,11 @@
       </main><!-- /.main -->
     </div><!-- /.content-wrap -->
 
-    <?php get_template_part('partials/components/search-module'); ?>
+    <?php
+    if( visitor_type() ) {
+      get_template_part('partials/components/search-module');
+    }
+    ?>
 
     <footer class="flex">
       <div class="footer-msg-wrap flex-box">
