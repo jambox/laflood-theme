@@ -33,10 +33,22 @@
           <?php the_content(); ?>
         </div>
         <div class="org-meta">
-          <a href="<?php echo $org_website ?>" class="btn btn-default">Website</a>
+
+          <div class="tag-list">
+            <h5>Services Offered:</h5>
+            <?php echo get_the_tag_list(); ?>
+          </div>
+
+          <?php if ($org_website): ?>
+            <a href="<?php echo $org_website ?>" target="_blank" class="btn btn-default">Website</a>
+          <?php endif ?>
   
           <?php if ( !empty( $org_location['lat'] ) ): ?>
-            <a href="<?php echo $org_location['lat'] . ', ' . $org_location['long'] ?>" class="btn btn-default">Map</a>
+            <a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>" class="btn btn-default">Map</a>
+          <?php endif ?>
+
+          <?php if ($org_main_phone): ?>
+            <a href="tel:<?php echo $org_main_phone ?>" class="btn btn-default">Call</a>
           <?php endif ?>
 
         </div>

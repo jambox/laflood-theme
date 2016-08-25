@@ -16,11 +16,30 @@ body.archive {
           @extend .Raleway;
           text-transform:uppercase;
         }
+
+        .tag-list {
+          margin-bottom:.8em;
+          a {
+            color:$gray;
+            text-transform:capitalize;
+            border-bottom:2px solid $gray;
+            padding:0.3em 0.3em;
+            display:inline-block;
+            margin-right:0.9em;
+            margin-bottom:.25em;
+            font-size:1.7rem;
+            &:hover, &:focus {
+              color:$secondary-color;
+              border-bottom-color:$secondary-color;
+            }
+          }
+        }
       }
     }
 
     .org-title {
       @extend h4;
+      font-size:3.5rem;
       a {
         border-bottom-color:transparent;
         &:hover, &:active, &:focus {
