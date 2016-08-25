@@ -25,6 +25,7 @@
 @import 'layouts/front-page';
 @import 'layouts/landing-page';
 @import 'layouts/category-page';
+@import 'layouts/archive';
 @import 'layouts/about-page';
 @import 'layouts/page-submissions';
 @import 'layouts/resource-bucket';
@@ -35,3 +36,4 @@
 
 // Components
 @import 'components/search-bar';
+@import 'components/sidebar';

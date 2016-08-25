@@ -18,14 +18,7 @@
       <h3>Let's Work Together.</h3>
       <p>If you, your team, or someone you know is doing the same thing as LAFloodRecovery.org, please let us know immediately so we can get in touch with them. We’ll happily put our energy towards another effort with the same goal, and we’ll happily partner with other folks who are offering services that we can add to this directory.</p>
     </div>
-    <div class="about-page--sidebar col-md-4 col-md-offset-1">
-      <p>Please do not contact us directly about getting assistance or volunteering. If you have a general question for our team, email <a href="mailto:info@lafloodrecovery.org">info@lafloodrecovery.org</a>.</p>
-      <hr>
-      <p>See something missing from our lists? Please help us expand this directory by <a href="<?php permalink_by_title('Add An Organization'); ?>">sharing a resource here</a>.</p>
-      <hr>
-      <p><a href="<?php permalink_by_title('About'); ?>">Learn more</a> about the people behind LA Flood Recovery.</p>
-      <hr>
-    </div>
+    <?php get_sidebar(); ?>
 
   </div>
 <?php endwhile; ?>

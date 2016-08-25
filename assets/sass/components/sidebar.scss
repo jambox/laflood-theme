@@ -1,0 +1,19 @@
+.page-sidebar {
+  padding-left:5em;
+  p {
+    @extend .p--small;
+  }
+  a {
+    &:link, &:visited {
+      border-bottom:0;
+    }
+    &:hover {
+      color:$brand-color;
+    }
+  }
+  hr {
+    margin:1.6em 0;
+    border-color:$secondary-color;
+    border-width:1px;
+  }
+}

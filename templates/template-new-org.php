@@ -7,11 +7,11 @@
 <?php get_header(); ?>
 
 	<div class="row-fluid">
-		<main class="col-md-8 col-md-offset-2">
+		<main class="col-md-9">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<h1><?php the_title(); ?></h1>
+				<h1 class="page-title"><?php the_title(); ?></h1>
 
 				<?php the_content(); ?>
 

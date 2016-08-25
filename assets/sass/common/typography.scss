@@ -24,6 +24,9 @@ h {
   &3{
     font-weight:bold;    
   }
+  &4{
+    font-weight:700;    
+  }
 }
 
 .Clarendon {
@@ -106,7 +109,8 @@ h {
   }
   &4{
     @extend .Raleway;
-    // line-height:1.4;
+    text-transform:uppercase;
+    color:$secondary-color;
   }
   &5{ // p.intro
     @extend .Freight;
@@ -154,13 +158,17 @@ p {
 a {
   transition: all $default-transition;
   color:$secondary-color;
-  border-bottom:2px solid $secondary-color;
+  &:not(.btn) {
+    border-bottom:2px solid $secondary-color;
+  }
 
   text-decoration:none;
   &:hover {
     color:$secondary-color;
     text-decoration:none;
-    border-bottom:2px solid transparent;
+    &:not(.btn) {
+      border-bottom:2px solid transparent;
+    }
   }
 }
 

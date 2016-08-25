@@ -1,0 +1,32 @@
+body.archive {
+  .content-wrap {
+    padding-top:7rem;
+    padding-bottom:7rem;
+  }
+
+  .org-list {
+
+    .org-item {
+      border-bottom:1px solid $light-gray;
+      padding-bottom:2rem;  
+      margin-bottom:2rem;
+
+      .org-meta {
+        .btn {
+          @extend .Raleway;
+          text-transform:uppercase;
+        }
+      }
+    }
+
+    .org-title {
+      @extend h4;
+      a {
+        border-bottom-color:transparent;
+        &:hover, &:active, &:focus {
+          text-decoration:underline;
+        }
+      }
+    }
+  }
+}

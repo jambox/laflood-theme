@@ -1,5 +1,9 @@
-.page-template-template-submissions {
+.add-an-organization {
   
+  .page-title {
+    @extend h3;
+  }
+
   .add-org-msg--wrap {
     text-align:center;
     .acf-label {
@@ -17,6 +21,21 @@
         @extend .btn;
         @extend .btn-info;
       }
+    }
+  }
+
+
+  .acf-field {
+    .acf-label {
+      label {
+        font-size:$font-size;
+      }
+      p.description {
+        font-size:$font-size-sm;
+      }
+    }
+    input {
+      font-family:monospace;
     }
   }
 

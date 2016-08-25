@@ -14,15 +14,8 @@ if ( $guidelines ): ?>
     </div>
   </div>  
 <?php endif; ?>
+
 <?php 
-
-if( $prompt ) : ?>
-<div class="row-fluid">
-  <div class="page-prompt col-md-6 col-md-offset-3"><?php echo $prompt; ?></div>
-</div>
-<?php endif; ?>
-
-<?php
 $items =  get_field('items', 'category_' .$queried_object_id);
 
 if ( $items ): ?>

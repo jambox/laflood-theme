@@ -3,14 +3,14 @@
   font-weight:bold;
 }
 
-.resource-category-list--title, .resource-list--title {
+.resource-category-list--title, .org-list--title {
   padding:0 10px;
   margin:20px 0;
   text-align:center;
   font-size:3rem;
 }
 
-.resource-category-list, .resource-list {
+.resource-category-list, .org-list {
   list-style:none;
   margin:0;
   padding:0;
@@ -73,7 +73,7 @@
 
   }
 
-} // .resource-category-list, .resource-list
+} // .resource-category-list, .org-list
 
 .prioritized-resources {
   .resource {
