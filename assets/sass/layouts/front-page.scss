@@ -5,7 +5,7 @@ body.home {
     margin:3rem 0 5rem;
 
     &--title {
-      font-size:8rem;
+      @extend h1;
       color:black;
       a {
         color:black;
@@ -24,6 +24,8 @@ body.home {
     }
 
     .home-page-ctas--list {
+      @extend h3;
+      @extend .Clarendon--light;
       .large-link {
         @extend .Clarendon;
       }

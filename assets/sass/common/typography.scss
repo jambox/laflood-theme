@@ -1,13 +1,14 @@
-$font-size:                1rem;
+$font-size:             2.4rem;
 $font-ratio:            0.7556;
+$font-ratio-sm:         0.5;
 // Heading Styles
 $headings: (
-  h1: 2.50rem,
-  h2: 1.60rem,
-  h3: 1.25rem,
-  h4: 1.15rem,
-  h5: 0.90rem,
-  h6: 0.80rem
+  h1: 7.6rem,
+  h2: 4.8rem,
+  h3: 3.2rem,
+  h4: 2.4rem,
+  h5: 3rem, // p.intro
+  h6: 1.9rem
 );
 
 
@@ -15,6 +16,12 @@ $headings: (
 
 .Raleway {
   font-family: 'Raleway', sans-serif;
+}
+
+h {
+  &3{
+    font-weight:bold;    
+  }
 }
 
 .Clarendon {
@@ -43,21 +50,6 @@ $headings: (
 }
 
 
-
-.Raleway-header {
-  @extend .Raleway;  
-  letter-spacing: .03em;
-}
-
-.Clarendon-header {
-  @extend .Clarendon;  
-}
-
-.header-font {
-  // @extend .Raleway-header;
-  @extend .Clarendon-header;
-}
-
 .body-font {
   @extend .Clarendon;  
 }
@@ -70,10 +62,12 @@ body {
 
 h {
   &1{
-    @extend .header-font;
+    @extend .Clarendon;
+    color:black;
   }
   &2{
-    @extend .header-font;
+    @extend .Clarendon--light;
+    color: $light-gray;
     margin-bottom: 30px;
     @include breakpoint($breakpoint-sm) {
       line-height:1.3;
@@ -81,10 +75,16 @@ h {
     }
   }
   &3{
-    @extend .header-font;
-    font-size:3rem;
-    font-weight:bold;    
-    line-height:1.4;
+    @extend .Clarendon;
+    // line-height:1.4;
+  }
+  &4{
+    @extend .Raleway;
+    // line-height:1.4;
+  }
+  &5{ // p.intro
+    @extend .Freight;
+    line-height:1.2;
   }
 }
 
@@ -92,24 +92,25 @@ h {
   $font-size-h: map-get($headings, h#{$h});
 
   h#{$h} {
-    font-size: $font-size-h * $font-ratio;
-    @include breakpoint(700) {
+    font-size: $font-size-h * $font-ratio-sm;
+    @include breakpoint(400px) {
+      font-size: $font-size-h * $font-ratio;
+    }
+    @include breakpoint(700px) {
       font-size: $font-size-h;
     }
   }
 
-  .h#{$h} {
-    font-size: $font-size-h * $font-ratio;
-    @include breakpoint(700) {
-      font-size: $font-size-h;
-    }
-  }
 }
 
 p {
   font-size: $font-size * $font-ratio;
-  @include breakpoint(700) {
+  @include breakpoint(700px) {
     font-size: $font-size;
+  }
+
+  &.intro {
+    @extend h5;
   }
 }
 
