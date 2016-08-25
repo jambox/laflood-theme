@@ -46,13 +46,5 @@
       if ( !is_front_page() && function_exists('yoast_breadcrumb') ) {
            yoast_breadcrumb('<p id="breadcrumbs">','</p>');
       }
-
-      $title = get_queried_object()->name;
       ?>
-      <?php
-      if ( !is_front_page() ) {
-        if( is_category() ): 
-          $title = "How to Provide $title"; 
-        endif; ?>
-        <h1 class="page-title"><?php echo $title; ?></h1>
-      <?php } ?>
+  

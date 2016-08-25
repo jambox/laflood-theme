@@ -2,13 +2,14 @@
   height: 100%;
   
   .intro--wrap {
-    // text-align:center;
+    padding-right:2em;
     .intro {
-      // color:white;
-      // background:$teal;
-      padding:25px 10px 10px;
       @include breakpoint($breakpoint-sm) {
         padding-top: 40px;
+      }
+
+      p {
+        @extend h5;
       }
       a {
         color:$brand-color;
