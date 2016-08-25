@@ -21,7 +21,7 @@ if ( !class_exists('widget_social_icons') ) {
 
   // Set up available accounts
   $widgetSocialAccounts = array(
-  	'Email' => 'envelope',
+  	'Email' => 'email',
   	'Facebook' => 'facebook',
   	'Twitter' => 'twitter',
   	'YouTube' => 'youtube',
@@ -127,19 +127,19 @@ if ( !class_exists('widget_social_icons') ) {
 			global $widgetSocialAccounts;
 
 			if($widgetSocialAccounts){
-				echo '<ul class="social_icon">';
+				echo '<ul class="social-icons">';
 				foreach( $widgetSocialAccounts as $account => $slug) {
 
 					if(!empty($instance[$accountUrl])){
 						echo '<li>',
-								 '<a href="'. esc_url( $instance[$accountUrl] ) .'" target="_blank" aria-label="'. $account .'">',
-								 '<i class="'. $instance['iconfont'] . $slug .'"></i>',
-								 '</a>',
-								 '</li>';
+							'<a href="', $slug === 'email' ? 'mailto:' : '', esc_url( $instance[$accountUrl] ), '" target="_blank" aria-label="', $account, '">',
+								'<i class="', $instance['iconfont'], $slug === 'email' ? 'envelope' : $slug, '"></i>',
+							'</a>',
+						'</li>';
 					}
 
 				}
-				echo '</ul><!-- /.social_icon -->';
+				echo '</ul>';
 			}
 
 			echo $args['after_widget']; // for the sake of css
