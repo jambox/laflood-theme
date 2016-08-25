@@ -1,0 +1,67 @@
+body.about {
+  
+  .content-wrap {
+    padding-top:7rem;
+    padding-bottom:7rem;
+  }
+
+  .about-page--content {
+    h3:first-child {
+      margin-top:0;
+    }
+  }
+  .about-page--cta {
+    @extend h4;
+    font-weight:700;
+    text-transform:uppercase;
+    text-decoration:none;
+
+    color:$secondary-color;
+    border-bottom:none;
+
+    display:block;
+
+    margin:1em 0;
+
+    $arrow-padding-init:.8em;    
+    &:hover, &:focus, &:active {
+      color:rgba(black, .7);
+      box-shadow: none;
+      color:lighten($secondary-color, 10%);
+      text-decoration:underline;
+      i {
+        padding-left: $arrow-padding-init + .3em;
+        color: lighten($secondary-color, 10%);
+      }
+    }
+
+    // icons
+    i {
+      padding-left: $arrow-padding-init;      
+      font-size:.8em;
+      padding-bottom:.3em;
+      vertical-align: middle;
+      transition: all $default-transition;      
+    }
+  }
+
+  .about-page--sidebar {
+    padding-left:5em;
+    p {
+      @extend .p--small;
+    }
+    a {
+      &:link, &:visited {
+        border-bottom:0;
+      }
+      &:hover {
+        color:$brand-color;
+      }
+    }
+    hr {
+      margin:1.6em 0;
+      border-color:$secondary-color;
+      border-width:1px;
+    }
+  }
+}
