@@ -1,3 +1,16 @@
+$font-size:                1rem;
+$font-ratio:            0.7556;
+// Heading Styles
+$headings: (
+  h1: 2.50rem,
+  h2: 1.60rem,
+  h3: 1.25rem,
+  h4: 1.15rem,
+  h5: 0.90rem,
+  h6: 0.80rem
+);
+
+
 @import 'https://fonts.googleapis.com/css?family=Raleway:400,700';
 
 .Raleway {
@@ -72,6 +85,31 @@ h {
     font-size:3rem;
     font-weight:bold;    
     line-height:1.4;
+  }
+}
+
+@for $h from 1 through 6 {
+  $font-size-h: map-get($headings, h#{$h});
+
+  h#{$h} {
+    font-size: $font-size-h * $font-ratio;
+    @include breakpoint(700) {
+      font-size: $font-size-h;
+    }
+  }
+
+  .h#{$h} {
+    font-size: $font-size-h * $font-ratio;
+    @include breakpoint(700) {
+      font-size: $font-size-h;
+    }
+  }
+}
+
+p {
+  font-size: $font-size * $font-ratio;
+  @include breakpoint(700) {
+    font-size: $font-size;
   }
 }
 
