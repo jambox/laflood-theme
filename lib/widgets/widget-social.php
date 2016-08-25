@@ -127,7 +127,7 @@ if ( !class_exists('widget_social_icons') ) {
 			global $widgetSocialAccounts;
 
 			if($widgetSocialAccounts){
-				echo '<ul class="social-icons">';
+				echo '<ul class="social-icons list-unstyled list-inline">';
 				foreach( $widgetSocialAccounts as $account => $slug) {
 
 					if(!empty($instance[$slug])){
