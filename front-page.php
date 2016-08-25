@@ -50,11 +50,6 @@
 				</div>
 			</div>
 		</section>
-		<?php if ($service == 'want-to-help'): ?>
-			
-		<section class="col-md-8"><p>This is a living directory of ways you can help the people and families that have been affected by the August 2016 flood disaster. All types of contributions are helpful, but please keep in mind that <a href="">money</a> and <a href="">bulk goods</a> provide the biggest impact for the affected areas.</p></section>
-		<?php endif ?>
 		<?php
   endforeach;?>
-
 <?php get_footer(); ?>
