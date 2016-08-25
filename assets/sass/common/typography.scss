@@ -5,7 +5,14 @@
 }
 
 .Clarendon {
-  font-family: "clarendon-text-pro", "Merriweather", Georgia, serif;
+  font-family: "clarendon-urw", "Merriweather", Georgia, serif;
+  font-weight:400;
+  &--light {
+    font-weight:300;
+  }
+  &--oblique {
+    font-weight:700;
+  }
 }
 
 .Freight {
