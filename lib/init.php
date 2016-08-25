@@ -38,15 +38,6 @@ add_action('after_setup_theme', 'bolt_setup');
  */
 function bolt_widgets_init() {
   register_sidebar(array(
-    'name'          => __('Primary', 'bolt'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
-  ));
-
-  register_sidebar(array(
     'name'          => __('Footer', 'bolt'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
