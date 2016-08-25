@@ -18,8 +18,16 @@
   <div class="app-wrap">
     <header class="flex">
       <nav class="header nav flex-box">
-        <a class="site-title--link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><h1 class="site-title"><?php bloginfo( 'name' ) ?></h1></a>
-        <p class="site-tagline">How to contribute to the Louisiana flood relief effort</p>
+        <div class="container">
+          <div class="site-title--wrap">
+            <?php if( is_front_page() ) :  ?><h1><?php endif; ?>
+
+              <a class="site-title--link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ) ?></a>
+
+            <?php if( is_front_page() ) :  ?></h1><?php endif; ?>
+            <p class="site-tagline"><?php bloginfo( 'description' ) ?></p>
+          </div>
+        </div>
       </nav>
     </header>
 

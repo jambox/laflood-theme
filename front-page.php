@@ -27,21 +27,27 @@
 
 	foreach ( $services as $service => $service_details ) :
 		?>
-			<h2><?php echo esc_attr($service_details['title']) ?></h2>
-			<div>
-				<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
-				<?php
-					$cat_obj = $service_details['cat'];
-					foreach ( $cat_obj as $cat ) :
-						$cat_url = $service . '/' . $cat->slug;
-						?>
-						<a href="<?php echo site_url($cat_url) . '/'; ?>"><?php echo strtolower($cat->name); ?></a>
-						
-						<?php
-					endforeach; ?>
+		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service);  ?> col-md-8">
+			<h2 class="home-page-section--title"><?php echo esc_attr($service_details['title']) ?></h2>
+			<div class="home-page-ctas--wrap">
+				<ul class="home-page-ctas--list">
+					<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
+					<?php
+					$top_level_cat_objs = $service_details['cat'];
+					$cat_list = array_map(
+						function($cat_obj) use ($service ) {
+							$cat_url = $service . '/' . $cat_obj->slug;
+							return '<li><a href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) .'</a></li>';
+						},
+					$top_level_cat_objs );
 
-				or <a href="<?php echo site_url($service); ?>">something else</a>.
+					$cat_list[] = sprintf('<li>or <a href="%s">something else</a>.</li>', site_url( $service ) );
+
+					echo implode(', ', $cat_list); ?>
+	
+				</ul>
 			</div>
+		</section>
   <?php
   endforeach;
 

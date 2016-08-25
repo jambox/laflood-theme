@@ -1,0 +1,43 @@
+body.home {
+
+  .home-page-section {
+    &--title {
+     font-size:6rem;
+     color:black;
+    }
+
+    a {
+      border-bottom-width:2px;
+    }
+
+    &--need-help {
+      a {
+        color:$brand-color;
+        border-bottom-color:$brand-color;
+        &:hover {
+          border-bottom-color:transparent;
+        }
+      }
+    }
+    &--want-to-help {
+      a {
+        color:$secondary-color;
+      }
+    }
+
+    .home-page-ctas--list {
+      list-style: none;
+      padding-left:0;
+      li {
+        display:inline-block;
+      }
+    }
+
+    .home-page-ctas--wrap {
+      font-size:4rem;
+      color:$light-gray;
+    }
+
+
+  } // .home-page-section
+}

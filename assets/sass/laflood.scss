@@ -9,10 +9,10 @@
 // endbower
 
 // Common
-@import 'common/flex-box';
-@import 'common/fonts';
-@import 'common/colors';
 @import 'common/global';
+@import 'common/flex-box';
+@import 'common/colors';
+@import 'common/typography';
 
 // Bootstrap Overrides
 @import 'overrides/modals';
@@ -21,6 +21,7 @@
 // Layouts
 @import 'layouts/header';
 @import 'layouts/footer';
+@import 'layouts/front-page';
 @import 'layouts/landing-page';
 @import 'layouts/category-page';
 @import 'layouts/page-submissions';

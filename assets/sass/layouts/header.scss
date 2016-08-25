@@ -1,38 +1,43 @@
 header {
-  text-align:center;
-  text-transform:uppercase;
-  font-weight: bold;
   @extend .Raleway-header;
-  .header-msg-wrap {
+  .nav {
     padding:10px;
-    background: $blue;
-    color:white;
-    .site-tagline {
-      font-size:1.7rem;
-      font-weight:normal;
-      text-transform:none;
-      letter-spacing:0;
-    }
-  }
-  a {
-    color: #FFF;
+    background: white;
 
-    .site-title {
-      font-size:2.4rem;
-      display:inline-block;
-      border-bottom:1px solid transparent;  
-      padding-bottom:4px;
-      margin-bottom:5px;  
-    }
+    box-shadow:0 1px 11px rgba(0,0,0, 0.3);
 
-    &:active,
-    &:focus,
-    &:hover {
-      color: white;
-      border-bottom:none;
-      .site-title {
-        border-bottom:1px dotted white;
+    .site-title--wrap {
+      @extend .Franklin;
+      h1 {
+        display:inline-block;
+        font-family:inherit;
       }
     }
+
+    .site-title--link {
+      @extend .Franklin--demi;
+      font-size:3.3rem;
+      line-height:1;
+      text-transform:uppercase;
+
+      color:$brand-color;
+      width:200px;
+      display:inline-block;
+
+      margin-bottom:5px;
+
+    }
+    .site-tagline {
+      @extend .Freight;
+      color:$light-gray;      
+      font-size:2.9rem;
+      line-height:1.2;
+      font-weight:400;
+      text-transform:none;
+      letter-spacing:1px;
+      width:330px;
+      display:inline-block;
+    }
   }
+
 }

@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <?php while (have_posts()) : the_post(); ?>
-  <div class="front-page-wrap row-fluid">
+  <div class="lading-page--wrap row-fluid">
     <div class="intro--wrap col-md-8 col-md-offset-2">
       <div class="intro"><?php the_content() ?></div>
     </div>

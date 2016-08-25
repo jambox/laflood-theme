@@ -1,21 +1,13 @@
 footer {
   text-align:center;
   margin-top: 40px;
+  box-shadow:0 1px 11px rgba(0,0,0, 0.3);
+
   .footer-msg-wrap {
     padding:20px;
-    background:$teal;
-    color:white;
+    // background:$brand-color;
   }
-  a {
-    border-bottom:1px solid white;
-    &:link, &:visited {
-      color:white;
-    }
-    &:hover {
-      border-bottom:none;
-    }
-    
-  }
+
   .disclaimer {
     @extend .small;
   }
