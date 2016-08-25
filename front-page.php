@@ -49,7 +49,6 @@
 			</div>
 		</section>
   <?php
-  endforeach;
+  endforeach;?>
 
-?>
 <?php get_footer(); ?>

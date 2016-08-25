@@ -27,6 +27,10 @@ header {
       margin-bottom:5px;
       border-bottom:0;
 
+      box-shadow: none;
+      &:hover {
+        box-shadow: none;
+      }
     }
     .site-tagline {
       @extend .Freight;

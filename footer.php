@@ -1,6 +1,8 @@
       </main><!-- /.main -->
     </div><!-- /.content-wrap -->
 
+    <?php get_template_part('partials/components/search-module'); ?>
+
     <footer class="flex">
       <div class="footer-msg-wrap flex-box">
         <p>See something missing from this list? Submit an organization on the <a href="<?php permalink_by_title('Add An Organization'); ?>" class="submit-org-link">Submissions Page</a>.</p>

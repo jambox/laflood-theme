@@ -10,15 +10,14 @@ body.home {
     }
 
     .home-page-ctas--wrap {
+      @extend .Clarendon--light;
       font-size:5rem;
       color:$light-gray;
     }
 
     .home-page-ctas--list {
-      list-style: none;
-      padding-left:0;
-      li {
-        display:inline-block;
+      .large-link {
+        @extend .Clarendon;
       }
     }
 

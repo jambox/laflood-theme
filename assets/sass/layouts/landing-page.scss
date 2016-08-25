@@ -12,7 +12,7 @@
       }
       a {
         color:$brand-color;
-        text-decoration:underline;
+        text-decoration:none;
         &:hover {
           color:black;
           text-decoration:none;
@@ -27,25 +27,13 @@
     text-transform:uppercase;
   }
 
-  .search-bar--wrap {
-    label {
-      width:80%;
-      margin-left:10%;
-    }
-    .search-field {
-      transition:all $default-transition;
-      border-bottom:2px solid $gray;
-      padding:6px 12px;
-      font-size:2.5rem;
-      width:60%;
-      margin-left:20%;
-      &:focus, &:active {
-        width:90%;
-        margin-left:5%;
-        outline:0;
-        border-bottom-color:$brand-color;
+  body.need-help & {
+    a {
+      color:$brand-color;
+      &:hover {
       }
     }
-  } // .search-bar--wrap
+  }
 
-} // .front-page-wrap
+} // .landing-page-wrap
+
