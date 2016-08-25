@@ -28,8 +28,10 @@ header {
       border-bottom:0;
 
       box-shadow: none;
+      transition:color .5s ease;
       &:hover {
         box-shadow: none;
+        color:$secondary-color;
       }
     }
     .site-tagline {

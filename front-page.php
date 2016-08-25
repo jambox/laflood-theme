@@ -27,8 +27,8 @@
 
 	foreach ( $services as $service => $service_details ) :
 		?>
-		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service);  ?> col-md-8">
-			<h2 class="home-page-section--title"><?php echo esc_attr($service_details['title']) ?>.</h2>
+		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service); ?> col-md-8">
+			<h2 class="home-page-section--title"><a href="<?php echo site_url( $service ); ?>"><?php echo esc_attr( $service_details['title'] ) ?></a>.</h2>
 			<div class="home-page-ctas--wrap">
 				<div class="home-page-ctas--list">
 					<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
