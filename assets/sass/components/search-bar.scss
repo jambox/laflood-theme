@@ -1,4 +1,11 @@
 .search-module--wrap {
+  
+  .search-bar-prompt {
+    @extend .Freight;
+    font-weight:400;
+    width:100%;
+    max-width:550px;
+  }
 
 }
 
