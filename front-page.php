@@ -48,7 +48,7 @@
 
 					$more = $service == 'want-to-help' ? 'much more' : 'other services';
 
-					$cat_list[] = sprintf('or <a class="large-link" href="%s">%s</a>.', site_url( $service . '#something-else' ), $more );
+					$cat_list[] = sprintf('or <a class="large-link" href="%s">%s</a>.', site_url( 'explore/' . $service ), $more );
 
 					echo implode(', ', $cat_list); ?>
 	

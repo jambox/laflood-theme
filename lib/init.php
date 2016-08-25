@@ -58,12 +58,14 @@ add_action('acf/init', 'laflood_acf_init');
 function laflood_custom_rewrite_tags() {
   add_rewrite_tag( '%want-to-help%', '([^&]+)' );
   add_rewrite_tag( '%need-help%', '([^&]+)' );
+  add_rewrite_tag( '%explore%', '([^&]+)' );
 }
 add_action('init', 'laflood_custom_rewrite_tags', 10, 0);
 
 function laflood_custom_rewrite_rule() {
   add_rewrite_rule( '^want-to-help/([^/]*)/?', 'index.php?lfr_visitor_type=want-to-help&category_name=$matches[1]', 'top' );
   add_rewrite_rule( '^need-help/([^/]*)/?', 'index.php?lfr_visitor_type=need-help&category_name=$matches[1]', 'top' );
+  add_rewrite_rule( '^explore/([^/]*)/?', 'index.php?pagename=explore&lfr_visitor_type=$matches[1]', 'top' );
 }
 add_action('init', 'laflood_custom_rewrite_rule', 10, 0);
 
