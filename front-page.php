@@ -27,7 +27,7 @@
 
 	foreach ( $services as $service => $service_details ) :
 		?>
-		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service);  ?> col-md-8">
+		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service); ?> col-md-8">
 			<h2 class="home-page-section--title"><a href="<?php echo site_url($service) ?>"><?php
 			 $title_array = explode(' ', esc_attr($service_details['title'])); 
 			 if (count($title_array) > 1 ) { 
