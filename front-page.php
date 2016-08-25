@@ -28,7 +28,12 @@
 	foreach ( $services as $service => $service_details ) :
 		?>
 		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service);  ?> col-md-8">
-			<h2 class="home-page-section--title"><?php echo esc_attr($service_details['title']) ?>.</h2>
+			<h2 class="home-page-section--title"><a href="<?php echo site_url($service) ?>"><?php
+			 $title_array = explode(' ', esc_attr($service_details['title'])); 
+			 if (count($title_array) > 1 ) { 
+			   $title_array[count($title_array)-1] = '<span class="nowrap">'.($title_array[count($title_array)-1]).'.<i class="fa fa-fw fa-chevron-right"></i></span>'; 
+			   echo implode(' ', $title_array);  
+			 } ?></a></h2>
 			<div class="home-page-ctas--wrap">
 				<div class="home-page-ctas--list">
 					<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
@@ -41,7 +46,7 @@
 						},
 					$top_level_cat_objs );
 
-					$more = $service == 'want-to-help' ? 'more' : 'other services';
+					$more = $service == 'want-to-help' ? 'much more' : 'other services';
 
 					$cat_list[] = sprintf('or <a class="large-link" href="%s">%s</a>.', site_url( $service . '#something-else' ), $more );
 
