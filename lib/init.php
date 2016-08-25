@@ -55,10 +55,17 @@ function laflood_acf_init() {
 add_action('acf/init', 'laflood_acf_init');
 
 // Create custom rewrite rules for visitor type
-function laflood_custom_rewrite() {
-  add_rewrite_tag('%assistance_type%', '([^&]+)');
+function laflood_custom_rewrite_tags() {
+  add_rewrite_tag( '%want-to-help%', '([^&]+)' );
+  add_rewrite_tag( '%need-help%', '([^&]+)' );
 }
-add_action('init', 'laflood_custom_rewrite', 10, 0);
+add_action('init', 'laflood_custom_rewrite_tags', 10, 0);
+
+function laflood_custom_rewrite_rule() {
+  add_rewrite_rule( '^want-to-help/([^/]*)/?', 'index.php?lfr_visitor_type=want-to-help&category_name=$matches[1]', 'top' );
+  add_rewrite_rule( '^need-help/([^/]*)/?', 'index.php?lfr_visitor_type=need-help&category_name=$matches[1]', 'top' );
+}
+add_action('init', 'laflood_custom_rewrite_rule', 10, 0);
 
 // filter the taxonomy shown in the admin area to children of a specific parent
 function laflood_limit_acf_taxonomies( $args, $field ) {
