@@ -30,22 +30,22 @@
 		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service);  ?> col-md-8">
 			<h2 class="home-page-section--title"><?php echo esc_attr($service_details['title']) ?>.</h2>
 			<div class="home-page-ctas--wrap">
-				<ul class="home-page-ctas--list">
+				<div class="home-page-ctas--list">
 					<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
 					<?php
 					$top_level_cat_objs = $service_details['cat'];
 					$cat_list = array_map(
 						function($cat_obj) use ($service ) {
 							$cat_url = $service . '/' . $cat_obj->slug;
-							return '<li><a href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) .'</a></li>';
+							return '<a class="large-link" href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) .'</a>';
 						},
 					$top_level_cat_objs );
 
-					$cat_list[] = sprintf('<li>or <a href="%s">something else</a>.</li>', site_url( $service ) );
+					$cat_list[] = sprintf('or <a class="large-link" href="%s">something else</a>.', site_url( $service . '#something-else' ) );
 
 					echo implode(', ', $cat_list); ?>
 	
-				</ul>
+				</div>
 			</div>
 		</section>
   <?php
