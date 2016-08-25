@@ -27,31 +27,55 @@ h {
 .Clarendon {
   font-family: "clarendon-urw", "Merriweather", Georgia, serif;
   font-weight:400;
-  &--light {
-    font-weight:300;
-  }
-  &--oblique {
-    font-weight:700;
-  }
 }
+
+.Clarendon--light {
+  font-family: "clarendon-urw", "Merriweather", Georgia, serif;
+  font-weight:300;
+}
+
+.Clarendon--oblique {
+  font-family: "clarendon-urw", "Merriweather", Georgia, serif;
+  font-weight:700;
+}
+
 
 .Freight {
   font-family: "freight-text-pro", Georgia, serif;
+  font-weight:400;
+}
+.Freight--light {
+  font-family: "freight-text-pro", Georgia, serif;
+  font-weight:300;
+}
+.Freight--book {
+  font-family: "freight-text-pro", Georgia, serif;
+  font-weight:400;
+}
+.Freight--medium {
+  font-family: "freight-text-pro", Georgia, serif;
+  font-weight:500;
+}
+.Freight--bold {
+  font-family: "freight-text-pro", Georgia, serif;
+  font-weight:700;
 }
 
 .Franklin {
   font-family: "franklin-gothic-urw-cond", Arial, Impact, serif;
-  &--medium {
-    font-weight:500;
-  }
-  &--demi {
-    font-weight:700;
-  }
+}
+.Franklin--medium {
+  font-family: "franklin-gothic-urw-cond", Arial, Impact, serif;
+  font-weight:500;
+}
+.Franklin--demi {
+  font-family: "franklin-gothic-urw-cond", Arial, Impact, serif;
+  font-weight:700;
 }
 
 
 .body-font {
-  @extend .Clarendon;  
+  @extend .Clarendon--light;  
 }
 
 

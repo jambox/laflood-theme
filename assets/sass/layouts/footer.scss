@@ -1,14 +1,15 @@
 footer {
-  text-align:center;
-  margin-top: 40px;
+  padding:40px 0;
   box-shadow:0 1px 11px rgba(0,0,0, 0.3);
 
-  .footer-msg-wrap {
-    padding:20px;
-    // background:$brand-color;
+  @extend .Freight;
+
+  a {
+    &:link, &:visited {
+      border-bottom:0;
+    }
   }
 
-  .disclaimer {
-    @extend .small;
-  }
+  .footer-wrap {}
+
 } // footer
