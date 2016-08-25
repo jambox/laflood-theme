@@ -18,7 +18,7 @@
   // Add classes to body
   $body_classes = [];
 
-  $visitor_type = $wp_query->query_vars['lfr_visitor_type'];
+  $visitor_type = visitor_type();
 
   $body_classes[] = $visitor_type;
 

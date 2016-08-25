@@ -41,14 +41,20 @@
 						},
 					$top_level_cat_objs );
 
-					$cat_list[] = sprintf('or <a class="large-link" href="%s">something else</a>.', site_url( $service . '#something-else' ) );
+					$more = $service == 'want-to-help' ? 'more' : 'other services';
+
+					$cat_list[] = sprintf('or <a class="large-link" href="%s">%s</a>.', site_url( $service . '#something-else' ), $more );
 
 					echo implode(', ', $cat_list); ?>
 	
 				</div>
 			</div>
 		</section>
-  <?php
+		<?php if ($service == 'want-to-help'): ?>
+			
+		<section class="col-md-8"><p>This is a living directory of ways you can help the people and families that have been affected by the August 2016 flood disaster. All types of contributions are helpful, but please keep in mind that <a href="">money</a> and <a href="">bulk goods</a> provide the biggest impact for the affected areas.</p></section>
+		<?php endif ?>
+		<?php
   endforeach;?>
 
 <?php get_footer(); ?>

@@ -144,6 +144,17 @@ function laflood_only_allow_search_for_org( $query ) {
 add_action('pre_get_posts','laflood_only_allow_search_for_org');
 
 
+function visitor_type() {
+  global $wp_query;
+  if( is_page('want-to-help') || is_page('need-help') ) {
+    return $wp_query->query_vars['name'];
+  } else {
+    return isset( $wp_query->query_vars['lfr_visitor_type'] ) ? $wp_query->query_vars['lfr_visitor_type'] : false ;
+  }
+  return;
+} // END visitor_type()
+
+
 /*===================================
 =            CPT Helpers            =
 ===================================*/
