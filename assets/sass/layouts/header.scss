@@ -29,9 +29,10 @@ header {
 
       box-shadow: none;
       transition:color .5s ease;
-      &:hover {
+      &:hover, &:active, &:focus {
         box-shadow: none;
         color:$secondary-color;
+        text-decoration:none;
       }
     }
     .site-tagline {

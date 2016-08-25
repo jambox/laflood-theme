@@ -8,6 +8,9 @@ footer {
     &:link, &:visited {
       border-bottom:0;
     }
+    &:hover, &:active {
+      text-decoration:underline;
+    }
   }
 
   .footer-wrap {}
