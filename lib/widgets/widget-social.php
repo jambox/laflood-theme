@@ -130,7 +130,7 @@ if ( !class_exists('widget_social_icons') ) {
 				echo '<ul class="social-icons">';
 				foreach( $widgetSocialAccounts as $account => $slug) {
 
-					if(!empty($instance[$accountUrl])){
+					if(!empty($instance[$slug])){
 						echo '<li>',
 							'<a href="', $slug === 'email' ? 'mailto:' : '', esc_url( $instance[$accountUrl] ), '" target="_blank" aria-label="', $account, '">',
 								'<i class="', $instance['iconfont'], $slug === 'email' ? 'envelope' : $slug, '"></i>',
