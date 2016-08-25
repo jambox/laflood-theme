@@ -43,9 +43,9 @@ if ( $items ): ?>
 
 <?php
   if ( $archive_layout === 'list' ) {
-    get_template_part('partials/resource-list-short' );
+    get_template_part('partials/archive-list-short' );
   } else {
-    get_template_part('partials/resource-list-cards' );
+    get_template_part('partials/archive-list-cards' );
   }
 
 
