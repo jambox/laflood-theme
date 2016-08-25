@@ -21,8 +21,8 @@ $bolt_includes = array(
   '/lib/relative-urls.php',     // Root relative URLs
   'lib/theme-functions.php',    // Theme-specific functions
   'lib/admin.php',              // Admin functions
-  'lib/acf-mods.php'            // ACF Mods. duh.
-  // 'lib/widgets.php',           // Theme-specific widgets
+  'lib/acf-mods.php',           // ACF Mods. duh.
+  'lib/widgets.php'             // Theme-specific widgets
   // 'lib/shortcodes.php',        // Theme-specific shortcodes
 );
 
