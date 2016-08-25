@@ -4,7 +4,7 @@
     while ( have_posts() ) : the_post(); ?>
     <li class="resource-card list-inline col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="resource-card--header flex-box">
-        <h4 class="resource-name"><a href="<?php get_permalink() ?>"><?php the_title(); ?></a></h4>
+        <h4 class="resource-name"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4>
       </div>
       <div class="resource-card--body">
         <?php the_field('description'); ?>
