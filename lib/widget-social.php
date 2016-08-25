@@ -46,7 +46,7 @@ if ( !class_exists('widget_social_icons') ) {
 		*/
 		function __construct() {
 			parent::__construct(
-				'social_icoms',
+				'social_icons',
 				'Social Media Icons',
 				array( 'description' => "Display icons linking to your Social Media accounts." )
 			);
