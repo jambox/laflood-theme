@@ -14,7 +14,7 @@
       <p>After the floods, everyone sprang into action. In fact, there’s been so much happening on the internet and in the media that it’s been a little overwhelming. How do you know where to go for help--or where your money or time will make the most difference for those in need? This website is here to guide volunteers toward effective ways of helping the flood recovery effort.</p>
       <a class="about-page--cta" href="<?php echo site_url('want-to-help') ?>">Find out how you can help<i class="fa fa-fw fa-arrow-right"></i></a>
       <p>It’s also here to provide flood survivors with the help you need right now. </p>
-      <a class="about-page--cta" href="<?php echo site_url('want-to-help') ?>">Get flood recovery help<i class="fa fa-fw fa-arrow-right"></i></a>
+      <a class="about-page--cta" href="<?php echo site_url('need-help') ?>">Get flood recovery help<i class="fa fa-fw fa-arrow-right"></i></a>
       <h3>Let's Work Together.</h3>
       <p>If you, your team, or someone you know is doing the same thing as LAFloodRecovery.org, please let us know immediately so we can get in touch with them. We’ll happily put our energy towards another effort with the same goal, and we’ll happily partner with other folks who are offering services that we can add to this directory.</p>
     </div>
