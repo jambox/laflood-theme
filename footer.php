@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="container"><?php if ( is_active_sidebar( 'left-sidebar' ) ) { dynamic_sidebar( 'left-sidebar' ); } ?></div>
+      <div class="container"><?php if ( is_active_sidebar( 'sidebar-footer' ) ) { dynamic_sidebar( 'sidebar-footer' ); } ?></div>
     </footer>
   </div> <!-- .offcanvas-wrap-inner -->
 </div><!-- /.wrap .offcanvas-wrap-outer -->
