@@ -13,13 +13,15 @@ if ( ! defined ( 'ABSPATH' ) ) {
 if ( !class_exists('widget_social_icons') ) {
 
 	//Register Widget
+  add_action('widgets_init', 'load_widget_social_icons');
+
   function load_widget_social_icons() {
     register_widget( 'widget_social_icons' );
   }
-  add_action('widgets_init', 'load_widget_social_icons');
 
   // Set up available accounts
   $widgetSocialAccounts = array(
+  	'Email' => 'envelope',
   	'Facebook' => 'facebook',
   	'Twitter' => 'twitter',
   	'YouTube' => 'youtube',
@@ -46,7 +48,7 @@ if ( !class_exists('widget_social_icons') ) {
 		function __construct() {
 			parent::__construct(
 				'social_icons',
-				'Social Media Icons',
+				'&#10052; Social Media Icons',
 				array( 'description' => "Display icons linking to your Social Media accounts." )
 			);
 		} // /register widget
@@ -126,12 +128,12 @@ if ( !class_exists('widget_social_icons') ) {
 
 			if($widgetSocialAccounts){
 				echo '<ul class="social_icon">';
-				foreach( $widgetSocialAccounts as $account => $accountUrl) {
+				foreach( $widgetSocialAccounts as $account => $slug) {
 
 					if(!empty($instance[$accountUrl])){
 						echo '<li>',
-								 '<a href="'. esc_url( $instance[$accountUrl] ) .'" target="_blank" aria-label="'. $accountUrl .'">',
-								 '<i class="'. $instance['iconfont'] . $accountUrl .'"></i>',
+								 '<a href="'. esc_url( $instance[$accountUrl] ) .'" target="_blank" aria-label="'. $account .'">',
+								 '<i class="'. $instance['iconfont'] . $slug .'"></i>',
 								 '</a>',
 								 '</li>';
 					}
