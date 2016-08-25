@@ -4,19 +4,6 @@ body.home {
 
     margin:3rem 0 5rem;
 
-    &--title {
-      @extend h1;
-      color:black;
-      a {
-        color:black;
-        border-bottom:0;
-        text-decoration:none;
-        &:hover, &:focus, &:active {
-          color:rgba(black, .7);
-        }
-      }
-    }
-
     .home-page-ctas--wrap {
       @extend .Clarendon--light;
       font-size:5rem;
@@ -54,7 +41,37 @@ body.home {
       }
     }
 
+    &--title {
+     font-size:8rem;
 
+      &,
+      a {
+        color: black;
+      }
+
+      a,
+      &:hover, &:focus, &:active {
+        color:rgba(black, .7);
+        box-shadow: none;
+        i {
+          padding-left: 0.33em;
+          color: #DFDFDF;
+        }
+      }
+
+      a{
+        border-bottom:0;
+        text-decoration:none;
+        i {
+          padding-left: 0.1em;
+          padding-bottom: 0.3em;
+          color: #ECECEC;
+          font-size: 0.5em;
+          vertical-align: middle;
+          transition: all $default-transition;
+        }
+      } 
+    }
 
   } // .home-page-section
 }
