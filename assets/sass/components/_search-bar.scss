@@ -27,7 +27,7 @@
     transition:all $default-transition;
     border-bottom:3px solid white;
     padding:6px 12px;
-    width:60%; 
+    width:70%; 
     // margin-left:20%;
 
     &::placeholder {
@@ -36,8 +36,7 @@
     }
 
     &:focus, &:active {
-      width:80%;
-      margin-left:10%;
+      width:90%;
       outline:0;
       &::placeholder {
         color:rgba(white, 0);
