@@ -127,6 +127,9 @@ h {
     @extend .Freight;
     line-height:1.2;
     @include font-smoothing;
+    a {
+      @extend .Freight--bold;
+    }
   }
 }
 
