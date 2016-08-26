@@ -1,4 +1,10 @@
 .add-an-organization {
+
+  .org-search-form--wrap {
+    .acf-form-submit {
+      display:none;
+    }
+  }
   
   .page-title {
     @extend h3;
