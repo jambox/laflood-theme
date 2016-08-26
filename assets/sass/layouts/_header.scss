@@ -35,7 +35,7 @@ header {
         transform: rotate(1.6deg);
         border:0 solid $secondary-color;
         border-bottom-width:1.3em;
-        transition:border-bottom-width .3s ease;
+        transition:all .3s ease;
       }
 
       &:hover, &:active, &:focus {
@@ -47,6 +47,7 @@ header {
 
         hr {
           border-bottom-width: 2px;
+          transform: rotate(0deg);
         }
       }
     }
