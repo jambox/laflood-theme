@@ -3,7 +3,9 @@
       <hr>
       <p>See something missing from our lists? Please help us expand this directory by <a href="<?php permalink_by_title('Add An Organization'); ?>">sharing a resource here</a>.</p>
       <hr>
-      <p><a href="<?php permalink_by_title('Who We Are'); ?>">Learn more</a> about the people behind LA Flood Recovery.</p>
-      <hr>
+      <?php if (!is_page('Who We Are')): ?>
+        <p><a href="<?php permalink_by_title('Who We Are'); ?>">Learn more</a> about the people behind LA Flood Recovery.</p>
+        <hr>
+      <?php endif; ?>
       <?php if ( is_active_sidebar( 'primary-sidebar' ) ) { dynamic_sidebar( 'primary-sidebar' ); } ?>
     </div>

@@ -1,4 +1,4 @@
-body.about {
+body.about, body.who-we-are {
   
   .content-wrap {
     padding-top:7rem;
@@ -41,5 +41,13 @@ body.about {
       vertical-align: middle;
       transition: all $default-transition;      
     }
+  }
+
+  .page-sidebar {
+    hr {
+      margin:1.6em 0;
+      border-color:$secondary-color;
+      border-width:1px;
+    }    
   }
 }
