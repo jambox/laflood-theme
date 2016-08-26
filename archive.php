@@ -6,7 +6,7 @@ $prompt = $queried_object->description;
 $guidelines = get_field('guidelines', 'category_' . $queried_object_id );
 $archive_layout = get_field('cat_archive_display', 'category_' . $queried_object_id );
 
-if ( $guidelines ): ?>
+if ( visitor_type() == 'want-to-help' && $guidelines ): ?>
   <div class="row-fluid">
     <div class="col-md-8 col-md-offset-2">
       <h3>Please Give Thoughtfully</h3>
