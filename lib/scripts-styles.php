@@ -72,6 +72,13 @@ add_action('admin_enqueue_scripts', 'laflood_admin_styles');
 
 
 function load_ga_script() {
+  // Don't track wp-admin behaviors or admin-level users
+  if(
+    is_admin() ||
+    ( is_user_logged_in() && current_user_can('administrator') )
+  ) {
+   return false;
+  }
   ?>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
