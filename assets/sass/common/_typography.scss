@@ -186,17 +186,12 @@ a {
   transition: all $default-transition;
   color:$secondary-color;
   text-decoration:none;
+  border-bottom:2px solid $secondary-color;
   
-  &:not(.btn) {
-    border-bottom:2px solid $secondary-color;
-  }
-
   &:hover {
     color:$secondary-color;
     text-decoration:none;
-    &:not(.btn) {
-      border-bottom:2px solid transparent;
-    }
+    border-bottom:2px solid transparent;
   }
 }
 
