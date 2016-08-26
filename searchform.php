@@ -13,7 +13,7 @@
     <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'twentysixteen' ); ?></span>
     <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Start typing to search ...', 'placeholder', 'twentysixteen' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
   </label>
-  <?php if ( $type = visitor_type() ): ?>
+  <?php if ( $type = visitor_type() && false ): ?>
     <input type="hidden" name="lfr_visitor_type" value="<?php echo $type; ?>" />
   <?php endif ?>
   <button type="submit" class="search-submit">
