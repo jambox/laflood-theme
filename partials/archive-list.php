@@ -36,14 +36,18 @@ if( have_posts() ) : ?>
       </div>
       <div class="org-meta">
       <?php
-        $terms = get_the_terms( 'lfr_org', 'lfr_service' );
-        
+
+        $terms = get_the_terms( null, 'lfr_service' );
         if( !empty($terms) ) : ?>
         <div class="tag-list">
           <h5>Services Offered:</h5>
           <ul><?php
             foreach ( $terms as $term ) {
-              echo '<li>', $term ,'</li>';
+              echo '<li>';
+              echo '<a href="', site_url(visitor_type() . '/lfr_service/' . $term->slug), '" rel="tag">';
+              echo $term->name;
+              echo '</a>';
+              echo '</li>';
             }
             //$links[] = '<a href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
           ?></ul>

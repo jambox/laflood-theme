@@ -67,6 +67,7 @@ function bolt_add_custom_taxonomies() {
       'show_admin_column'          => true,
       'show_in_nav_menus'          => true,
       'show_tagcloud'              => true,
+      'rewrite'                    => array( 'slug' => $key, 'with_front' => false, 'hierarchical' => $hierarchical ),
     );
 
     register_taxonomy( $db_tax_name , $post_types, $args );
