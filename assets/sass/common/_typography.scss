@@ -145,7 +145,10 @@ h {
 
 p {
   color:$gray;
-  @include font-smoothing;
+  @extend .Freight--medium;    
+  &:not(.site-tagline) {
+    @include font-smoothing;
+  }
 
   font-size: $font-size * $font-ratio;
   @include breakpoint(700px) {
@@ -168,11 +171,12 @@ p {
 a {
   transition: all $default-transition;
   color:$secondary-color;
+  text-decoration:none;
+  
   &:not(.btn) {
     border-bottom:2px solid $secondary-color;
   }
 
-  text-decoration:none;
   &:hover {
     color:$secondary-color;
     text-decoration:none;

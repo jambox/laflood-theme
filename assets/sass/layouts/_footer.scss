@@ -32,6 +32,7 @@ footer {
   }
 
   .nav-footer {
+    @include font-smoothing;
     font-size: 1.8rem;
   }
 

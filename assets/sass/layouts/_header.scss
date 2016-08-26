@@ -65,13 +65,10 @@ header {
       letter-spacing:.05em;
     }
     .site-tagline {
-      @extend .Freight;
-      color:$light-gray;      
+      color:$light-gray;
       font-size:2.9em;
       line-height:1.2;
-      font-weight:400;
       text-transform:none;
-      letter-spacing:1px;
       width:330px;
       margin-left:2.2em;
       display:inline-block;
