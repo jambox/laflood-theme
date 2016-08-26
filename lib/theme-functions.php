@@ -134,16 +134,6 @@ function laflood_add_org_category_archive( $query ) {
 add_action('pre_get_posts','laflood_add_org_category_archive');
 
 
-function laflood_only_allow_search_for_org( $query ) {
-  if ($query->is_search) {
-      $query->set( 'post_type', get_org_cpt_name() );
-  };
-  return $query;   
-
-} // END laflood_add_org_category_archive()
-add_action('pre_get_posts','laflood_only_allow_search_for_org');
-
-
 function visitor_type() {
   global $wp_query;
   if( is_page('want-to-help') || is_page('need-help') ) {
