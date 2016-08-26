@@ -1,9 +1,14 @@
+
+
 .lading-page--wrap {
   height: 100%;
   
   .intro--wrap {
     padding-right:2em;
     .intro {
+  padding-top: 40px;
+  padding-right: 20px;
+      
       @include breakpoint($breakpoint-sm) {
         padding-top: 40px;
       }
@@ -12,7 +17,12 @@
         @extend h5;
       }
       a {
-        color:$brand-color;
+        .need-help & {
+          color:$brand-color;
+        }
+        .want-to-help & {
+          color:$secondary-color;
+        }
         text-decoration:none;
         &:hover {
           color:black;
