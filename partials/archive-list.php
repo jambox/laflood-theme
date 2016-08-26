@@ -50,18 +50,19 @@ if( have_posts() ) : ?>
           ?></ul>
         </div>
         <?php endif; ?>
+        <ul class="list-unstyled list-inline">
+          <?php if ($org_website): ?>
+            <li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li>
+          <?php endif ?>
 
-        <?php if ($org_website): ?>
-          <a href="<?php echo $org_website ?>" target="_blank">Website</a>
-        <?php endif ?>
+          <?php if ( !empty( $org_location['lat'] ) ): ?>
+            <li><a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>">Map</a></li>
+          <?php endif ?>
 
-        <?php if ( !empty( $org_location['lat'] ) ): ?>
-          <a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>">Map</a>
-        <?php endif ?>
-
-        <?php if ($org_main_phone): ?>
-          <a href="tel:<?php echo $org_main_phone ?>">Call</a>
-        <?php endif ?>
+          <?php if ($org_main_phone): ?>
+            <li><a href="tel:<?php echo $org_main_phone ?>">Call</a></li>
+          <?php endif ?>
+        </ul>
 
       </div>
     </li>
