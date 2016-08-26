@@ -41,7 +41,9 @@ if( have_posts() ) : ?>
         if( !empty($terms) ) : ?>
         <div class="tag-list">
           <ul class="list-unstyled list-inline">
-            <h5>Services offered:</h5><?php
+            <?
+              echo '<h5>', $queried_object->slug == 'general-resources' ? 'Available resources' : 'Services offered', ':</h5>';
+
               $term_list = [];
               foreach ( $terms as $term ) {
                 $term_string = '<li>';
