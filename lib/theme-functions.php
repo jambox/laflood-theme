@@ -346,7 +346,7 @@ function get_visitor_type_cats( $type = 0, $cats = 0 ) {
 
 
 
-function get_main_cat_list( $visitor_type ) {
+function get_main_cat_list( $visitor_type, $after_link = '' ) {
   
   // Allow for a type term obj and slug to be passed
   $visitor_type = is_array( $visitor_type ) ? $visitor_type['value'] : $visitor_type;
@@ -362,9 +362,9 @@ function get_main_cat_list( $visitor_type ) {
   $visitor_type_cats = get_visitor_type_cats( $visitor_type, $cats );
 
   $cat_list = array_map(
-    function($cat_obj) use ( $visitor_type ) {
+    function($cat_obj) use ( $visitor_type, $after_link ) {
       $cat_url = $visitor_type . '/' . $cat_obj->slug;
-      return '<a class="large-link" href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) .'</a>';
+      return '<a class="large-link" href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) . $after_link . '</a>';
     },
   $visitor_type_cats );
   return $cat_list;

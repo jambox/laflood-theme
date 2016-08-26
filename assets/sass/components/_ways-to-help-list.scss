@@ -1,0 +1,9 @@
+.ways-to-help-list {
+  list-style: none;
+  padding-left:0;
+  margin-left:0;
+  li {
+    @extend h1;
+    text-transform:capitalize;
+  }
+}
