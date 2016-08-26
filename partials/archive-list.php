@@ -42,7 +42,7 @@ if( have_posts() ) : ?>
         <div class="tag-list">
           <ul class="list-unstyled list-inline">
             <?
-              echo '<h5>', $queried_object->slug == 'general-resources' ? 'Available resources' : 'Services offered', ':</h5>';
+              echo '<h5>', $queried_object->slug == 'general-resources' ? 'Available information' : 'Services offered', ':</h5>';
 
               $term_list = [];
               foreach ( $terms as $term ) {
