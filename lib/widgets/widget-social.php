@@ -22,7 +22,7 @@ if ( !class_exists('widget_social_icons') ) {
   // Set up available accounts
   $widgetSocialAccounts = array(
   	'Email' => 'email',
-  	'Facebook' => 'facebook',
+  	'Facebook' => 'facebook-official',
   	'Twitter' => 'twitter',
   	'YouTube' => 'youtube',
   	'tumblr' => 'tumblr',
