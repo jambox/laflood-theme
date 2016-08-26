@@ -6,5 +6,7 @@
         </header>
       </div>
       <?php include('archive.php') ?>
-    <?php endif; ?>
+    <?php else : ?>
+    <div>Sorry we couldn't find any results for your search</div>
+  <?php endif; ?>
 <?php get_footer(); ?>
