@@ -51,3 +51,11 @@ body.about, body.who-we-are {
     }    
   }
 }
+
+body.who-we-are {
+  .about-page--content {
+    hr {
+      border:0.4em solid $secondary-color;
+    }
+  }
+}
