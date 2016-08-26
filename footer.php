@@ -16,8 +16,8 @@
               <div class="col-md-4"><p>See something missing from our lists? Please help us expand this directory by <a href="<?php permalink_by_title('Add An Organization'); ?>">submitting a resource</a>.</p></div>
               <div class="col-md-4">
                 <nav class="nav-footer"><?php
-                  if (has_nav_menu('primary_navigation')) {
-                    wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
+                  if (has_nav_menu('footer_navigation')) {
+                    wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => 'nav']);
                   }
                 ?></nav>
               </div>
