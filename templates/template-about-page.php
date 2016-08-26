@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: About Style Page
+ */
+?><?php get_header(); ?>
 
   <?php while (have_posts()) : the_post(); ?>
     <div class="page-wrap row-fluid">
