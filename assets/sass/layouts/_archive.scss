@@ -4,7 +4,7 @@ body.archive {
     padding-bottom:7rem;
   }
 
-  p {
+  .small p {
     @extend .p--small;
     line-height: 1.6;
   }

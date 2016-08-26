@@ -5,9 +5,16 @@
       <div class="explore-page--content col-md-8 col-md-offset-2">
         <h1>Other Services</h1>
         <?php $oppportunities_prompt = is_client_page() ? "find help" : "volunteer"; ?>
-        <?php $action_prompt = is_client_page() ? "explore" : "consider giving"; ?>
-        <p class="intro">A directory of other oppportunities to <?php echo $oppportunities_prompt; ?> will be available soon. In the meantime, please <?php echo $action_prompt; ?> in one of the following areas.</p>
-        
+        <?php
+          $funds_link = site_url( visitor_type() . '/' . 'funds');
+          $food_link = site_url( visitor_type() . '/' . 'food-and-goods');
+          $housing_link = site_url( visitor_type() . '/' . 'housing');
+          $labor_link = site_url( visitor_type() . '/' . 'labor');
+          $action_prompt = is_client_page() ?
+            sprintf("explore the <a href='%s'>%s</a>, <a href='%s'>%s</a>, or <a href='%s'>%s</a> resources", $food_link, 'food & goods', $housing_link, 'housing', $labor_link, 'labor' ) :
+            sprintf("consider giving <a href='%s'>%s</a>, <a href='%s'>%s</a>, <a href='%s'>%s</a>, or <a href='%s'>%s</a>", $funds_link, 'funds', $food_link, 'food & goods', $housing_link, 'housing', $labor_link, 'labor' ); ?>
+        <p class="intro">A directory of other oppportunities to <?php echo $oppportunities_prompt; ?> will be available soon. In the meantime, please <?php echo $action_prompt; ?>.</p>
+        <hr>        
         <?php
         $terms = get_terms( 'lfr_service', array('number' => 25) );
         if( !empty($terms) ) : ?>
@@ -28,10 +35,7 @@
               echo implode("", $term_list);
           ?></ul>
         </div>
-      <?php endif; ?>
-
-        <hr>
-        <ul class="main-cats-list"><?php echo lfr_main_cats(); ?></ul>
+        <?php endif; ?>
       </div>
     </div>
   <?php endwhile; ?>

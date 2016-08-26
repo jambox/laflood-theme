@@ -161,6 +161,14 @@ p {
   }
 }
 
+.p--small {
+  line-height:1.7;
+  font-size: $font-size-sm * $font-ratio;
+  @include breakpoint(700px) {
+    font-size: $font-size-sm;
+  }
+}
+
 .intro p,
 p.intro {
   @extend h5;
@@ -174,13 +182,6 @@ p.intro {
   }
 }
 
-.p--small {
-  line-height:1.7;
-  font-size: $font-size-sm * $font-ratio;
-  @include breakpoint(700px) {
-    font-size: $font-size-sm;
-  }
-}
 
 a {
   transition: all $default-transition;

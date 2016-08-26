@@ -1,6 +1,18 @@
 .explore {
   .page-wrap {
+    // body.need-help & a {
+    //   color:$brand-color;
+    // }
+    .tag-list {
+      display:block;
+      @extend .Freight;
+      li {
+        margin-bottom:.2em;
+      }
+    }
     hr {
+      display:inline-block;
+      width:100%;
       border-width:0.8em;
       border-color:$secondary-color;
     }
