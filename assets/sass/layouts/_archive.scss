@@ -22,8 +22,11 @@ body.archive {
         .contact-list {
           @extend .Franklin;
           text-transform:uppercase;
-          a:hover, a:focus {
-            color:darken($secondary-color, 10%);
+          a {
+            border-bottom: 0;
+            &:hover, &:focus {
+              color:darken($secondary-color, 10%);
+            }
           }
         }
 
