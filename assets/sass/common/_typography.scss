@@ -161,6 +161,13 @@ p {
 p.intro {
   @extend h5;
   color:$gray;
+  margin-top: 3.2rem;
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+  a {
+    @extend .Freight--bold;
+  }
 }
 
 .p--small {

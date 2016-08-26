@@ -154,6 +154,10 @@ function visitor_type() {
   return;
 } // END visitor_type()
 
+function archive_layout_type($queried_object_id) {
+  return get_field('cat_archive_display', 'category_' . $queried_object_id );
+}
+
 
 function is_client_page() {
   return visitor_type() == 'need-help';

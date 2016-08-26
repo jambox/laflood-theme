@@ -1,5 +1,12 @@
-<h3 class="top-orgs-header">Some highly recommended ways to give in this category are listed below:</h3>
-<?php if( have_posts() ) : ?>
+<?php
+$queried_object = get_queried_object();
+$queried_object_id = $queried_object->term_id; 
+
+if ( archive_layout_type($queried_object_id) === 'short' ) : ?>
+  <h3 class="top-orgs-header">Some highly recommended ways to give in this category are listed below:</h3>
+<?php endif;
+
+if( have_posts() ) : ?>
 <ul class="org-list">
   <?php    
   while ( have_posts() ) : the_post();
@@ -28,11 +35,20 @@
         <?php the_content(); ?>
       </div>
       <div class="org-meta">
-
+      <?php
+        $terms = get_the_terms( 'lfr_org', 'lfr_service' );
+        
+        if( !empty($terms) ) : ?>
         <div class="tag-list">
           <h5>Services Offered:</h5>
-          <?php echo get_the_tag_list(); ?>
+          <ul><?php
+            foreach ( $terms as $term ) {
+              echo '<li>', $term ,'</li>';
+            }
+            //$links[] = '<a href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
+          ?></ul>
         </div>
+        <?php endif; ?>
 
         <?php if ($org_website): ?>
           <a href="<?php echo $org_website ?>" target="_blank" class="btn btn-default">Website</a>
@@ -49,6 +65,5 @@
       </div>
     </li>
   <?php endwhile;?>
-</ul>
 <?php endif; ?>
-</ul> 
+</ul>
