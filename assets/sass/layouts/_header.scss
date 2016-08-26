@@ -8,43 +8,71 @@ header {
 
     .site-title--wrap {
       @extend .Franklin;
+      font-size: 1rem;
       h1 {
         display:inline-block;
         font-family:inherit;
       }
     }
 
+    .site-title {
+      position:relative;
+      width:auto;
+      margin-right:6.3em;
+      display:inline-block;
+      margin-bottom:2em;
+      
+      h1 {
+        margin:0;
+        font-size:1em;
+      }
+
+      hr {
+        position:absolute;
+        bottom:-0.5em;
+        margin:0;
+        width:100%;
+        transform: rotate(1.6deg);
+        border:0 solid $secondary-color;
+        border-bottom-width:1.3em;
+        transition:border-bottom-width .3s ease;
+      }
+
+      &:hover, &:active, &:focus {
+        .site-title--link {
+          box-shadow:none;
+          color:$secondary-color;
+          text-decoration:none;
+        }
+
+        hr {
+          border-bottom-width: 2px;
+        }
+      }
+    }
+
     .site-title--link {
       @extend .Franklin--demi;
-      font-size:3.3rem;
+      font-size:3.3em;
       line-height:1;
       text-transform:uppercase;
-
       color:$brand-color;
-      width:200px;
-      display:inline-block;
-
-      margin-bottom:5px;
       border-bottom:0;
-
       box-shadow: none;
       transition:color .5s ease;
-      &:hover, &:active, &:focus {
-        box-shadow: none;
-        color:$secondary-color;
-        text-decoration:none;
-      }
+      letter-spacing: 0.05em;
     }
     .site-tagline {
       @extend .Freight;
       color:$light-gray;      
-      font-size:2.9rem;
+      font-size:2.9em;
       line-height:1.2;
       font-weight:400;
       text-transform:none;
       letter-spacing:1px;
       width:330px;
       display:inline-block;
+      vertical-align:top;
     }
   }
 
