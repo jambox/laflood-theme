@@ -4,7 +4,7 @@ $queried_object_id = $queried_object->term_id;
 
 if( have_posts() ) :
 
-if ( archive_layout_type($queried_object_id) === 'short' ) : ?>
+if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'general-resources' ) : ?>
   <h3 class="top-orgs-header">Some highly recommended ways to give in this category are listed below:</h3>
 <?php endif; ?>
 <ul class="org-list">
