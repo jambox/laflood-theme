@@ -42,7 +42,8 @@ header {
         .site-title--link {
           box-shadow:none;
           color:$secondary-color;
-          text-decoration:none;
+          text-decoration:initial;
+          border:none;
         }
 
         hr {
@@ -58,10 +59,11 @@ header {
       line-height:1;
       text-transform:uppercase;
       color:$brand-color;
-      border-bottom:0;
-      box-shadow: none;
+      border:none;
+      box-shadow:none;
+      text-decoration:initial;
       transition:color .5s ease;
-      letter-spacing: 0.05em;
+      letter-spacing:.05em;
     }
     .site-tagline {
       @extend .Freight;
