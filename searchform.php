@@ -16,5 +16,11 @@
   <?php if ( $type = visitor_type() ): ?>
     <input type="hidden" name="lfr_visitor_type" value="<?php echo $type; ?>" />
   <?php endif ?>
-  <button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'twentysixteen' ); ?></span></button>
+  <button type="submit" class="search-submit">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+    </span>
+    <span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'twentysixteen' ); ?></span>
+  </button>
 </form>

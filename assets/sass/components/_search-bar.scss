@@ -33,7 +33,7 @@
 
     @include breakpoint(850px) {    
       font-size:4.5rem;
-      width:70%;
+      width:calc(70% - 3.3em);
     }
     // margin-left:20%;
 
@@ -43,14 +43,41 @@
     }
 
     &:focus, &:active {
-      @include breakpoint(700px) {    
-        width:90%;
+      @include breakpoint(850px) {    
+        width:calc(90% - 3.3em);
       }
       outline:0;
       &::placeholder {
         color:rgba(white, 0);
       }
       // border-bottom-color:$brand-color;
+    }
+  } // .search-field
+
+  .search-submit {
+    @extend h3;
+    border:0;
+    background:transparent;
+    padding:.2em;
+    @include breakpoint(850px) {    
+      font-size:3em;
+    }    
+    &:hover {
+      .fa-circle {
+        color:$secondary-color;
+      }
+      .fa-search {
+        color:white;
+      }
+    }
+    .fa {
+      transition:color $default-transition;
+    }
+    .fa-circle {
+      color:white;
+    }
+    .fa-search {
+      color:$secondary-color;
     }
   }
 } // .search-bar--wrap
