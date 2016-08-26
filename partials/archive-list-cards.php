@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-8 col-md-offset-2">
   <ul class="resource-list">
   <?php if( have_posts() ) :
     while ( have_posts() ) : the_post(); ?>
