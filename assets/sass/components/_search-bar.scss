@@ -65,9 +65,11 @@
     &:hover, &:active, &:focus {
       .fa-circle {
         color:$secondary-color;
+        outline: none;
       }
       .fa-search {
         color:white;
+        outline: none;
       }
     }
     .fa {
