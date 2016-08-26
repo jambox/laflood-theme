@@ -24,7 +24,7 @@ body.archive {
           text-transform:uppercase;
           a {
             border-bottom: 0;
-            &:hover, &:focus {
+            &:hover, &:active, &:focus {
               color:darken($secondary-color, 10%);
             }
           }
@@ -48,7 +48,7 @@ body.archive {
           a {
             color:$gray;
             font-size:1.6rem;
-            &:hover, &:focus {
+            &:hover, &:active, &:focus {
               color:$secondary-color;
             }
           }

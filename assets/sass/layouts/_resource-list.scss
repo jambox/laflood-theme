@@ -42,7 +42,7 @@
       background:white;
       border-color:$blue;
       border-width:2px;
-      &:hover {
+      &:hover, &:active, &:focus {
         color:white;
         font-weight:bold;
         background:$blue;

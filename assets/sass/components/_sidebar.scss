@@ -7,7 +7,7 @@
     &:link, &:visited {
       border-bottom:0;
     }
-    &:hover {
+    &:hover, &:active, &:focus {
       color:$brand-color;
     }
   }

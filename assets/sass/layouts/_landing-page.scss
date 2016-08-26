@@ -21,7 +21,7 @@
           color:$brand-color;
           box-shadow:inset 0 0 0 transparent,inset 0 -3px 0 $brand-color;
           border-bottom:0;
-          &:hover {
+          &:hover, &:active, &:focus {
             color:$brand-color;
             box-shadow:inset 0 0 0 transparent,inset 0 -3px 0 transparent;
             border-bottom:0;
@@ -29,12 +29,12 @@
         }
         .want-to-help & {
           color:$secondary-color;
-          &:hover {
+          &:hover, &:active, &:focus {
             color:$secondary-color;            
           }
         }
         text-decoration:none;
-        &:hover {
+        &:hover, &:active, &:focus {
           color:black;
           text-decoration:none;
         }
@@ -51,8 +51,6 @@
   body.need-help & {
     a {
       color:$brand-color;
-      &:hover {
-      }
     }
   }
 
