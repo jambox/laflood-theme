@@ -44,7 +44,7 @@ if( have_posts() ) : ?>
           <ul><?php
             foreach ( $terms as $term ) {
               echo '<li>';
-              echo '<a href="', site_url(visitor_type() . '/lfr_service/' . $term->slug), '" rel="tag">';
+              echo '<a href="', site_url(visitor_type() . '/service/' . $term->slug), '" rel="tag">';
               echo $term->name;
               echo '</a>';
               echo '</li>';
