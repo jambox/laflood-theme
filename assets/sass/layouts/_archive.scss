@@ -26,7 +26,7 @@ body.archive, body.search-results {
           a {
             border-bottom: 0;
             &:hover, &:active, &:focus {
-              color:darken($secondary-color, 10%);
+              color:$link-hover-color;
             }
           }
         }

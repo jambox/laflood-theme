@@ -1,0 +1,21 @@
+.pagination {
+	margin:1em 0;
+	font-size:1.8em;
+	a {
+		border-bottom:0;
+		padding:0 5px;
+		&:hover, &:focus, &:active {
+			color:$link-hover-color;
+		}
+	}
+	.fa {
+		font-size:60%;
+		padding-bottom:3px;
+		vertical-align:middle;
+	}
+
+	.prev,
+	.next {
+		font-size: 80%;
+	}
+}

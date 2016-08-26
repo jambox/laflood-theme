@@ -79,4 +79,8 @@ if ( archive_layout_type($queried_object_id) === 'short' ) : ?>
   <?php endwhile;?>
 <?php endif; ?>
 </ul>
-<?php the_posts_pagination() ?>
+<?php the_posts_pagination([
+  'prev_text' => '<i class="fa fa-chevron-left"></i> Previous',
+  'next_text' => 'Next <i class="fa fa-chevron-right"></i>'
+])
+?>
