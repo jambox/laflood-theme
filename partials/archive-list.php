@@ -44,7 +44,13 @@ if( have_posts() ) : ?>
             <h5>Services offered:</h5><?php
               $term_list = [];
               foreach ( $terms as $term ) {
-                $term_list[] = '<li><a href="' . site_url(visitor_type() . '/service/' . $term->slug) . '" rel="tag">' . $term->name . '</a></li>';
+                $term_string = '<li>';
+                //$term_string .= '<a href="' . site_url(visitor_type() . '/service/' . $term->slug) . '" rel="tag">';
+                $term_string .= $term->name;
+                //$term_string .= '</a>';
+                $term_string .= '</li>';
+
+                $term_list[] = $term_string;
               }
               echo implode(",", $term_list);
           ?></ul>
