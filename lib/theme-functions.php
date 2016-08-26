@@ -155,6 +155,11 @@ function visitor_type() {
 } // END visitor_type()
 
 
+function is_client_page() {
+  return visitor_type() == 'need-help';
+} // is_client_page()
+
+
 /*===================================
 =            CPT Helpers            =
 ===================================*/
