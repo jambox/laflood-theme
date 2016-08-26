@@ -62,7 +62,7 @@
     @include breakpoint(850px) {    
       font-size:3em;
     }    
-    &:hover {
+    &:hover, &:active, &:focus {
       .fa-circle {
         color:$secondary-color;
       }
