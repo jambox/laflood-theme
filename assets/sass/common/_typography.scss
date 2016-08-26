@@ -145,7 +145,7 @@ h {
 
 p {
   color:$gray;
-  -webkit-font-smoothing: antialiased;
+  @include font-smoothing;
 
   font-size: $font-size * $font-ratio;
   @include breakpoint(700px) {
@@ -155,13 +155,6 @@ p {
   &.intro {
     @extend h5;
   }
-
-  &.footer {
-    font-size:1.8rem;
-    color:#888;
-    font-weight:400;
-  }
-
 }
 
 .p--small {

@@ -5,6 +5,13 @@ footer {
 
   @extend .Freight;
 
+  p {
+    font-size:1.8rem;
+    color:#888;
+    font-weight:500;
+    @include font-smoothing;
+  }
+
   a {
     &:link, &:visited {
       font-weight:600;
