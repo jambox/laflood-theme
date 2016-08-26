@@ -33,7 +33,14 @@ footer {
 
   .nav-footer {
     @include font-smoothing;
-    font-size: 1.8rem;
+    font-size:3rem;
+    text-align:center;
+    margin-top:2rem;
+    @include breakpoint($breakpoint-sm) {
+      margin-top:0;
+      text-align:right;
+      font-size: 1.8rem;
+    }
   }
 
 } // footer

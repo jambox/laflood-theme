@@ -23,7 +23,6 @@ body {
 
 .content-wrap {
   flex: 1 0 auto;
-  text-align: center;
   @include breakpoint($breakpoint-sm) {
     text-align: left;
     padding-top:20px;

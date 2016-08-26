@@ -8,7 +8,10 @@ header {
 
     .site-title--wrap {
       @extend .Franklin;
-      font-size: 1rem;
+      font-size:0.8rem;
+      @include breakpoint($breakpoint-sm){
+        font-size: 1rem;
+      }
       h1 {
         display:inline-block;
         font-family:inherit;
@@ -71,9 +74,11 @@ header {
       line-height:1.2;
       text-transform:none;
       width:330px;
-      margin-left:2.2em;
       display:inline-block;
       vertical-align:top;
+      @include breakpoint($breakpoint-sm) {
+        margin-left:2.2em;
+      }
     }
   }
 
