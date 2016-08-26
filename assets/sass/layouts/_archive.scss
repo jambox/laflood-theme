@@ -17,13 +17,17 @@ body.archive {
       margin-bottom:2rem;
 
       .org-meta {
-        .btn {
+        color:$gray;
+
+        .contact-list {
           @extend .Franklin;
           text-transform:uppercase;
+          a:hover, a:focus {
+            color:darken($secondary-color, 10%);
+          }
         }
 
         .tag-list {
-          color:$gray;
           margin-bottom:.8em;
           @include font-smoothing;
           h5 {
@@ -36,11 +40,11 @@ body.archive {
           }
           li {
             padding-right: 0;
+            font-style: italic;
           }
           a {
             color:$gray;
             font-size:1.6rem;
-            font-style: italic;
             &:hover, &:focus {
               color:$secondary-color;
             }

@@ -29,7 +29,13 @@ if( have_posts() ) : ?>
   ?>
     <li class="org-item">
       <header>
-        <h2 class="org-title"><?php echo /*'<a href="', the_permalink(), '">',*/ the_title() /*, '</a>'; */?></h2>
+        <h2 class="org-title"><?php
+        /*'<a href="', the_permalink(), '">',*/ 
+        if (!empty($org_website) ) {
+          echo '<a href="', esc_url($org_website), '">';
+        }
+        the_title();
+        echo '</a>'; ?></h2>
       </header>
       <div class="small">
         <?php the_content(); ?>
@@ -58,18 +64,10 @@ if( have_posts() ) : ?>
           ?></ul>
         </div>
         <?php endif; ?>
-        <ul class="list-unstyled list-inline">
-          <?php if ($org_website): ?>
-            <li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li>
-          <?php endif ?>
-
-          <?php if ( !empty( $org_location['lat'] ) ): ?>
-            <li><a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>">Map</a></li>
-          <?php endif ?>
-
-          <?php if ($org_main_phone): ?>
-            <li><a href="tel:<?php echo $org_main_phone ?>">Call</a></li>
-          <?php endif ?>
+        <ul class="list-unstyled list-inline contact-list">
+          <?php if ($org_website): ?><li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li><?php endif ?>
+          <?php if ( !empty( $org_location['lat'] ) ): ?>&middot;<li><a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>">Map</a></li><?php endif ?>
+          <?php if ($org_main_phone): ?>&middot;<li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php endif ?>
         </ul>
 
       </div>
