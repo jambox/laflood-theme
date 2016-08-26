@@ -10,3 +10,8 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+@mixin font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
