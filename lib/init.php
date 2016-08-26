@@ -45,7 +45,9 @@ function laflood_custom_rewrite_tags() {
 add_action('init', 'laflood_custom_rewrite_tags', 10, 0);
 
 function laflood_custom_rewrite_rule() {
+  add_rewrite_rule( '^want-to-help/([^/]*)/page/?([0-9]{1,})/?', 'index.php?lfr_visitor_type=want-to-help&category_name=$matches[1]&paged=$matches[2]', 'top' );
   add_rewrite_rule( '^want-to-help/([^/]*)/?', 'index.php?lfr_visitor_type=want-to-help&category_name=$matches[1]', 'top' );
+  add_rewrite_rule( '^need-help/([^/]*)/page/?([0-9]{1,})/?', 'index.php?lfr_visitor_type=need-help&category_name=$matches[1]&paged=$matches[2]', 'top' );
   add_rewrite_rule( '^need-help/([^/]*)/?', 'index.php?lfr_visitor_type=need-help&category_name=$matches[1]', 'top' );
   add_rewrite_rule( '^explore/([^/]*)/?', 'index.php?pagename=explore&lfr_visitor_type=$matches[1]', 'top' );
 }
