@@ -23,12 +23,16 @@ $archive_layout = get_field('cat_archive_display', 'category_' . $queried_object
     if ( $items ):
 
     ?>
-    <ul class="priority-items">
-     <h4 class="priority-items--title">When giving, please prioritize these things:</h4>
-     <?php while(  have_rows('items', 'category_' .$queried_object_id ) ) : the_row();?>
-       <li class="priority-item"><?php the_sub_field('item'); ?></li>
-       <?php endwhile; ?>
-     </ul>
+    <div class="row-fluid">
+      <div class="col-md-10 col-md-offset-1 priorities--wrap">
+        <ul class="priority-items">
+          <h4 class="priority-items--title">When giving, please prioritize these things:</h4>
+          <?php while(  have_rows('items', 'category_' .$queried_object_id ) ) : the_row();?>
+            <li class="priority-item"><?php the_sub_field('item'); ?></li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    </div>
     <?php
 
     endif; 
