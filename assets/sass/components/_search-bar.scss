@@ -31,6 +31,7 @@
     // margin-left:20%;
 
     &::placeholder {
+      transition:color $default-transition;
       color:white;    
     }
 
@@ -39,8 +40,7 @@
       margin-left:10%;
       outline:0;
       &::placeholder {
-        transition:color $default-transition;
-        color:rgba(white, .5);
+        color:rgba(white, 0);
       }
       // border-bottom-color:$brand-color;
     }
