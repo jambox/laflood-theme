@@ -9,7 +9,7 @@ $headings: (
   h2: 4.8rem,
   h3: 3.2rem,
   h4: 2.8rem,
-  h5: 2.6rem, // p.intro
+  h5: 2.7rem, // p.intro
   h6: 1.9rem
 );
 
@@ -125,6 +125,7 @@ h {
   &5{ // p.intro
     @extend .Freight;
     line-height:1.2;
+    @include font-smoothing;
   }
 }
 
@@ -154,10 +155,12 @@ p {
   @include breakpoint(700px) {
     font-size: $font-size;
   }
+}
 
-  &.intro {
-    @extend h5;
-  }
+.intro p,
+p.intro {
+  @extend h5;
+  color:$gray;
 }
 
 .p--small {
