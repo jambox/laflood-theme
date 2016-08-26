@@ -29,11 +29,12 @@
       <nav class="header nav flex-box">
         <div class="container">
           <div class="site-title--wrap">
-            <?php if( is_front_page() ) :  ?><h1><?php endif; ?>
-
-              <a class="site-title--link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ) ?></a>
-
-            <?php if( is_front_page() ) :  ?></h1><?php endif; ?>
+            <div class="site-title">
+            <?php echo is_front_page() ? '<h1>' : ''; ?>
+              <a class="site-title--link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo str_replace( ' ', '<br>', get_bloginfo( 'name' ) ) ?></a>
+            <?php echo is_front_page() ? '</h1>' : ''; ?>
+              <hr>
+            </div>
             <p class="site-tagline"><?php bloginfo( 'description' ) ?></p>
           </div>
         </div>
@@ -42,9 +43,8 @@
 
    <div class="content-wrap container">
       <main class="content row main" role="main">
+
       <?php
-      if ( !is_front_page() && function_exists('yoast_breadcrumb') ) {
-           yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-      }
-      ?>
-  
+      if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
+        breadcrumb_trail();
+      } ?>
