@@ -2,6 +2,8 @@
   list-style: none;
   padding-left:0;
   margin-left:0;
+  margin-bottom:3em;
+  display:inline-block;
   li {
     @extend h1;
     text-transform:capitalize;
