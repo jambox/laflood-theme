@@ -1,60 +1,44 @@
 <?php get_header(); ?>
 <?php
-	// Dynamically display top-level Categories by category visitor type.
-	$args = array(
-		'hide_empty' => false,
-		'parent'=>0
-	);
 
-	$cats = get_terms('category', $args);
-	if( !empty($cats) ){
+  $visitor_types = array(
+  	array(
+  		'label' => 'I need help',
+  		'value' => 'need-help'
+		),
+  	array(
+  		'label' => 'I want to help',
+  		'value' => 'want-to-help'
+		)
+  );
 
-		$services = [];
-		foreach ( $cats as $cat ) {
-			// Skip 'uncategorized' term
-			if( $cat->term_id == 1) continue;
-			$visitor_types = get_field('cat_visitor_type', $cat);
-			if ( !is_array($visitor_types) ) continue;
 
-			foreach ( $visitor_types as $visitor_type ) {
-				$slug = $visitor_type['value'];
-				$services[$slug]['title'] = $visitor_type['label'];
-				$services[$slug]['cat'][] = $cat;
-			}
-		}
-
-	}
-
-	foreach ( $services as $service => $service_details ) :
+	foreach ($visitor_types as $type ) :
+		$title = $type['label'];
+		$slug = $type['value'];
 		?>
-		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $service); ?> col-md-8">
-			<h2 class="home-page-section--title"><a href="<?php echo site_url($service) ?>"><?php
-			 $title_array = explode(' ', esc_attr($service_details['title'])); 
+		<section class="home-page-section <?php echo sprintf('home-page-section--%s', $slug); ?> col-md-8">
+			<h2 class="home-page-section--title"><a href="<?php echo site_url($slug) ?>"><?php
+			 $title_array = explode(' ', esc_attr($title)); 
 			 if (count($title_array) > 1 ) { 
 			   $title_array[count($title_array)-1] = '<span class="nowrap">'.($title_array[count($title_array)-1]).'.<i class="fa fa-fw fa-chevron-right"></i></span>'; 
 			   echo implode(' ', $title_array);  
 			 } ?></a></h2>
 			<div class="home-page-ctas--wrap">
 				<div class="home-page-ctas--list">
-					<span><?php echo $service == 'need-help' ? 'Find ' : 'Give '; ?></span>
+					<span><?php echo $slug == 'need-help' ? 'Find ' : 'Give '; ?></span>
 					<?php
-					$top_level_cat_objs = $service_details['cat'];
-					$cat_list = array_map(
-						function($cat_obj) use ($service ) {
-							$cat_url = $service . '/' . $cat_obj->slug;
-							return '<a class="large-link" href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) .'</a>';
-						},
-					$top_level_cat_objs );
+					$cat_list = get_main_cat_list( $type );
 
-					$more = $service == 'want-to-help' ? 'much more' : 'other services';
+					$more = $slug == 'want-to-help' ? 'much more' : 'other services';
 
-					$cat_list[] = sprintf('or <a class="large-link" href="%s">%s</a>.', site_url( 'explore/' . $service ), $more );
+					$cat_list[] = sprintf('or <a class="large-link" href="%s">%s</a>.', site_url( 'explore/' . $slug ), $more );
 
 					echo implode(', ', $cat_list); ?>
 	
 				</div>
 			</div>
 		</section>
-		<?php
+	<?php
   endforeach;?>
 <?php get_footer(); ?>

@@ -317,4 +317,61 @@ function my_kses_post( $value ) {
 add_filter('acf/update_value', 'my_kses_post', 10, 1);
 
 
+function get_visitor_type_cats( $type = 0, $cats = 0 ) {
+  if( !$type || !$cats ) return false;
+
+  // Loop through all the cats and unset the ones that
+  // aren't set to this vistor type
+  foreach( $cats as $i => $cat ) {
+    $visitor_types_from_cat = get_field('cat_visitor_type', $cat);
+
+    if( !$visitor_types_from_cat ) unset( $cats[$i] );
+
+    if ( !is_array($visitor_types_from_cat) ) continue;
+
+    $visitor_type_slugs = [];
+    foreach( $visitor_types_from_cat as $term_obj ) {
+      $visitor_type_slugs[] = $term_obj['value'];      
+    }
+
+    if( !in_array( $type, $visitor_type_slugs ) ) {
+      unset( $cats[$i] );
+    }
+
+  }
+
+  return $cats;
+
+} // END get_visitor_type_cats()
+
+
+
+function get_main_cat_list( $visitor_type ) {
+  
+  // Allow for a type term obj and slug to be passed
+  $visitor_type = is_array( $visitor_type ) ? $visitor_type['value'] : $visitor_type;
+
+  // Dynamically display top-level Categories by category visitor type.
+  $args = array(
+    // 'hide_empty' => false,
+    'parent'=>0
+  );
+
+  $cats = get_terms('category', $args);
+
+  $visitor_type_cats = get_visitor_type_cats( $visitor_type, $cats );
+
+  $cat_list = array_map(
+    function($cat_obj) use ( $visitor_type ) {
+      $cat_url = $visitor_type . '/' . $cat_obj->slug;
+      return '<a class="large-link" href="' . site_url($cat_url) . '/' . '">'. strtolower($cat_obj->name) .'</a>';
+    },
+  $visitor_type_cats );
+  return $cat_list;
+    
+} // get_main_cat_list
+
+
+
+
 ?>
