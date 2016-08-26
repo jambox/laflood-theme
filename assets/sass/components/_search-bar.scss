@@ -30,6 +30,12 @@
     transition:all $default-transition;
     border-bottom:3px solid white;
     padding:6px 12px;
+    border-radius:0;
+    -webkit-appearance: none;
+
+    @media (max-width:480px ) {
+      font-size:2rem;      
+    }
 
     @include breakpoint(850px) {    
       font-size:4.5rem;
