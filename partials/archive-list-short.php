@@ -1,4 +1,4 @@
-<div class="col-md-10">
+<div class="col-md-8 col-md-offset-2">
   <h1>Give <?php echo get_queried_object()->name; ?>.</h1>
   <?php if ( get_queried_object()->name !== 'Funds' ): ?>
     <p class="intro">All types of contributions are helpful, but please keep in mind that money and bulk goods provide the biggest impact for the affected areas.</p>
