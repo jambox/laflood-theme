@@ -108,7 +108,7 @@ h {
     margin-bottom:.6em;
   }
   &4{
-    @extend .Raleway;
+    @extend .Franklin--demi; letter-spacing:1px;
     text-transform:uppercase;
     color:$secondary-color;
   }
