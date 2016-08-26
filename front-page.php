@@ -3,12 +3,12 @@
 
   $visitor_types = array(
   	array(
-  		'label' => 'I need help',
-  		'value' => 'need-help'
-		),
-  	array(
   		'label' => 'I want to help',
   		'value' => 'want-to-help'
+		),
+  	array(
+  		'label' => 'I need help',
+  		'value' => 'need-help'
 		)
   );
 

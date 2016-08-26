@@ -10,7 +10,7 @@ function lfr_main_cats() {
     return false;
   }
   ?>
-  <ul class="ways-to-help-list">
+  <ul class="main-cats-list">
   <?php
 
   foreach ($cat_list as $cat_link) :
