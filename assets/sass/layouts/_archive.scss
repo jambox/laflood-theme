@@ -1,4 +1,4 @@
-body.archive {
+body.archive, body.search-results {
   .content-wrap {
     padding-top:7rem;
     padding-bottom:7rem;
@@ -15,6 +15,7 @@ body.archive {
       border-bottom:1px solid $light-gray;
       padding-bottom:2rem;  
       margin-bottom:2rem;
+      width:100%;
 
       .org-meta {
         color:$gray;
