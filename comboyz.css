@@ -1,0 +1,209 @@
+
+/* grid.scss 10 */
+/*
+.container {
+  width: 960px;
+  }
+
+*/
+
+
+
+/* landing-page.scss 1 */
+
+/*.lading-page--wrap .intro--wrap .intro {
+  padding-top: 40px;
+  padding-right: 20px;
+  }
+  */
+  
+  
+  
+  
+/* type.scss 9 */
+  
+/*h1 {
+  line-height: .9;
+  }
+
+*/
+
+
+
+/* sidebar.scss 18 */
+
+/*body.home .home-page-section--want-to-help .large-link {*/
+  /* color: #10b2e8; */
+  /* border-bottom: 0; */
+  /* box-shadow: inset 0 0 0 transparent, inset 0 -3px 0 #10b2e8; */
+  /*}*/
+  
+/*body.home .home-page-section .large-link {*/
+  /* border-bottom-width: 3px; */
+  /* box-shadow: inset 0 0 0 transparent, inset 0 -3px 0 #62a539 */
+  /*}*/
+
+/*.large-link {*/
+  /* box-shadow: inset 0 0 0 transparent, inset 0 -3px 0 #10b2e8 */
+  /*text-decoration: underline;*/
+  /*}*/
+
+body.home .home-page-section--title:active, body.home .home-page-section--title:focus, body.home .home-page-section--title:hover, body.home .home-page-section--title a {
+  color: rgba (0, 0, 0, 1);
+  }
+  
+/*a:hover:not(.btn):not(.button):not(.add-an-organization .add-org-msg--wrap .add-org-btn a) {
+  border-bottom: none;
+  }
+  
+a:not(.btn):not(.button):not(.add-an-organization .add-org-msg--wrap .add-org-btn a) {
+  border-bottom: none;
+  }*/
+
+/*footer a:link {
+  font-weight: 600;
+  }*/
+
+/*footer .nav-footer {
+  font-size: 1.8rem;
+  }*/
+  
+.add-an-organization .add-org-msg--wrap .add-org-btn body.archive .org-list .org-item .org-meta a,
+.org-list .resource-card--link,
+.org-list .resource-category--link,
+.Raleway,
+.resource-category-list .resource-card--link,
+.resource-category-list .resource-category--link,
+body.archive .org-list .org-item .org-meta .add-an-organization .add-org-msg--wrap .add-org-btn a,
+body.archive .org-list .org-item .org-meta .btn,
+body.archive .org-list .org-item .org-meta .button,
+header
+{
+  font-family: franklin-gothic-urw-cond, Arial, Impact, serif;
+  letter-spacing: 2px;
+  }
+  
+/*.add-an-organization .page-title {
+  font-size: 5.2rem;
+  margin-bottom: 10px;
+  color: #000;
+  }*/
+  
+h3 {
+  font-size: 3.2rem;
+  color: #000;
+  }
+  
+p {
+  font-size: 2.3rem;
+   /*-webkit-font-smoothing: antialiased;*/ <-- eli done
+  }
+  
+
+// I think this is already in there on _about-page.scss
+/*body.about .about-page--cta {
+  text-decoration: none;
+  color: #10b2e8;
+  border-bottom: none;
+  display: block;
+  margin-bottom: 1em;
+  }  
+*/
+
+
+
+
+
+/* typography.scss 136 */
+
+p {
+  font-size: 2.3rem;
+  /*-webkit-font-smoothing: antialiased;*/ <-- eli done
+  }
+
+
+
+
+
+
+/* Attention! New Class Alert! */
+  
+/*h3.top-orgs-header{
+  font-family: freight-text-pro, Georgia, serif;
+  color: #6d6e71;
+  margin-top: 10px;
+  }
+  */
+/*h2.org-title {
+  margin-bottom: 5px;
+  }
+  */
+/*.tag-list h5 {
+  font-size: 1.6rem;
+  color: #000;
+  }*/
+  
+/*.tag-list a {
+  font-size: 1.6rem;
+  color: #000;
+  }*/
+/*p.footer {
+  font-size: 1.8rem;
+  color: #888;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  }
+
+*/
+
+
+
+
+/* font-awesome.scss 1 */
+
+.add-an-organization .add-org-msg--wrap .add-org-btn a, .btn, .button { 
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  /* padding: 6px 12px; */
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+  }
+
+.btn-default {
+  /* color: #333; */
+  /* background-color: #fff; */
+  /* border-color: #ccc */
+  }
+
+
+
+
+
+
+/* buttons.scss 71 */
+
+.btn-primary, .button-primary {
+  color: #fff;
+  background-color: #009fda;
+  border-color: #009fda;
+  font-family: franklin-gothic-urw-cond, Arial, Impact, serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.6rem;
+  }
