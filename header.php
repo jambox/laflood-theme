@@ -43,9 +43,10 @@
 
    <div class="content-wrap container">
       <main class="content row main" role="main">
+
       <?php
-      if ( !is_front_page() && function_exists('yoast_breadcrumb') ) {
-           yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+      if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
+           breadcrumb_trail();
       }
       ?>
   
