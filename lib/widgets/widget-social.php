@@ -131,8 +131,9 @@ if ( !class_exists('widget_social_icons') ) {
 				foreach( $widgetSocialAccounts as $account => $slug) {
 
 					if(!empty($instance[$slug])){
+						$url = $instance[$slug];
 						echo '<li>',
-							'<a href="', $slug === 'email' ? 'mailto:' : '', esc_url( $instance[$accountUrl] ), '" target="_blank" aria-label="', $account, '">',
+							'<a href="', $slug === 'email' ? 'mailto:' . $url . '"' : $url . '" target="_blank"', ' aria-label="', $account, '">',
 								'<i class="', $instance['iconfont'], $slug === 'email' ? 'envelope' : $slug, '"></i>',
 							'</a>',
 						'</li>';
