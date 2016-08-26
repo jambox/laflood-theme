@@ -5,4 +5,5 @@
       <hr>
       <p><a href="<?php permalink_by_title('About'); ?>">Learn more</a> about the people behind LA Flood Recovery.</p>
       <hr>
+      <?php if ( is_active_sidebar( 'primary-sidebar' ) ) { dynamic_sidebar( 'primary-sidebar' ); } ?>
     </div>

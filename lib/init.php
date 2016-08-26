@@ -20,15 +20,15 @@ function theme_setup() {
 add_action('after_setup_theme', 'theme_setup');
 
 // Register sidebars
-function bolt_widgets_init() {
+function theme_widgets_init() {
   register_sidebar(array(
-    'name'          => 'Footer',
-    'id'            => 'sidebar-footer',
+    'name'          => 'Primary',
+    'id'            => 'primary-sidebar',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
   ));
 }
-add_action('widgets_init', 'bolt_widgets_init');
+add_action('widgets_init', 'theme_widgets_init');
 
 // Set google map API key for ACF
 function laflood_acf_init() { 

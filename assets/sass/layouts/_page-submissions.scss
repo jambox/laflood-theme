@@ -24,6 +24,13 @@
     }
   }
 
+  // Content Editor
+  .mce-toolbar-grp,
+  .wp-editor-tools,
+  .mce-statusbar {
+    display: none;
+  }
+
 
   .acf-field {
     .acf-label {
