@@ -72,6 +72,9 @@
     }
     .fa {
       transition:color $default-transition;
+      &:focus, &:active {
+        outline:none;
+      }
     }
     .fa-circle {
       color:white;
