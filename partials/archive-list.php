@@ -31,7 +31,7 @@ if( have_posts() ) : ?>
       <header>
         <h2 class="org-title"><?php echo /*'<a href="', the_permalink(), '">',*/ the_title() /*, '</a>'; */?></h2>
       </header>
-      <div>
+      <div class="small">
         <?php the_content(); ?>
       </div>
       <div class="org-meta">
@@ -40,30 +40,27 @@ if( have_posts() ) : ?>
         $terms = get_the_terms( null, 'lfr_service' );
         if( !empty($terms) ) : ?>
         <div class="tag-list">
-          <h5>Services Offered:</h5>
-          <ul><?php
-            foreach ( $terms as $term ) {
-              echo '<li>';
-              echo '<a href="', site_url(visitor_type() . '/service/' . $term->slug), '" rel="tag">';
-              echo $term->name;
-              echo '</a>';
-              echo '</li>';
-            }
-            //$links[] = '<a href="' . esc_url( $link ) . '" rel="tag">' . $term->name . '</a>';
+          <ul class="list-unstyled list-inline">
+            <h5>Services offered:</h5><?php
+              $term_list = [];
+              foreach ( $terms as $term ) {
+                $term_list[] = '<li><a href="' . site_url(visitor_type() . '/service/' . $term->slug) . '" rel="tag">' . $term->name . '</a></li>';
+              }
+              echo implode(",", $term_list);
           ?></ul>
         </div>
         <?php endif; ?>
 
         <?php if ($org_website): ?>
-          <a href="<?php echo $org_website ?>" target="_blank" class="btn btn-default">Website</a>
+          <a href="<?php echo $org_website ?>" target="_blank">Website</a>
         <?php endif ?>
 
         <?php if ( !empty( $org_location['lat'] ) ): ?>
-          <a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>" class="btn btn-default">Map</a>
+          <a href="<?php echo $org_location['lat'] . ', ' . $org_location['lng'] ?>">Map</a>
         <?php endif ?>
 
         <?php if ($org_main_phone): ?>
-          <a href="tel:<?php echo $org_main_phone ?>" class="btn btn-default">Call</a>
+          <a href="tel:<?php echo $org_main_phone ?>">Call</a>
         <?php endif ?>
 
       </div>

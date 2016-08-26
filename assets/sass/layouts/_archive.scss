@@ -4,6 +4,11 @@ body.archive {
     padding-bottom:7rem;
   }
 
+  p {
+    @extend .p--small;
+    line-height: 1.6;
+  }
+
   .org-list {
     margin-top:4rem;
     .org-item {
@@ -18,23 +23,26 @@ body.archive {
         }
 
         .tag-list {
+          color:$gray;
           margin-bottom:.8em;
+          @include font-smoothing;
           h5 {
+            display: inline-block;
             font-size:1.6rem;
             color:black;
           }
+          ul {
+            margin-left: 0;
+          }
+          li {
+            padding-right: 0;
+          }
           a {
-            color:black;
-            text-transform:capitalize;
-            border-bottom:2px solid #797a7d;
-            padding:0.3em 0.3em;
-            display:inline-block;
-            margin-right:0.9em;
-            margin-bottom:.25em;
+            color:$gray;
             font-size:1.6rem;
+            font-style: italic;
             &:hover, &:focus {
               color:$secondary-color;
-              border-bottom-color:$secondary-color;
             }
           }
         }
