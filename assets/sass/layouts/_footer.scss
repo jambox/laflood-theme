@@ -14,7 +14,7 @@ footer {
 
   a {
     &:link, &:visited {
-      @extend .Franklin--book;
+      @extend .Franklin--medium;
       text-transform: uppercase;
       border-bottom:0;
       text-decoration:none;
@@ -48,7 +48,7 @@ footer {
     margin-top:2rem;
     @include breakpoint($breakpoint-sm) {
       margin-top:0;
-      text-align:right;
+      text-align:left;
       font-size: 1.8rem;
     }
 
