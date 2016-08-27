@@ -29,9 +29,18 @@ footer {
     li {
       padding-right: 1.2rem;
     }
+    @media (max-width:$breakpoint-sm) {
+      margin-top:.5em;
+      text-align:center;
+      li {
+        padding-left:1.2rem;
+        width:50px;
+      }
+    }
   }
 
   .nav-footer {
+    // @extend h4;
     @include font-smoothing;
     font-size:3rem;
     text-align:center;
@@ -41,6 +50,7 @@ footer {
       text-align:right;
       font-size: 1.8rem;
     }
+
   }
 
 } // footer
