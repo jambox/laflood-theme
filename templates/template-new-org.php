@@ -51,7 +51,6 @@
 								'id'           => 'org-submission-form',
 								'post_id'      => 'new_post',
 								'post_title'   => true,
-								'post_content' => true,
 								'new_post'     => array(
 									'post_type'   =>  get_org_cpt_name(),
 									'post_status' => 'draft'
