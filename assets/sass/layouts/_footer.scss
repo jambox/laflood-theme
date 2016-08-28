@@ -43,13 +43,25 @@ footer {
   .nav-footer {
     // @extend h4;
     @include font-smoothing;
-    font-size:3rem;
-    text-align:center;
-    margin-top:2rem;
-    @include breakpoint($breakpoint-sm) {
+    @media (max-width:$breakpoint-lg) {
+      font-size:2.5rem;
+      margin:2rem 0;
+      padding-top:0.8em;
+      border-top:1px solid $light-gray;
+      text-align:left;
+    }
+
+    @media (max-width:$breakpoint-sm) {
+      text-align:center;
+    }
+    @include breakpoint($breakpoint-lg) {
       margin-top:0;
       text-align:left;
       font-size: 1.8rem;
+    }
+    li {
+      line-height:1;
+      margin-bottom:0.5em;
     }
 
   }
