@@ -109,31 +109,6 @@ function get_category_link_by_slug( $slug = 0 ) {
 }
 
 
-function laflood_org_archive_query( $query ) {
-  if ( is_org_archive() && $query->is_main_query() && !is_admin() ) {
-    set_query_var('post_parent', 0 );
-    set_query_var('post_status', array('publish') );
-    set_query_var('orderby', 'menu_order' );
-  }
-} // END laflood_org_archive_query()
-
-add_action('pre_get_posts','laflood_org_archive_query');
-
-
-function laflood_add_org_category_archive( $query ) {
-  if( is_category() && $query->is_main_query() ) {
-    $post_type = get_query_var('post_type');
-    $proj_cpt = get_org_cpt_name();
-    $post_type = $post_type ? array($post_type, $proj_cpt) : array($proj_cpt);
-    $query->set('post_type',$post_type);
-  }
-    return $query;   
-
-} // END laflood_add_org_category_archive()
-
-add_action('pre_get_posts','laflood_add_org_category_archive');
-
-
 function visitor_type() {
   global $wp_query;
   if( is_page('want-to-help') || is_page('need-help') ) {
