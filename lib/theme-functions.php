@@ -351,6 +351,9 @@ function lfr_acf_save_post( $post_id ) {
     // Don't do this on the ACF post type
     if ( get_post_type( $post_id ) == 'acf' ) return;
 
+    // Don't do this in admin
+    if ( is_admin() ) return;
+
     // Get the Fields
     $fields = get_field_objects( $post_id );
 
