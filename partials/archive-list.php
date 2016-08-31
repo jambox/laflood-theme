@@ -30,10 +30,10 @@ if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slu
     <li class="org-item">
       <header>
         <h2 class="org-title"><?php
-        /*'<a href="', the_permalink(), '">',*/ 
-        if (!empty($org_website) ) {
-          echo '<a href="', esc_url($org_website), '">';
-        }
+        echo '<a href="', the_permalink(), '">',
+        /* if (!empty($org_website) ) {
+          '<a href="', esc_url($org_website), '">';
+        } */
         the_title();
         echo '</a>'; ?></h2>
       </header>
