@@ -12,7 +12,7 @@
 		
 		$org_location_type_object = get_field_object('field_57ba96f045dad');	
 		$org_location_type = get_field('org_location_type');
-		$org_location_type_label = $org_location_type_object['choices'][ $org_location_type ];
+		$org_location_type_label = $org_handles_goods ? $org_location_type_object['choices'][ $org_location_type ] : false;
 
 		$org_website = get_field('org_website');
 		$org_main_phone = get_field('org_main_phone');
