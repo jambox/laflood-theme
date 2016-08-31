@@ -9,6 +9,13 @@ get_header();
 
 $organizations = cpt_query( get_org_cpt_name() );
 ?>
+<div id="map-wrap">
+	<div class="col-md-12">
+		<?php create_map(); ?>
+	</div>
+</div>
+
+
 <div class="col-md-12">
 <?php
 
@@ -29,5 +36,4 @@ $organizations = cpt_query( get_org_cpt_name() );
 
 ?>
 </div>
-
 <?php get_footer(); ?>

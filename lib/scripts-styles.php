@@ -22,7 +22,8 @@ function client_scripts($hook) {
     );
 
     if( is_page_template('templates/template-map.php') ) {
-      // Main Client Script
+      
+      // Load map script
       wp_enqueue_script(
         THEME_PREFIX .'-map-js',
         THEME_URL . 'dist/scripts/map.js',
@@ -39,6 +40,21 @@ function client_scripts($hook) {
           'template_url' => get_bloginfo('template_url')
         )
       );
+
+      // Load Mapbox 
+      wp_enqueue_script(
+        THEME_PREFIX . 'mapbox',
+        'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
+        array('jquery')
+      );
+
+      // Load Leaflet Draw 
+      wp_enqueue_script(
+        THEME_PREFIX . 'leaflet-draw',
+        '//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.js',
+        array('jquery')
+      );
+
       
     }
 
@@ -63,6 +79,38 @@ function client_styles() {
 
     // wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ie.css", array( THEME_PREFIX . '-theme' )  );
     // $wp_styles->add_data( THEME_PREFIX . '-ie', 'conditional', 'IE' );
+
+
+    global $is_IE;
+    $userAgentTokens = explode(' ', $_SERVER['HTTP_USER_AGENT']);
+    $version = isset( $userAgentTokens[3] ) ? floatval( $userAgentTokens[3] ) : 0;
+
+    if ( !$is_IE || ($is_IE && $version >= 8) ){
+
+      // Add mapbox styles
+      wp_register_style( 'mapbox-css', 'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css', false, '1.0.0' );
+      wp_enqueue_style( 'mapbox-css' );
+
+      // This might not be relevant if we're not drawing geometry on the map
+
+      // global $post;
+      // $post_name = isset( $post->post_name ) ? $post->post_name : '';
+      // if ( in_array( $post_name, array('home','locations') ) ) {
+      //   // Add mapbox styles
+      //   wp_register_style( 'leaflet-draw-css', '//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-draw/v0.2.2/leaflet.draw.css', false, '1.0.0' );
+      //   wp_enqueue_style( 'leaflet-draw-css' );
+      
+      // }
+
+    }
+    if ( $is_IE && $version < 8 )
+    {
+      // Add mapbox styles
+      wp_register_style( 'mapbox-ie-css', '//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css', false, '1.0.0' );
+      wp_enqueue_style( 'mapbox-ie-css' );
+    }
+
+
 
 }
 add_action( 'wp_enqueue_scripts', 'client_styles' );
