@@ -1,3 +1,9 @@
+.single-lfr_org {
+	p {
+		font-size: 2.2rem;
+	}
+}
+
 .single-map {
 	width: 100%;
 	height: 280px;
@@ -10,5 +16,66 @@
 
 	img {
 		max-width: inherit !important;
+	}
+}
+
+.single-sidebar {
+	line-height: 1.4;
+	@extend .Franklin--medium;
+	letter-spacing: 0.03em;
+	@include font-smoothing;
+	color: #A7A9AB; //@TODO change this to global colors
+	
+	// @TODO: This is the same as the footer, merge and @extend.
+	a {
+		&:link, &:visited {
+	    text-transform: uppercase;
+	    border-bottom:0;
+	    text-decoration:none;
+		}
+		&:hover, &:active, &:focus {
+		  text-decoration:underline;
+		}
+	}
+
+	.org-location {
+		text-transform: uppercase;
+		color: $text-color;
+	}
+
+	h3 {
+		@extend .Franklin--medium;
+		margin-top: 25px;
+		margin-bottom: 3px;
+		font-size: 1.6rem;
+		color: inherit;
+		text-transform: uppercase;
+	}
+
+	.org-contacts > ul,
+	.org-services {
+		@extend .Freight--book;
+		padding-left: 20px;
+		list-style: disc;
+	}
+
+	.org-contacts {
+
+		&--name span {
+			color: $text-color;
+		}
+
+		&--details a {
+			text-transform: none;
+
+			&:last-of-type {
+				padding-left: 15px;
+			}
+		}
+	}
+
+	.org-services a {
+		text-transform: none;
+		font-style: italic;
 	}
 }
