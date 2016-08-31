@@ -45,7 +45,7 @@
     if (
       is_singular(get_org_cpt_name()) ||
       page_needs_map() ) : ?>
-      <div class="page-header-row row">
+      <div class="page-header-row">
         <?php if ( is_singular(get_org_cpt_name()) ) {
           get_template_part('partials/single-map');
         } else {
