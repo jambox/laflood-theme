@@ -11,7 +11,7 @@
 
   // $.preloadImages( laflood_globals.template_url + "/assets/images/loading-image.svg" );
 
-  //
+  //////
   // Google Map for Single Pages
   //
 
@@ -37,6 +37,12 @@
     });
     // center map
     center_map( map );
+    // keep map centered on window resize
+    google.maps.event.addDomListener(window, "resize", function() {
+        var center = map.getCenter();
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(center); 
+    });
     // return map
     return map;
   }
@@ -89,6 +95,8 @@
   // document.ready
   $( document ).ready(function() {
 
+    // Google Map
+    //
     // only call map on org single pages
     if ($('body').hasClass('single-lfr_org') ) {
       $('.single-map').each(function(){
