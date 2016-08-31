@@ -39,20 +39,27 @@
           </div>
         </div>
       </nav>
-    </header><?php
+    </header>
 
-    if ( is_singular(get_org_cpt_name()) ) {
-      get_template_part('partials/single-map');
-    }
+   <div class="content-wrap"><?php
+    if ( page_needs_map() ): ?>
+      <div class="page-header-row row">
+        <div class="col-md-12">
+          <?php create_map(); ?>
+        </div>
+      </div>
+    <?php endif ?>
+    <div class="container">
+      <?php 
+      if ( is_singular(get_org_cpt_name()) ) {
+        get_template_part('partials/single-map');
+      }
 
-    ?><div class="content-wrap container">
+      ?>
       <main class="content row main" role="main">
 
       <?php
       if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
         breadcrumb_trail();
       } ?>
-
-      <div class="col-md-12">
-        <?php create_map(); ?>
-      </div>
+    

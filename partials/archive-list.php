@@ -4,7 +4,7 @@ $queried_object_id = $queried_object->term_id;
 
 if( have_posts() ) :
 
-if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'general-resources' && !is_client_page() ) : ?>
+if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'recovery-resources' && !is_client_page() ) : ?>
   <h3 class="top-orgs-header">Some highly recommended ways to give in this category are listed below:</h3>
 <?php endif; ?>
 <ul class="org-list">
@@ -48,7 +48,7 @@ if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slu
         <div class="tag-list">
           <ul class="list-unstyled list-inline">
             <?
-              echo '<h5>', $queried_object->slug == 'general-resources' ? 'Available information' : 'Services offered', ':</h5>';
+              echo '<h5>', $queried_object->slug == 'recovery-resources' ? 'Available information' : 'Services offered', ':</h5>';
 
               $term_list = [];
               foreach ( $terms as $term ) {

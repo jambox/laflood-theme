@@ -380,5 +380,17 @@ function lfr_acf_save_post( $post_id ) {
 add_action( 'acf/save_post', 'lfr_acf_save_post', 10, 1 );
 
 
+function page_needs_map() {
+  global $wp_query;
+  if( is_page_template('templates/template-map.php') ) :
+    query_posts('post_type=' . get_org_cpt_name() . "&posts_per_page=-1" );
+    return true;
+  endif;
+
+  return false;
+
+} // END page_needs_map()
+
+
 
 ?>

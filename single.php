@@ -1,24 +1,24 @@
 <?php get_header(); ?>
   
 <?php while (have_posts()) : the_post(); ?>
-  <?php 
-    // Organizations Meta
-    $org_category = get_field('org_category');
-    $org_parent_org = get_field('org_parent_org');
-    $org_services = get_field('org_services');
-    $org_visitor_type = get_field('org_visitor_type');
-    $org_location = get_field('org_location');
-    $org_handles_goods = get_field('org_handles_goods');
-    
-    $org_location_type_object = get_field_object('field_57ba96f045dad');  
-    $org_location_type = get_field('org_location_type');
-    $org_location_type_label = $org_location_type_object['choices'][ $org_location_type ];
 
-    $org_website = get_field('org_website');
-    $org_main_phone = get_field('org_main_phone');
-    $org_main_email = get_field('org_main_email');
-    $org_contacts = get_field('org_contacts');
-  ?>
+		// Organizations Meta
+		$org_category = get_field('org_category');
+		$org_parent_org = get_field('org_parent_org');
+		$org_services = get_field('org_services');
+		$org_visitor_type = get_field('org_visitor_type');
+		$org_location = get_field('org_location');
+		$org_handles_goods = get_field('org_handles_goods');
+		
+		$org_location_type_object = get_field_object('field_57ba96f045dad');	
+		$org_location_type = get_field('org_location_type');
+		$org_location_type_label = $org_handles_goods ? $org_location_type_object['choices'][ $org_location_type ] : false;
+
+		$org_website = get_field('org_website');
+		$org_main_phone = get_field('org_main_phone');
+		$org_main_email = get_field('org_main_email');
+		$org_contacts = get_field('org_contacts');
+	?>
   <article <?php post_class(); ?>>
     <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
