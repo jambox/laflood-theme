@@ -39,9 +39,13 @@
           </div>
         </div>
       </nav>
-    </header>
+    </header><?php
 
-   <div class="content-wrap container">
+    if ( is_singular(get_org_cpt_name()) ) {
+      get_template_part('partials/single-map');
+    }
+
+    ?><div class="content-wrap container">
       <main class="content row main" role="main">
 
       <?php
