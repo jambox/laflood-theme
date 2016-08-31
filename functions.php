@@ -10,7 +10,7 @@
  *
  */
 $bolt_includes = array(
-  'lib/define.php',             // Helper Functions
+  'lib/define.php',             // Define Constants
   'lib/utils.php',              // Helper Functions
   'lib/init.php',               // Initial theme setup and constants
   'lib/logging.php',            // Debugging / Kenny loggins stuff
