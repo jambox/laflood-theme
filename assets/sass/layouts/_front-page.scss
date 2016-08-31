@@ -2,7 +2,7 @@ body.home {
 
   .home-page-section {
 
-    margin:3rem 0 5rem;
+    margin:3rem 0 4.5rem;
 
     .home-page-ctas--wrap {
       @extend .Clarendon--light;
@@ -86,4 +86,17 @@ body.home {
     }
 
   } // .home-page-section
+  .home-page-resources-cta {
+    margin-top:3rem;
+    a {
+      &:link, &:visited {
+        color: $brand-color;
+        border-bottom-color:$brand-color;
+      }
+      &:hover, &:active, &:focus {
+        color: $brand-color;
+        border-bottom-color:transparent;
+      }      
+    }
+  }
 }

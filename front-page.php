@@ -38,6 +38,13 @@
 	
 				</div>
 			</div>
+      <?php if ( $slug == 'need-help' ): ?>
+        <div class="home-page-resources-cta">
+          <p class="intro">For next steps and help with long term recovery,</p>
+          <h4><a href="<?php echo site_url( $slug . '/recovery-resources' ); ?>">view our recovery resources<i class="fa fa-fw fa-arrow-right"></i></a></h4>
+        </div>
+        
+      <?php endif ?>
 		</section>
 	<?php
   endforeach;?>
