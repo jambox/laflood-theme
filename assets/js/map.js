@@ -36,6 +36,8 @@ $(function () {
         .loadURL(laflood_globals.template_url + '/lib/maps/locations.geojson')
         .addTo(map);
 
+    map.scrollZoom.disable();
+
     console.log( featureLayer );
         
     featureLayer.on('click', function( e ){

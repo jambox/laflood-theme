@@ -41,14 +41,21 @@
       </nav>
     </header>
 
-   <div class="content-wrap container">
-      <main class="content row main" role="main">
+   <div class="content-wrap">
+      
+      <?php if ( page_needs_map() ): ?>
+        <div class="page-header-row row">
+          <div class="col-md-12">
+            <?php create_map(); ?>
+          </div>
+        </div>
+      <?php endif ?>
 
-      <?php
-      if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
-        breadcrumb_trail();
-      } ?>
+      <div class="container">
+        <main class="content row main" role="main">
 
-      <div class="col-md-12">
-        <?php create_map(); ?>
-      </div>
+        <?php
+        if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
+          breadcrumb_trail();
+        } ?>
+    
