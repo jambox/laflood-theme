@@ -11,3 +11,4 @@ npm-debug.log
 bower_components/
 dist/
 _Design
+locations.geojson
