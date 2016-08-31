@@ -16,10 +16,10 @@
 @import 'common/flex-box';
 @import 'common/colors';
 @import 'common/typography';
+@import 'common/wp-classes';
 
 // Bootstrap Overrides
 @import 'overrides/modals';
-@import 'overrides/wp-classes';
 
 // Layouts
 @import 'layouts/header';
@@ -33,12 +33,14 @@
 @import 'layouts/page-submissions';
 @import 'layouts/resource-bucket';
 @import 'layouts/resource-list';
-
-// TinyMCE
-@import "overrides/tinymce";
+@import 'layouts/single-page';
 
 // Components
 @import 'components/search-bar';
 @import 'components/sidebar';
 @import 'components/main-cats-list';
 @import 'components/navigation';
+
+// Overrides
+@import "overrides/tinymce";
+@import 'overrides/acf';
