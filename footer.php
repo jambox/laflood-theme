@@ -6,7 +6,10 @@
     <footer>
       <div class="footer-wrap">
         <?php
-        if( visitor_type() && !is_page('explore') ) {
+        if(
+          //visitor_type() &&
+          !is_page('explore')
+        ) {
           get_template_part('partials/components/search-module');
         }
         ?>

@@ -128,6 +128,10 @@ function is_client_page() {
   return visitor_type() == 'need-help';
 } // is_client_page()
 
+function is_volunteer_page() {
+  return visitor_type() == 'want-to-help';
+} // is_client_page()
+
 
 /*===================================
 =            CPT Helpers            =
