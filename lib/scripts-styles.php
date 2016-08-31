@@ -21,6 +21,33 @@ function client_scripts($hook) {
       )
     );
 
+    
+    // Load map script
+    wp_enqueue_script(
+      THEME_PREFIX .'-map-js',
+      THEME_URL . 'dist/scripts/map.js',
+      array(THEME_PREFIX .'-main-js', 'jquery','underscore'),
+      $ver = get_bloginfo('version'),
+      $in_footer = true
+    );
+
+    wp_localize_script(
+      THEME_PREFIX .'-main-js',
+      'laflood_map_globals',
+      array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'template_url' => get_bloginfo('template_url')
+      )
+    );
+
+    // Load Mapbox 
+    wp_enqueue_script(
+      THEME_PREFIX . 'mapbox',
+      'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js',
+      array('jquery')
+    );
+    
+
     // wp_enqueue_script( THEME_PREFIX .'-google-maps', "https://maps.googleapis.com/maps/api/js?" . GOOGLE_MAPS_API_KEY );
 
     
@@ -42,6 +69,27 @@ function client_styles() {
 
     // wp_enqueue_style( THEME_PREFIX . '-ie', THEME_URL . "assets/css/ie.css", array( THEME_PREFIX . '-theme' )  );
     // $wp_styles->add_data( THEME_PREFIX . '-ie', 'conditional', 'IE' );
+
+
+    global $is_IE;
+    $userAgentTokens = explode(' ', $_SERVER['HTTP_USER_AGENT']);
+    $version = isset( $userAgentTokens[3] ) ? floatval( $userAgentTokens[3] ) : 0;
+
+    if ( !$is_IE || ($is_IE && $version >= 8) ){
+
+      // Add mapbox styles
+      wp_register_style( 'mapbox-css', 'https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css', false, '1.0.0' );
+      wp_enqueue_style( 'mapbox-css' );
+
+    }
+    if ( $is_IE && $version < 8 )
+    {
+      // Add mapbox styles
+      wp_register_style( 'mapbox-ie-css', '//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css', false, '1.0.0' );
+      wp_enqueue_style( 'mapbox-ie-css' );
+    }
+
+
 
 }
 add_action( 'wp_enqueue_scripts', 'client_styles' );

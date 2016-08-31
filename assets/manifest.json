@@ -3,13 +3,17 @@
     "main.js": {
       "files": [
         "js/main.js",
-        "js/plugins/offcanvas-menu.js",
-        "js/org-modal.js"        
+        "js/plugins/offcanvas-menu.js"
       ],
       "vendor": [
         "vendor/some/path/file.js"
       ],
       "main": true
+    },
+    "map.js": {
+      "files": [
+        "js/map.js"
+      ]
     },
     "laflood.css": {
       "files": [

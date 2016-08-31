@@ -10,7 +10,7 @@
  *
  */
 $bolt_includes = array(
-  'lib/define.php',             // Helper Functions
+  'lib/define.php',             // Define Constants
   'lib/utils.php',              // Helper Functions
   'lib/init.php',               // Initial theme setup and constants
   'lib/logging.php',            // Debugging / Kenny loggins stuff
@@ -22,8 +22,9 @@ $bolt_includes = array(
   'lib/theme-functions.php',    // Theme-specific functions
   'lib/admin.php',              // Admin functions
   'lib/acf-mods.php',           // ACF Mods. duh.
-  'lib/widgets.php',             // Theme-specific widgets
-  'lib/shortcodes.php',        // Theme-specific shortcodes
+  'lib/widgets.php',            // Theme-specific widgets
+  'lib/shortcodes.php',         // Theme-specific shortcodes
+  'lib/maps/map-functions.php'   // Map Stuff
 );
 
 foreach ($bolt_includes as $file) {
