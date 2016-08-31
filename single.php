@@ -150,7 +150,14 @@
     <div class="single-footer col-md-8"><h5>
     <?php
     if( $org_category ) {
-      echo 'Find more places to donate <a href="/want-to-help/' . $org_category->slug . '">' . $org_category->name . '</a>. ';
+      $html = 'Find more places to offer ';
+      $orgs = array();
+      foreach( $org_category as $org_cat ) {
+        $orgs[] = '<a href="/want-to-help/' . $org_cat->slug . '">' . $org_cat->name . '</a>';   
+      }
+      $html .= implode(', ', $orgs);
+      $html .= '.';
+      echo $html;
     }
     ?>
     </h5></div>
