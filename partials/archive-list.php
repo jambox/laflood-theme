@@ -48,7 +48,7 @@ if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slu
         <div class="tag-list">
           <ul class="list-unstyled list-inline">
             <?
-              echo '<h5>', $queried_object->slug == 'general-resources' ? 'Available information' : 'Services offered', ':</h5>';
+              echo '<h5>', $queried_object->slug == 'recovery-resources' ? 'Available information' : 'Services offered', ':</h5>';
 
               $term_list = [];
               foreach ( $terms as $term ) {
