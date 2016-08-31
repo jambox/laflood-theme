@@ -1,5 +1,5 @@
-jQuery.fn.exists = function(){return this.length>0;};
-var $ = jQuery;
+// .noConflict()
+(function($) {
 
 // $.preloadImages = function() {
 //   for (var i = 0; i < arguments.length; i++) {
@@ -33,3 +33,4 @@ $(function () {
 
 }); // jQuery document ready
 
+})(jQuery);

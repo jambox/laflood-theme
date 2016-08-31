@@ -58,7 +58,7 @@ $(function () {
       
   if (targetLink.length > 0) {
     if ( 'map' == targetLink ) {
-      $(document).ready( function () { $.scrollTo('.locations-wrap', 1000, { axis : 'y' } ) });
+      $(document).ready( function () { $.scrollTo('.locations-wrap', 1000, { axis : 'y' } ); });
     } else {
       $(document).ready( function () {
         var destination = 'region-names',
@@ -94,7 +94,7 @@ $(function () {
     
     if( window.location.pathname.match(/locations/) ) {
     
-      var targetLink = $(this).find(':selected').attr('data-attr-slug')
+      var targetLink = $(this).find(':selected').attr('data-attr-slug');
 
       if (targetLink.length > 0) {
 /*         debugger; */
@@ -176,7 +176,7 @@ $(function () {
     } else {
         map.once('zoomend',function (e) {
           _setView(the_layer, false);
-        })
+        });
         _setView(the_layer, false);
 /*         map.setZoom(13); */
     }
@@ -201,18 +201,18 @@ $(function () {
       
       map.once('zoomend',function (e) {
         layer.openPopup();
-      })
+      });
 
       map.once('moveend',function (e) {
         if( ! is_user_drag )
           layer.openPopup();
-      })
+      });
 
       map.setView(layer._latlng, 14,
         {
           pan : {
             animate : true,
-            duration : .8
+            duration : 0.8
           },
           zoom : {
             animate : true
