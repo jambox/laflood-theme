@@ -25,7 +25,7 @@
     // }
 	?>
   <article <?php post_class(); ?>>
-    <header class="col-md-12">
+    <header class="col-md-8">
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php if( $org_parent_org ) {
         echo '<h2>', $org_parent_org->name, '</h2>';
@@ -34,7 +34,8 @@
     <div class="single-entry-content col-md-8">
       <?php the_content(); ?>
     </div>
-    <div class="single-sidebar col-md-3 col-md-offset-1">
+    <div class="single-sidebar col-md-3">
+      <h3>Contact Info</h3>
     <?php
       echo '<ul class="org-location list-unstyled">';
     if( $org_location ) {
@@ -81,7 +82,7 @@
 
     if( have_rows('org_contacts') ) {
       echo '<ul class="org-contacts list-unstyled">',
-           '<h3>Contact</h3>';
+           '<h3>Additional Contact</h3>';
 
       while ( have_rows('org_contacts') ) { the_row(); 
 
@@ -150,7 +151,7 @@
     <div class="single-footer col-md-8"><h5>
     <?php
     if( $org_category ) {
-      $html = 'Find more places to offer ';
+      $html = '<strong>More:</strong> Find organizations in ';
       $orgs = array();
       foreach( $org_category as $org_cat ) {
         $orgs[] = '<a href="/want-to-help/' . $org_cat->slug . '">' . $org_cat->name . '</a>';   

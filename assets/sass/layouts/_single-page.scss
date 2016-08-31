@@ -6,6 +6,17 @@
 	.content-wrap {
 		padding-bottom: 0;
 	}
+
+	.entry-title {
+		// TODO : Refactor this so it extends an h1 in _typography.scss
+		font-size:4rem;	  
+		@media (min-width:$breakpoint-md) {
+			font-size:5.4rem;	  
+		}
+		@media (min-width:$breakpoint-lg) {
+			font-size:6.4rem;	  
+		}
+	}
 }
 
 .single-map {
@@ -29,6 +40,13 @@
 	letter-spacing: 0.03em;
 	@include font-smoothing;
 	color: #A7A9AB; //@TODO change this to global colors
+
+
+	@media (min-width:$breakpoint-lg) {
+		border-left:1px solid $light-gray;
+		padding-left:4%;
+		margin-left:4.333333%;
+	}
 	
 	// @TODO: This is the same as the footer anchors, merge and @extend.
 	a {
@@ -48,10 +66,10 @@
 	}
 
 	h3 {
-		@extend .Franklin--medium;
+		@extend .Franklin--demi;
 		margin-top: 25px;
 		margin-bottom: 3px;
-		font-size: 1.6rem;
+		font-size: 2rem;
 		color: inherit;
 		text-transform: uppercase;
 	}
