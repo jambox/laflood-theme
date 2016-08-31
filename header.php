@@ -49,13 +49,13 @@
         </div>
       </div>
     <?php endif ?>
-    <?php 
-    if ( is_singular(get_org_cpt_name()) ) {
-      get_template_part('partials/single-map');
-    }
-
-    ?>
     <div class="container">
+      <?php 
+      if ( is_singular(get_org_cpt_name()) ) {
+        get_template_part('partials/single-map');
+      }
+
+      ?>
       <main class="content row main" role="main">
 
       <?php
