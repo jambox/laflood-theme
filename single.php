@@ -60,7 +60,8 @@
         echo '<li><a href="mailto:', $org_main_email, '">email</a></li>';
       }
       if ( $org_main_phone ) {
-        echo '&middot;<li><a href="tel:+1' . preg_replace('/[^\d+]/', '', $org_main_phone) . '">', $org_main_phone, '</a></li>';
+        if ( $org_main_email ) echo '&middot;';
+        echo '<li><a href="tel:+1' . preg_replace('/[^\d+]/', '', $org_main_phone) . '">', $org_main_phone, '</a></li>';
       }
       echo '</ul>';
     }
@@ -71,7 +72,8 @@
         echo '<li><a href="', $org_website, '">Website</a></li>';
       }
       if ( $org_location ) {
-        echo '&middot;<li><a href="https://maps.google.com?q=', urlencode($org_location['address']), '" target="_blank">Map</a></li>';
+        if ( $org_website ) echo '&middot;';
+        echo '<li><a href="https://maps.google.com?q=', urlencode($org_location['address']), '" target="_blank">Map</a></li>';
       }
       echo '</ul></li>';
     }

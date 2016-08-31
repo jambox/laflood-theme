@@ -67,9 +67,9 @@
 
 		&--details a {
 			text-transform: none;
-
-			&:last-of-type {
-				padding-left: 15px;
+			padding-left: 15px;
+			&:first-of-type {
+				padding-left: 0;
 			}
 		}
 	}
