@@ -47,9 +47,10 @@ function client_scripts($hook) {
       array('jquery')
     );
     
-
-    // wp_enqueue_script( THEME_PREFIX .'-google-maps', "https://maps.googleapis.com/maps/api/js?" . GOOGLE_MAPS_API_KEY );
-
+    // Load Google Maps
+    if( is_singular(get_org_cpt_name()) ) {
+      wp_enqueue_script( THEME_PREFIX .'-google-maps', "https://maps.googleapis.com/maps/api/js?key=" . GOOGLE_MAPS_API_KEY );
+    }
     
 }
 add_action( 'wp_enqueue_scripts', 'client_scripts' );
