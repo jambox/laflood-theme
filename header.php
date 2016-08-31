@@ -48,3 +48,7 @@
       if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
         breadcrumb_trail();
       } ?>
+
+      <div class="col-md-12">
+        <?php create_map(); ?>
+      </div>

@@ -6,30 +6,35 @@ $geoJSON = array(
   "features" => array()
 );
 
-if ($organizations->have_posts()) :
-  while ($organizations->have_posts()) : $organizations->the_post();
-    $locationMap = get_field('address');
-    $address = ucwords(strtolower($locationMap["address"]));
-    $coords = explode(',',$locationMap["coordinates"]);
-    $sanitizedPhone = str_replace( '-', '', get_field("phone_number") ); 
+if (have_posts()) :
+  while (have_posts()) : the_post();
+
+    if( get_field("org_location") )  {
+      $address_obj = get_field("org_location" );
+    } else {
+      continue;
+    }
+    // $address_obj = get_field("org_location", post->ID );
+    $address = ucwords(strtolower($address_obj["address"]));
+    $sanitizedPhone = str_replace( '-', '', get_field("org_main_phone") ); 
     
-    if ( has_post_thumbnail() ) :
-      $image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail');
-      $image = '<img src="'.$image[0].'" title="'.ucwords(strtolower(get_the_title())).'"><br />';
-    else:
-      $image = '';
-    endif;
+    // if ( has_post_thumbnail() ) :
+    //   $image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail');
+    //   $image = '<img src="'.$image[0].'" title="'.ucwords(strtolower(get_the_title())).'"><br />';
+    // else:
+    //   $image = '';
+    // endif;
     
     $geoJSON["features"][] = array(
       "type" => "Feature",
       "geometry" => array(
         "type" => "Point",
-        // "coordinates" => array( (float)$coords[1], (float)$coords[0] ),
+        "coordinates" => array( (float)$address_obj['lng'], (float)$address_obj['lat'] ),
       ),
       "properties" => array(
         "wpID" => get_the_ID(),
         "loc_slug" => the_slug(),
-        // "loc_address" => $locationMap["address"],
+        "loc_address" => $address_obj["address"],
         "title" => ucwords(strtolower(get_the_title())),
         "marker-color"  => "#f63a39",
         "marker-size"   => "large",

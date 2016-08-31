@@ -14,7 +14,7 @@ var the_layer; // add this var to the global scope
 $(function () {
   //////////////    MapBox START     ////////////////////
     
-  if ($('.page-template-template-map').length > 0 && typeof L === 'object' ){
+  if ($('#map-elem').length > 0 && typeof L === 'object' ){
   
     // var mapArgs = {
     //   scrollWheelZoom : false
@@ -29,16 +29,16 @@ $(function () {
     // var map = L.mapbox.map('map', mapbox_token, mapArgs) // original initialization
 
     // Element with id="map-wrap"
-    var map = L.mapbox.map('map-wrap', 'mapbox.streets')
-                      .setView([29.962668238805545,-90.125], 11);
+    var map = L.mapbox.map('map-elem', 'mapbox.streets')
+                      .setView([30.4416034,-91.1787027], 11);
   
-    var markerLayer = L.mapbox.markerLayer()
-        .loadURL(laflood_globals.template_url + '/lib/mapbox/locations.geojson')
+    var featureLayer = L.mapbox.featureLayer()
+        .loadURL(laflood_globals.template_url + '/lib/maps/locations.geojson')
         .addTo(map);
 
-    console.log( markerLayer );
+    console.log( featureLayer );
         
-    markerLayer.on('click', function( e ){
+    featureLayer.on('click', function( e ){
       show_store_details( e );
     });
     
@@ -144,7 +144,7 @@ $(function () {
     
     var wpID = parseInt( $(this).attr('data-wpID') );
     
-    markerLayer.eachLayer(function (layer) {
+    featureLayer.eachLayer(function (layer) {
       if( layer.feature.properties.wpID == wpID )
         the_layer = layer;
     });    

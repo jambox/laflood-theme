@@ -12,8 +12,8 @@ function create_map() {
   require_once 'create-geojson.php'; // Create geoJSON file
   global $post;
   ?>
-  <div class="<?php echo $post->post_name; ?>-map-wrap map-wrap center-column">
-    <div id="<?php echo $post->post_name; ?>-map" class="dark map-div"></div>
+  <div iclass="map-wrap map-wrap center-column">
+    <div id="map-elem" class="dark map-div"></div>
   </div>
   <?php
 } // end home_map()
