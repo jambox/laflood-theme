@@ -1,6 +1,6 @@
 <?php get_header(); ?>
   
-<?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()) : the_post();
 
 		// Organizations Meta
 		$org_category = get_field('org_category');

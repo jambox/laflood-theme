@@ -42,22 +42,21 @@
     </header>
 
    <div class="content-wrap"><?php
-    if ( page_needs_map() ): ?>
+    if (
+      is_singular(get_org_cpt_name()) ||
+      page_needs_map() ) : ?>
       <div class="page-header-row row">
         <div class="col-md-12">
-          <?php create_map(); ?>
+          <?php if ( is_singular(get_org_cpt_name()) ) {
+            get_template_part('partials/single-map');
+          } else {
+            create_map();
+          } ?>
         </div>
       </div>
     <?php endif ?>
     <div class="container">
-      <?php 
-      if ( is_singular(get_org_cpt_name()) ) {
-        get_template_part('partials/single-map');
-      }
-
-      ?>
       <main class="content row main" role="main">
-
       <?php
       if ( !is_front_page() && function_exists('breadcrumb_trail') ) {
         breadcrumb_trail();
