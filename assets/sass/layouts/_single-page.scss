@@ -2,6 +2,10 @@
 	p {
 		font-size: 2.2rem;
 	}
+
+	.content-wrap {
+		padding-bottom: 0;
+	}
 }
 
 .single-map {
@@ -26,7 +30,7 @@
 	@include font-smoothing;
 	color: #A7A9AB; //@TODO change this to global colors
 	
-	// @TODO: This is the same as the footer, merge and @extend.
+	// @TODO: This is the same as the footer anchors, merge and @extend.
 	a {
 		&:link, &:visited {
 	    text-transform: uppercase;
@@ -77,5 +81,17 @@
 	.org-services a {
 		text-transform: none;
 		font-style: italic;
+	}
+}
+
+.single-footer {
+	color: #6D6E70; //@TODO change this to global colors
+	h5 {
+		margin-top: 60px;
+		margin-bottom: 0;
+	}
+
+	.large-link {
+		box-shadow: none;
 	}
 }

@@ -16,7 +16,7 @@ function bolt_custom_post_types() {
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,
-      'rewrite_slug' => 'orgs'
+      'rewrite_slug' => 'organization'
     ),
     RESOURCES_CPT_NAME => array(
       'singular' => 'Resource',

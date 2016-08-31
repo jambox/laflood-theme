@@ -31,7 +31,7 @@
         echo '<h2>', $org_parent_org->name, '</h2>';
       } ?>
     </header>
-    <div class="entry-content col-md-8">
+    <div class="single-entry-content col-md-8">
       <?php the_content(); ?>
     </div>
     <div class="single-sidebar col-md-3 col-md-offset-1">
@@ -147,6 +147,13 @@
 
     ?>
     </div>
+    <div class="single-footer col-md-8"><h5>
+    <?php
+    if( $org_category ) {
+      echo 'Find more places to donate <a href="/want-to-help/' . $org_category->slug . '">' . $org_category->name . '</a>. ';
+    }
+    ?>
+    </h5></div>
   </article>
 <?php endwhile; ?>
 
