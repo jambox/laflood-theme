@@ -89,9 +89,10 @@
 
 		&--details a {
 			text-transform: none;
-			padding-left: 15px;
+			padding-left: 8px;
 			&:first-of-type {
 				padding-left: 0;
+				padding-right: 8px;
 			}
 		}
 	}

@@ -62,7 +62,10 @@
       }
       if ( $org_main_phone ) {
         if ( $org_main_email ) echo '&middot;';
-        echo '<li><a href="tel:+1' . preg_replace('/[^\d+]/', '', $org_main_phone) . '">', $org_main_phone, '</a></li>';
+        $org_main_phone =  preg_replace('/[^\d+]/', '', $org_main_phone); // Remove non-int chars
+        $org_main_phone_formatted =  "(".substr($org_main_phone, 0, 3).") ".substr($org_main_phone, 3, 3)."-".substr($org_main_phone,6); // Re-format
+
+        echo '<li><a href="tel:+1' . $org_main_phone . '">', $org_main_phone_formatted, '</a></li>';
       }
       echo '</ul>';
     }
@@ -90,6 +93,9 @@
         $org_contact_title = get_sub_field('org_contact_title');
         $org_contact_email = get_sub_field('org_contact_email');
         $org_contact_phone = get_sub_field('org_contact_phone');
+        $org_contact_phone =  preg_replace('/[^\d+]/', '', $org_contact_phone); // Remove non-int chars
+        // Re-format        
+        $org_contact_phone_formatted =  "(".substr($org_contact_phone, 0, 3).") ".substr($org_contact_phone, 3, 3)."-".substr($org_contact_phone,6);
 
         echo '<ul><li><ul class="list-unstyled">';
         if ( $org_contact_name ) {
@@ -99,9 +105,11 @@
           '</li>';
         }
         if ( $org_contact_email || $org_contact_phone ) {
+          $pipe = $org_contact_email && $org_contact_phone ? ' | ' : '';
           echo '<li class="org-contacts--details">',
-          $org_contact_email ? '<a href="' . $org_contact_email . '"><em>email</em></a>' : '',
-          $org_contact_phone ? '<a href="tel:+1' . preg_replace('/[^\d+]/', '', $org_contact_phone) . '">' . $org_contact_phone . '</a>' : '',
+          $org_contact_email ? '<a href="' . $org_contact_email . '"><em>Email</em></a>' : '',
+          $pipe,
+          $org_contact_phone ? '<a href="tel:+1' . $org_contact_phone . '">' . $org_contact_phone_formatted . '</a>' : '',
           '</li>';
         }
 
