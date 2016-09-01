@@ -18,11 +18,15 @@ $org_main_phone = get_field('org_main_phone');
 $org_main_email = get_field('org_main_email');
 $org_contacts = get_field('org_contacts');
 
+$is_recovery_resource = is_recovery_resource();
+
+$item_link = $is_recovery_resource ? $org_website : get_permalink();
+
 ?>
 <li class="org-item col-md-4">
   <header>
     <h2 class="org-title"><?php
-    echo '<a href="', the_permalink(), '">',
+    echo '<a href="', $item_link, '">',
     /* if (!empty($org_website) ) {
       '<a href="', esc_url($org_website), '">';
     } */
@@ -30,14 +34,18 @@ $org_contacts = get_field('org_contacts');
     echo '</a>'; ?></h2>
   </header>
   <ul class="list-unstyled list-inline contact-list"><?php
-    if ($org_website):
-      ?><li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li><?php
-    endif?><?php
-    if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['address'] ?>" target="_blank">Map</a></li><?php
-    elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['lat'] . ', ' . $org_location['lng'] ?>" target="_blank">Map</a></li><?php
-    endif ?><?php
-    if ($org_main_phone): echo $org_website || isset( $org_location['lat'] ) ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
-    endif
+    if( !$is_recovery_resource ) :
+
+      if ($org_website && !$is_recovery_resource ):
+        ?><li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li><?php
+      endif?><?php
+      if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['address'] ?>" target="_blank">Map</a></li><?php
+      elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['lat'] . ', ' . $org_location['lng'] ?>" target="_blank">Map</a></li><?php
+      endif ?><?php
+      if ($org_main_phone): echo $org_website || isset( $org_location['lat'] ) ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
+      endif;
+      
+    endif;
  ?></ul>
   <div>
     <?php the_excerpt(); ?>

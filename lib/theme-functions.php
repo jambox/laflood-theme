@@ -422,6 +422,21 @@ function str_no_wrap( $title = 0, $after = '',$add_chevron = true ) {
 } // END str_no_wrap()
 
 
+function get_resources_cat_id() {
+  $cat_obj = get_category_by_slug( "recovery-resources" ); 
+  return $cat_obj->term_id;
+} // END get_resources_cat_id()
+
+
+
+function is_recovery_resource() {
+  return
+    get_queried_object()->slug == "recovery-resources"
+    ||
+    cat_is_ancestor_of( get_resources_cat_id(), get_queried_object()->term_id ) 
+  ;
+} // END is_recovery_resource()
+
 
 
 ?>
