@@ -25,7 +25,13 @@
       center      : new google.maps.LatLng(0, 0),
       mapTypeId   : google.maps.MapTypeId.ROADMAP,
       scrollwheel : false,
-      draggable   : false
+      draggable   : false,
+      zoomControl       : true,
+      mapTypeControl    : false,
+      streetViewControl : false,
+      rotateControl     : false,
+      scaleControl      : false,
+      fullscreenControl : false
     };
     // create map           
     var map = new google.maps.Map( $el[0], args);
