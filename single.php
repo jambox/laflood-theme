@@ -159,7 +159,7 @@
     <div class="single-footer col-md-8"><h5>
     <?php
     if( !empty($org_category) ) {
-      $html = '<strong>More:</strong> Find organizations in ';
+      $html = '<strong>More:</strong> Find organizations providing ';
       $orgs = array();
       foreach( $org_category as $org_cat ) {
         $orgs[] = '<a href="/want-to-help/' . $org_cat->slug . '">' . $org_cat->name . '</a>';   
