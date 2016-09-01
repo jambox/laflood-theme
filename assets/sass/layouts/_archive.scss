@@ -12,10 +12,9 @@ body.archive, body.search-results {
   .org-list {
     margin-top:4rem;
     .org-item {
-      border-bottom:1px solid $light-gray;
+      // border-bottom:1px solid $light-gray;
       padding-bottom:2rem;  
       margin-bottom:2rem;
-      width:100%;
 
       .org-meta {
         color:$gray;
@@ -61,9 +60,10 @@ body.archive, body.search-results {
       @extend h4;
       font-size:3.5rem;
       a {
-        border-bottom-color:transparent;
+        border-bottom:1px solid $gray;
         &:hover, &:active, &:focus {
-          text-decoration:underline;
+          // text-decoration:underline;
+          border-bottom:1px solid transparent;
         }
       }
     }

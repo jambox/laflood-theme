@@ -16,14 +16,14 @@ $org_main_email = get_field('org_main_email');
 $org_contacts = get_field('org_contacts');
 
 ?>
-<li class="org-item">
+<li class="org-item col-md-4">
   <header>
     <h2 class="org-title"><?php
     echo '<a href="', the_permalink(), '">',
     /* if (!empty($org_website) ) {
       '<a href="', esc_url($org_website), '">';
     } */
-    the_title();
+    str_no_wrap( get_the_title() );
     echo '</a>'; ?></h2>
   </header>
   <div class="small">

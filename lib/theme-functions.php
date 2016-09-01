@@ -396,5 +396,26 @@ function page_needs_map() {
 } // END page_needs_map()
 
 
+function right_chevron() {
+  return '<i class="fa fa-fw fa-chevron-right"></i>';  
+} // right_chevron()
+
+
+function str_no_wrap( $title = 0, $after = '', $add_chevron = true ) {
+  if( !$title ) return false;
+
+  $chev = $add_chevron ? right_chevron() : '';
+
+  $title_array = explode(' ', esc_attr( $title )); 
+  if (count($title_array) > 1 ) {
+    $title_array[count($title_array)-1] = '<span class="nowrap">'.($title_array[count($title_array)-1]). $after . $chev . '</span>'; 
+    return implode(' ', $title_array);  
+  }
+  return '';
+
+} // END str_no_wrap()
+
+
+
 
 ?>
