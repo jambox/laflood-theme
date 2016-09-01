@@ -1,6 +1,19 @@
 <?php
 $queried_object = get_queried_object();
-$queried_object_id = $queried_object->term_id; 
+$queried_object_id = $queried_object->term_id;
+$queried_object_tax = $queried_object->taxonomy;
+
+$children = get_term_children( $queried_object_id, $queried_object_tax);
+
+if (is_array($children) && count($children) > 0) {
+	echo '<ul>';
+	foreach ( $children as $child ) {
+		$term = get_term( $child, $queried_object_tax );
+		$parent = get_term( $term->parent, $queried_object_tax );
+		echo '<li><a href="/', visitor_type(), '/', $parent->slug, '/', $term->slug, '">', $term->name, '</a></li>';
+	}
+	echo '</ul>';
+}
 
 if( have_posts() ) :
 
