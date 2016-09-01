@@ -38,7 +38,7 @@
       <h3>Contact Info</h3>
     <?php
       echo '<ul class="org-location list-unstyled">';
-    if( $org_location ) {
+    if( !empty($org_location) ) {
       //$address = preg_replace('/[,]/', '<br>', $org_location['address'], 1);
       $address_array = explode(',', $org_location['address']);
       echo '<li>';
@@ -55,13 +55,13 @@
       echo '</li>';
     }
 
-    if( $org_main_phone || $org_main_email) {
+    if( !empty($org_main_phone) || !empty($org_main_email) ) {
       echo '<ul class="list-unstyled list-inline">';
-      if( $org_main_email ) {
+      if( !empty($org_main_email) ) {
         echo '<li><a href="mailto:', $org_main_email, '">email</a></li>';
       }
-      if ( $org_main_phone ) {
-        if ( $org_main_email ) echo '&middot;';
+      if ( !empty($org_main_phone) ) {
+        if ( !empty($org_main_email) ) echo '&middot;';
         $org_main_phone =  preg_replace('/[^\d+]/', '', $org_main_phone); // Remove non-int chars
         $org_main_phone_formatted =  "(".substr($org_main_phone, 0, 3).") ".substr($org_main_phone, 3, 3)."-".substr($org_main_phone,6); // Re-format
 
@@ -70,13 +70,14 @@
       echo '</ul>';
     }
 
-    if( $org_website || $org_location ) {
+    if( !empty($org_website) || !empty($org_location['address']) ) {
       echo '<li><ul class="list-unstyled list-inline">';
-      if ( $org_website ) {
+      if ( !empty($org_website) ) {
         echo '<li><a href="', $org_website, '">Website</a></li>';
       }
-      if ( $org_location ) {
-        if ( $org_website ) echo '&middot;';
+      if ( !empty($org_location) ) {
+        if ( !empty($org_website) ) echo '&middot;';
+        print_r($org_location['address']);
         echo '<li><a href="https://maps.google.com?q=', urlencode($org_location['address']), '" target="_blank">Map</a></li>';
       }
       echo '</ul></li>';
@@ -98,13 +99,13 @@
         $org_contact_phone_formatted =  "(".substr($org_contact_phone, 0, 3).") ".substr($org_contact_phone, 3, 3)."-".substr($org_contact_phone,6);
 
         echo '<ul><li><ul class="list-unstyled">';
-        if ( $org_contact_name ) {
+        if ( !empty($org_contact_name) ) {
           echo '<li class="org-contacts--name">',
           $org_contact_name  ? '<span>' . $org_contact_name . '</span>' : '',
           $org_contact_title ? ', <em>' . $org_contact_title . '</em>' : '',
           '</li>';
         }
-        if ( $org_contact_email || $org_contact_phone ) {
+        if ( !empty($org_contact_email) || !empty($org_contact_phone) ) {
           $pipe = $org_contact_email && $org_contact_phone ? ' | ' : '';
           echo '<li class="org-contacts--details">',
           $org_contact_email ? '<a href="mailto:' . $org_contact_email . '"><em>Email</em></a>' : '',
@@ -119,7 +120,7 @@
       echo '</ul>';
     } // endif org_contacts
 
-    if( $org_services ) {
+    if( !empty($org_services) ) {
       echo '<h3>Services Offered</h3>',
            '<ul class="org-services">';
 
@@ -134,7 +135,7 @@
       echo '</ul>';
     } // endif org_services
 
-    //if( $org_visitor_type ) {
+    //if( !empty($org_visitor_type) ) {
     //  echo '<ul>';
     //  foreach( $org_visitor_type as $org_visitor_type_term ) {
     //    echo '<li>', $org_visitor_type_term->name, '</li>';
@@ -142,7 +143,7 @@
     //  echo '</ul>';
     //}
 
-    if( $org_handles_goods ) {
+    if( !empty($org_handles_goods) ) {
       echo '<ul class="org-handles-goods list-inline">';
       if ( $org_location_type == 'both') {
         $choices = $org_location_type_object['choices'];
@@ -158,7 +159,7 @@
     </div>
     <div class="single-footer col-md-8"><h5>
     <?php
-    if( $org_category ) {
+    if( !empty($org_category) ) {
       $html = '<strong>More:</strong> Find organizations in ';
       $orgs = array();
       foreach( $org_category as $org_cat ) {
