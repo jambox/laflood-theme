@@ -12,7 +12,12 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
 
 <?php if ( is_client_page() ): ?>
   <div class="col-md-12">
-    <h1><?php echo $queried_object->name; ?></h1>
+    <?php
+      $term_parent = $queried_object->parent;
+      if ( $term_parent > 0 ) {
+        $parent = get_term($term_parent);
+        echo '<a href="/', visitor_type(), '/', $parent->slug, '">', $parent->name, '</a>';
+      } ?><h1 class="inline"><?php echo $queried_object->name; ?></h1>
   </div>
 <?php endif ?>
 
