@@ -1,4 +1,7 @@
 <?php
+
+$queried_object = get_queried_object();
+
 $org_category = get_field('org_category');
 $org_parent_org = get_field('org_parent_org');
 $org_services = get_field('org_services');
