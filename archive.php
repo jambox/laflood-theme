@@ -10,7 +10,7 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
 
 ?>
 
-<?php if ( is_client_page() ): ?>
+<?php if ( visitor_type() ): ?>
   <div class="col-md-12">
     <?php
       $term_parent = $queried_object->parent;
