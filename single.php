@@ -55,7 +55,7 @@
       echo '</li>';
     }
 
-    if( $org_main_phone || $ $org_main_email) {
+    if( $org_main_phone || $org_main_email) {
       echo '<ul class="list-unstyled list-inline">';
       if( $org_main_email ) {
         echo '<li><a href="mailto:', $org_main_email, '">email</a></li>';
@@ -107,7 +107,7 @@
         if ( $org_contact_email || $org_contact_phone ) {
           $pipe = $org_contact_email && $org_contact_phone ? ' | ' : '';
           echo '<li class="org-contacts--details">',
-          $org_contact_email ? '<a href="' . $org_contact_email . '"><em>Email</em></a>' : '',
+          $org_contact_email ? '<a href="mailto:' . $org_contact_email . '"><em>Email</em></a>' : '',
           $pipe,
           $org_contact_phone ? '<a href="tel:+1' . $org_contact_phone . '">' . $org_contact_phone_formatted . '</a>' : '',
           '</li>';
