@@ -13,6 +13,7 @@ body.archive, body.search-results {
     margin-left:0;
     li {
       margin-top:.3em;
+      margin-bottom:.5em;
       @extend .Franklin--book;
       text-transform:uppercase;
       color: $light-gray;
@@ -20,7 +21,7 @@ body.archive, body.search-results {
         margin-left:-5px;
       }
       a {
-        font-size:2.3rem;
+        font-size:2.1rem;
         letter-spacing:1px;
         padding:0.1em .4em;
         

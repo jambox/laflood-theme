@@ -21,7 +21,7 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
   if ( !is_client_page() && $queried_object ) :
 
     if( !empty($guidelines) ) :
-      echo '<div class="intro">', $guidelines, '</div>';
+      echo '<div class="intro col-md-12">', $guidelines, '</div>';
     endif;
 
     $items =  get_field('cat_items', 'category_' .$queried_object_id);
