@@ -9,6 +9,21 @@ body.archive, body.search-results {
     line-height: 1.6;
   }
 
+  .sub-cat-breadcrumbs {
+    @extend .Clarendon--light;
+    font-size: 1.9rem;
+    color: $light-gray;
+    margin-bottom:.5em;
+    a {
+      // border-bottom:0;
+      &:hover, &:active, &:focus {
+        // text-decoration:underline;
+        // border-bottom:0;
+      }
+
+    }
+  }
+
   .sub-cat-list {
     margin-left:0;
     li {

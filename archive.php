@@ -16,7 +16,7 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
       $term_parent = $queried_object->parent;
       if ( $term_parent > 0 ) {
         $parent = get_term($term_parent);
-        echo '<a href="/', visitor_type(), '/', $parent->slug, '">', $parent->name, '</a>';
+        echo '<div class="sub-cat-breadcrumbs">Back to <a href="/', visitor_type(), '/', $parent->slug, '">', $parent->name, '</a></div>';
       } ?><h1 class="inline"><?php echo $queried_object->name; ?></h1>
   </div>
 <?php endif ?>
