@@ -26,7 +26,17 @@ $org_contacts = get_field('org_contacts');
     str_no_wrap( get_the_title() );
     echo '</a>'; ?></h2>
   </header>
-  <div class="small">
+  <ul class="list-unstyled list-inline contact-list"><?php
+    if ($org_website):
+      ?><li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li><?php
+    endif?><?php
+    if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['address'] ?>" target="_blank">Map</a></li><?php
+    elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['lat'] . ', ' . $org_location['lng'] ?>" target="_blank">Map</a></li><?php
+    endif ?><?php
+    if ($org_main_phone): echo $org_website || $org_location['lat'] ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
+    endif
+ ?></ul>
+  <div>
     <?php the_content(); ?>
   </div>
   <div class="org-meta">
@@ -34,7 +44,7 @@ $org_contacts = get_field('org_contacts');
 
     $terms = get_the_terms( null, 'lfr_service' );
     if( !empty($terms) ) : ?>
-    <div class="tag-list">
+    <div class="services-list">
       <ul class="list-unstyled list-inline">
         <?
           echo '<h5>', $queried_object->slug == 'recovery-resources' ? 'Available information' : 'Services offered', ':</h5>';
@@ -53,15 +63,5 @@ $org_contacts = get_field('org_contacts');
       ?></ul>
     </div>
     <?php endif; ?>
-    <ul class="list-unstyled list-inline contact-list"><?php
-      if ($org_website):
-        ?><li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li><?php
-      endif?><?php
-      if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['address'] ?>" target="_blank">Map</a></li><?php
-      elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['lat'] . ', ' . $org_location['lng'] ?>" target="_blank">Map</a></li><?php
-      endif ?><?php
-      if ($org_main_phone): echo $org_website || $org_location['lat'] ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
-      endif
-   ?></ul>
   </div>
 </li>

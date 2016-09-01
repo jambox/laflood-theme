@@ -198,7 +198,29 @@ a {
     text-decoration:none;
     border-bottom:2px solid transparent;
   }
-}
+
+  //
+  // Auto Chevron animation/colors
+  //
+  $arrow-padding-init:0.7em;
+  .fa-chevron-right {
+    transition:all $default-transition;
+    padding-left: $arrow-padding-init;
+    padding-bottom: 0.3em;
+    color: $arrow-gray-init;
+    font-size: 0.5em;
+    vertical-align: middle;
+    transition: all $default-transition;
+  }
+  &:hover, &:focus, &:active {
+    .fa-chevron-right {
+      padding-left: $arrow-padding-init + .3em;
+      color: $arrow-gray-hover;
+      
+    }
+  }
+
+} // a
 
 .large-link {
   box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 $secondary-color;      
@@ -206,4 +228,5 @@ a {
     box-shadow: inset 0 0px 0 transparent, inset 0 -3px 0 transparent;
   }
 }
+
 

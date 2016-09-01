@@ -16,22 +16,27 @@ body.archive, body.search-results {
       padding-bottom:2rem;  
       margin-bottom:2rem;
 
+      .contact-list {
+        @extend .Franklin--medium;
+        text-transform:uppercase;
+        color:$light-gray;
+        font-size:2rem;
+        letter-spacing:1px;
+        margin-bottom:1em;
+        a {
+          border-bottom: 0;
+          &:hover, &:active, &:focus {
+            color:$link-hover-color;
+          }
+        }
+      }
+
       .org-meta {
         color:$gray;
 
-        .contact-list {
-          @extend .Franklin;
-          text-transform:uppercase;
-          a {
-            border-bottom: 0;
-            &:hover, &:active, &:focus {
-              color:$link-hover-color;
-            }
-          }
-        }
-
-        .tag-list {
+        .services-list {
           margin-bottom:.8em;
+          vertical-align: bottom;
           @include font-smoothing;
           h5 {
             display: inline-block;
@@ -60,11 +65,24 @@ body.archive, body.search-results {
       @extend h4;
       font-size:3.5rem;
       a {
-        border-bottom:1px solid $gray;
-        &:hover, &:active, &:focus {
-          // text-decoration:underline;
-          border-bottom:1px solid transparent;
+        color:$black;
+        border-bottom:2px solid transparent;
+        
+        &:after {
+          content:'';
+          display:block;
+          height:0.3em;
+          border-bottom:2px solid $light-gray;
         }
+
+        &:hover, &:active, &:focus {
+          color:$secondary-color;
+          border-bottom:2px solid transparent;
+        }
+        .fa-chevron-right {
+          font-size:.7em;
+        }
+
       }
     }
   }
