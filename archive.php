@@ -38,10 +38,6 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
     endif; 
   endif; // want-to-help
   ?>
-  <div class="col-md-12">
-    <div class="row">
-      <?php get_template_part('partials/archive-list'); ?>
-    </div>
-  </div>
+  <?php get_template_part('partials/archive-list'); ?>
 
 <?php get_footer(); ?>
