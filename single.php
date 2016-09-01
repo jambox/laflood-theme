@@ -77,7 +77,6 @@
       }
       if ( !empty($org_location) ) {
         if ( !empty($org_website) ) echo '&middot;';
-        print_r($org_location['address']);
         echo '<li><a href="https://maps.google.com?q=', urlencode($org_location['address']), '" target="_blank">Map</a></li>';
       }
       echo '</ul></li>';
