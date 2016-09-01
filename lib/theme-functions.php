@@ -402,7 +402,13 @@ function right_chevron() {
 
 
 function str_no_wrap( $title = 0, $after = '',$add_chevron = true ) {
+  // if( !$title ) {
+  //   global $post;
+  //   $title = get_the_title();
+  // }
+
   if( !$title ) return false;
+
 
   $chev = $add_chevron ? right_chevron() : '';
 
