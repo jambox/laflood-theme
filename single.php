@@ -156,6 +156,7 @@
 
     ?>
     </div>
+    <?php edit_post_link( 'Edit Page', '<div class="col-md-12">', '</div>', null, 'btn btn-primary' ); ?>
     <div class="single-footer col-md-8"><h5>
     <?php
     if( !empty($org_category) ) {
