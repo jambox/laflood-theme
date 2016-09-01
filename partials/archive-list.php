@@ -25,7 +25,7 @@ if ( is_array($children) && count($children) > 0) : ?>
 
 if( have_posts() ) :
   if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'recovery-resources' && !is_client_page() ) : ?>
-  <h3 class="top-orgs-header">Some highly recommended ways to give in this category are listed below:</h3>
+  <h3 class="top-orgs-header col-md-12">Some highly recommended ways to give in this category are listed below:</h3>
   <?php endif; ?>
   <ul class="org-list col-md-12">
     <?php    
