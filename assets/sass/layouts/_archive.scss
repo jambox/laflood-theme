@@ -112,5 +112,13 @@ body.archive, body.search-results {
 
       }
     }
+
+    .read-more {
+      border-bottom:2px solid transparent;
+      &:hover, &:active, &:focus {
+        border-bottom:2px solid $secondary-color;
+      }
+
+    }
   }
 }
