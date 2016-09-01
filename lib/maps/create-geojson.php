@@ -9,9 +9,8 @@ $geoJSON = array(
 if (have_posts()) :
   while (have_posts()) : the_post();
 
-    if( get_field("org_location") )  {
-      $address_obj = get_field("org_location" );
-    } else {
+    $address_obj = get_field("org_location");
+    if( !isset( $address_obj['lat'] ) || empty( $address_obj['lat'] ) )  {
       continue;
     }
     // $address_obj = get_field("org_location", post->ID );
