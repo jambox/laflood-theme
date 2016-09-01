@@ -3,7 +3,11 @@ $queried_object = get_queried_object();
 $queried_object_id = $queried_object->term_id;
 $queried_object_tax = $queried_object->taxonomy;
 
-$children = get_term_children( $queried_object_id, $queried_object_tax);
+$children = get_terms( array(
+      'child_of' => $queried_object_id,
+      'taxonomy' => $queried_object_tax,
+      'hide_empty' => true
+) );
 
 if (is_array($children) && count($children) > 0) : ?>
   <ul class="sub-cat-list list-inline list-unstyled col-md-12">
