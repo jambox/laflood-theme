@@ -381,7 +381,7 @@ function custom_excerpt($excerpt) {
 
     $excerpt = trim(force_balance_tags($excerptOutput));
 
-    $excerpt_end = '<a href="'. esc_url( get_permalink() ).'" class="read-more">' . __('&nbsp;Learn More', $i18n_domain) . '</a>';
+    $excerpt_end = '&nbsp;<a href="'. esc_url( get_permalink() ).'" class="read-more">' . __('Learn More', $i18n_domain) . '</a>';
     $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_end);
 
     // Inside last HTML tag
