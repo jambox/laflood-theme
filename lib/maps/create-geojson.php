@@ -25,6 +25,12 @@ if (have_posts()) :
     //   $image = '';
     // endif;
     
+    $description = get_the_content();
+
+    if( is_user_logged_in() ) {
+      $description .= "<h4><a href='". get_edit_post_link() ."' target='_blank'>Edit Org</a></h4>";
+    }
+
     $geoJSON["features"][] = array(
       "type" => "Feature",
       "geometry" => array(
@@ -39,7 +45,7 @@ if (have_posts()) :
         "marker-color"  => "#f63a39",
         "marker-size"   => "large",
         "marker-symbol" => "circle",
-        "description" => get_the_content()
+        "description" => $description
         // "description"   => "<p class='location-details'>".$address."<br/>"."<a href='tel:+1$sanitizedPhone' data-behavior='call' >".get_field("phone_number")."</a>"."</p><a class='marker-link' href='".permalink_by_title('locations', false). "#".the_slug().".go'>View This Location</a>",
       )
     );
