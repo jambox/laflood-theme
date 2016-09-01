@@ -36,7 +36,7 @@ $org_contacts = get_field('org_contacts');
     if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['address'] ?>" target="_blank">Map</a></li><?php
     elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['lat'] . ', ' . $org_location['lng'] ?>" target="_blank">Map</a></li><?php
     endif ?><?php
-    if ($org_main_phone): echo $org_website || $org_location['lat'] ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
+    if ($org_main_phone): echo $org_website || isset( $org_location['lat'] ) ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
     endif
  ?></ul>
   <div>
@@ -50,7 +50,7 @@ $org_contacts = get_field('org_contacts');
     <div class="services-list">
       <ul class="list-unstyled list-inline">
         <?
-          echo '<h5>', $queried_object->slug == 'recovery-resources' ? 'Available information' : 'Services offered', ':</h5>';
+          echo '<h5>', $queried_object && $queried_object->slug == 'recovery-resources' ? 'Available information' : 'Services offered', ':</h5>';
 
           $term_list = [];
           foreach ( $terms as $term ) {

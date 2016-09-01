@@ -3,6 +3,7 @@
 get_header();
 
 $queried_object = get_queried_object();
+
 $queried_object_id = $queried_object->term_id; 
 $prompt = $queried_object->description;
 $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
@@ -17,7 +18,7 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
 
 <?php
 
-  if ( !is_client_page() ) :
+  if ( !is_client_page() && $queried_object ) :
 
     if( !empty($guidelines) ) :
       echo '<div class="intro">', $guidelines, '</div>';

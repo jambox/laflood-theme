@@ -2,14 +2,13 @@
 $queried_object = get_queried_object();
 $queried_object_id = $queried_object->term_id;
 $queried_object_tax = $queried_object->taxonomy;
-
 $children = get_terms( array(
-      'child_of' => $queried_object_id,
-      'taxonomy' => $queried_object_tax,
-      'hide_empty' => true
+  'child_of' => $queried_object_id,
+  'taxonomy' => $queried_object_tax,
+  'hide_empty' => true
 ) );
 
-if (is_array($children) && count($children) > 0) : ?>
+if ( is_array($children) && count($children) > 0) : ?>
   <ul class="sub-cat-list list-inline list-unstyled col-md-12">
     <h5>Choose from one of the categories below to refine your search:</h5>
     <?php
@@ -25,16 +24,15 @@ if (is_array($children) && count($children) > 0) : ?>
 <?php endif;
 
 if( have_posts() ) :
-
-if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'recovery-resources' && !is_client_page() ) : ?>
+  if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'recovery-resources' && !is_client_page() ) : ?>
   <h3 class="top-orgs-header">Some highly recommended ways to give in this category are listed below:</h3>
-<?php endif; ?>
-<ul class="org-list col-md-12">
-  <?php    
-  while ( have_posts() ) : the_post();
-    get_template_part('partials/archive-list-item');
-  endwhile;?>
-<?php endif; ?>
+  <?php endif; ?>
+  <ul class="org-list col-md-12">
+    <?php    
+    while ( have_posts() ) : the_post();
+      get_template_part('partials/org-list-item');
+    endwhile;?>
+  <?php endif; ?>
 </ul>
 <?php the_posts_pagination([
   'prev_text' => '<i class="fa fa-chevron-left"></i> Previous',
