@@ -40,7 +40,7 @@ $org_contacts = get_field('org_contacts');
     endif
  ?></ul>
   <div>
-    <?php the_content(); ?>
+    <?php the_excerpt(); ?>
   </div>
   <div class="org-meta">
   <?php
