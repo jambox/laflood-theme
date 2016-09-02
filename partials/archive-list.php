@@ -34,8 +34,10 @@ if( have_posts() ) :
     endwhile;?>
   <?php endif; ?>
 </ul>
-<?php the_posts_pagination([
-  'prev_text' => '<i class="fa fa-chevron-left"></i> Previous',
-  'next_text' => 'Next <i class="fa fa-chevron-right"></i>'
-])
-?>
+<div class="col-md-12">
+  <?php the_posts_pagination([
+    'prev_text' => '<i class="fa fa-chevron-left"></i> Previous',
+    'next_text' => 'Next <i class="fa fa-chevron-right"></i>'
+  ])
+  ?>
+</div>
