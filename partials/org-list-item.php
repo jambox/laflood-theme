@@ -37,16 +37,16 @@ $item_link = $is_recovery_resource ? $org_website : get_permalink();
     if( !$is_recovery_resource ) :
 
       if ($org_website && !$is_recovery_resource ):
-        ?><li><a href="<?php echo $org_website ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.website" target="_blank">Website</a></li><?php
+        ?><li><a href="<?php echo $org_website ?>" onclick="trackOutboundLink($(this));" data-behavior="archive.website" target="_blank">Website</a></li><?php
       endif?><?php
       // Middle Dot (map link type a)
       if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : '';
       $mapUrl = 'https://www.google.com/maps/?q=' . get_the_title() . '%20' . $org_location['address'];
-      ?><li><a href="<?php echo $mapUrl ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.map" target="_blank">Map</a></li><?php
+      ?><li><a href="<?php echo $mapUrl ?>" onclick="trackOutboundLink(this);" data-behavior="archive.map" target="_blank">Map</a></li><?php
       // Middle Dot (map link type b)
       elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : '';
       $mapUrl = 'https://www.google.com/maps/?q=' . get_the_title() . '%20' . $org_location['lat'] . ',%20' . $org_location['lng'];
-      ?><li><a href="<?php echo $mapUrl ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.map" target="_blank">Map</a></li><?php
+      ?><li><a href="<?php echo $mapUrl ?>" onclick="trackOutboundLink(this);" data-behavior="archive.map" target="_blank">Map</a></li><?php
       endif ?><?php
       // Middle Dot (phone)
       if ($org_main_phone): echo $org_website || isset( $org_location['lat'] ) ? '&middot;' : '';

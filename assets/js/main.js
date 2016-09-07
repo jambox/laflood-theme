@@ -129,3 +129,35 @@
   });
 
 })(jQuery);
+
+
+
+/**
+* Outbound Link Tracking
+*
+* Function tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string, used as the event label, and 'action' type.
+* Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*
+* @property ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);
+* @use <a href="http://www.example.com" onclick="trackOutboundLink(this, 'action type'); return false;">Link Text</a>
+*/
+function trackOutboundLink(el) {
+  $el = $(el);
+  var url = $el.attr('href');
+  var action = $el.data('behavior');
+  var target = $el.attr('target');
+  ga('send', 'event', { 
+    eventCategory: 'Outbound',
+    eventAction: action,
+    eventLabel: url,
+    transport: 'beacon',
+    hitCallback: function(){
+      if(target!=='_blank'){
+        window.location.href = url;
+      }
+    }
+  });
+}    
+
