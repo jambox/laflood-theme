@@ -12,7 +12,14 @@ function bolt_custom_post_types() {
       'plural' => 'Organizations',
       'show_in_menu' => true,
       'supports' => array('excerpt', 'page-attributes'),
-      'taxonomies' => array('post_tag','category', get_visitor_type_tax_name(), get_parent_org_tax_name(), get_service_tax_name() ),
+      'taxonomies' => array(
+          'post_tag',
+          'category',
+          get_visitor_type_tax_name(),
+          get_parent_org_tax_name(),
+          get_service_tax_name(),
+          get_feature_tax_name()
+      ),
       'has_archive' => true,
       'public' => true,
       'hierarchical' => true,

@@ -199,6 +199,11 @@ function get_service_tax_name() {
 } // END get_service_tax_name()
 
 
+function get_feature_tax_name() {
+  return THEME_PREFIX . '_' . FEATURE_TAX_NAME;
+} // END get_feature_tax_name()
+
+
 function loader_title() {
  $titles = array('Loading', 'One sec', 'Hold on', 'One Moment');
  shuffle( $titles );

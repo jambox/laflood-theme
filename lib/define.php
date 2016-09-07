@@ -30,6 +30,7 @@ define('ORG_CPT_NAME', 'org');
 define('PARENT_ORG_TAX', 'parent_org');
 define('SERVICE_TAX_NAME', 'service');
 define('VISITOR_TYPE_TAX_NAME', 'visitor_type');
+define('FEATURE_TAX_NAME', 'feature');
 
 define('RESOURCE_TYPE_TAX_NAME', 'resource_type');
 

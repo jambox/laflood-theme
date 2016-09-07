@@ -21,6 +21,13 @@ function bolt_add_custom_taxonomies() {
       'post_types' => array( get_org_cpt_name() ),
       'hierarchical' => true,
     ),
+    FEATURE_TAX_NAME => array(
+      'plural' => 'Feautured Orgs',
+      'singular' => 'Featured Org',
+      'post_types' => array( get_org_cpt_name() ),
+      'show_ui' => false,
+      'show_admin_column' => false,
+    ),
     RESOURCE_TYPE_TAX_NAME => array(
       'plural' => 'Resource Types',
       'singular' => 'Resource Type',
@@ -40,6 +47,7 @@ function bolt_add_custom_taxonomies() {
 
     $hierarchical = isset($tax['hierarchical']) ? $tax['hierarchical'] : false;
     $show_ui = isset($tax['show_ui']) ? $tax['show_ui'] : true;
+    $show_admin_column = isset($tax['show_admin_column']) ? $tax['show_admin_column'] : true;
 
 
     $labels = array(
@@ -64,7 +72,7 @@ function bolt_add_custom_taxonomies() {
       'hierarchical'               => $hierarchical,
       'public'                     => true,
       'show_ui'                    => $show_ui,
-      'show_admin_column'          => true,
+      'show_admin_column'          => $show_admin_column,
       'show_in_nav_menus'          => true,
       'show_tagcloud'              => true,
       'rewrite'                    => array( 'slug' => $key, 'with_front' => false, 'hierarchical' => $hierarchical ),
