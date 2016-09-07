@@ -58,14 +58,14 @@
     if( !empty($org_main_phone) || !empty($org_main_email) ) {
       echo '<ul class="list-unstyled list-inline">';
       if( !empty($org_main_email) ) {
-        echo '<li><a href="mailto:', $org_main_email, '" onclick="trackOutboundLink(this);" data-behavior="single.email">email</a></li>';
+        echo '<li><a href="mailto:', $org_main_email, '" onclick="trackOutboundLink(this); return false;" data-behavior="single.email">email</a></li>';
       }
       if ( !empty($org_main_phone) ) {
         if ( !empty($org_main_email) ) echo '&middot;';
         $org_main_phone =  preg_replace('/[^\d+]/', '', $org_main_phone); // Remove non-int chars
         $org_main_phone_formatted =  "(".substr($org_main_phone, 0, 3).") ".substr($org_main_phone, 3, 3)."-".substr($org_main_phone,6); // Re-format
 
-        echo '<li><a href="tel:+1' . $org_main_phone . '" onclick="trackOutboundLink(this);" data-behavior="single.phone">', $org_main_phone_formatted, '</a></li>';
+        echo '<li><a href="tel:+1' . $org_main_phone . '" onclick="trackOutboundLink(this); return false;" data-behavior="single.phone">', $org_main_phone_formatted, '</a></li>';
       }
       echo '</ul>';
     }
@@ -107,9 +107,9 @@
         if ( !empty($org_contact_email) || !empty($org_contact_phone) ) {
           $pipe = $org_contact_email && $org_contact_phone ? ' | ' : '';
           echo '<li class="org-contacts--details">',
-          $org_contact_email ? '<a href="mailto:' . $org_contact_email . '" onclick="trackOutboundLink(this);" data-behavior="single.contact.email"><em>Email</em></a>' : '',
+          $org_contact_email ? '<a href="mailto:' . $org_contact_email . '" onclick="trackOutboundLink(this); return false;" data-behavior="single.contact.email"><em>Email</em></a>' : '',
           $pipe,
-          $org_contact_phone ? '<a href="tel:+1' . $org_contact_phone . '" onclick="trackOutboundLink(this);" data-behavior="single.contact.phone">' . $org_contact_phone_formatted . '</a>' : '',
+          $org_contact_phone ? '<a href="tel:+1' . $org_contact_phone . '" onclick="trackOutboundLink(this); return false;" data-behavior="single.contact.phone">' . $org_contact_phone_formatted . '</a>' : '',
           '</li>';
         }
 
