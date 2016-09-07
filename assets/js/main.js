@@ -141,7 +141,8 @@
 * using 'navigator.sendBeacon' in browser that support it.
 *
 * @property ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);
-* @use <a href="http://www.example.com" onclick="trackOutboundLink(this, 'action type'); return false;">Link Text</a>
+* @use if target !== _blank: <a href="http://www.example.com" onclick="trackOutboundLink(this, 'action type'); return false;">Link Text</a>
+* @use if target  == _blank: <a href="http://www.example.com" onclick="trackOutboundLink(this, 'action type');" target="_blank">Link Text</a>
 */
 function trackOutboundLink(el) {
   $el = $(el);
