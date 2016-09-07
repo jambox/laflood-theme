@@ -26,14 +26,6 @@
         "sass/admin.scss"
       ],
       "main": true
-    },
-    "customizer.js": {
-      "files": [
-        "js/customizer.js"
-      ]
-    },
-    "jquery.js": {
-      "bower": ["jquery"]
     }
   },
   "config": {

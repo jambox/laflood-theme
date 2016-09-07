@@ -123,7 +123,7 @@
   });
 
   // window.onload
-  $(window).load(function(){
+  $(window).on('load', function(){
     // Wait till modernizr adds classes to <html> so fade/transform transition isn't triggered visibly
     // $('#offcanvas-content').removeClass('no-show');
   });
