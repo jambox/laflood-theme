@@ -435,10 +435,14 @@ function get_resources_cat_id() {
 
 
 function is_recovery_resource() {
+  $qo = get_queried_object();
+
+  if( !$qo ) return false;
+  
   return
-    get_queried_object()->slug == "recovery-resources"
+    $qo->slug == "recovery-resources"
     ||
-    cat_is_ancestor_of( get_resources_cat_id(), get_queried_object()->term_id ) 
+    cat_is_ancestor_of( get_resources_cat_id(), $qo->term_id ) 
   ;
 } // END is_recovery_resource()
 
