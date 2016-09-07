@@ -37,12 +37,21 @@ $item_link = $is_recovery_resource ? $org_website : get_permalink();
     if( !$is_recovery_resource ) :
 
       if ($org_website && !$is_recovery_resource ):
-        ?><li><a href="<?php echo $org_website ?>" target="_blank">Website</a></li><?php
+        ?><li><a href="<?php echo $org_website ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.website" target="_blank">Website</a></li><?php
       endif?><?php
-      if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['address'] ?>" target="_blank">Map</a></li><?php
-      elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : ''; ?><li><a href="https://www.google.com/maps/?q=<?php echo get_the_title() . ' ' . $org_location['lat'] . ', ' . $org_location['lng'] ?>" target="_blank">Map</a></li><?php
+      // Middle Dot (map link type a)
+      if ( !empty( $org_location['address'] ) ): echo $org_website ? '&middot;' : '';
+      $mapUrl = 'https://www.google.com/maps/?q=' . get_the_title() . '%20' . $org_location['address'];
+      ?><li><a href="<?php echo $mapUrl ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.map" target="_blank">Map</a></li><?php
+      // Middle Dot (map link type b)
+      elseif (!empty( $org_location['lat'] ) ): echo $org_website ? '&middot;' : '';
+      $mapUrl = 'https://www.google.com/maps/?q=' . get_the_title() . '%20' . $org_location['lat'] . ',%20' . $org_location['lng'];
+      ?><li><a href="<?php echo $mapUrl ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.map" target="_blank">Map</a></li><?php
       endif ?><?php
-      if ($org_main_phone): echo $org_website || isset( $org_location['lat'] ) ? '&middot;' : '' ?><li><a href="tel:+1<?php echo preg_replace('/[^\d+]/', '', $org_main_phone) ?>"><?php echo $org_main_phone; ?></a></li><?php
+      // Middle Dot (phone)
+      if ($org_main_phone): echo $org_website || isset( $org_location['lat'] ) ? '&middot;' : '';
+      $phoneUrl = 'tel:+1' . preg_replace('/[^\d+]/', '', $org_main_phone);
+      ?><li><a href="<?php echo $phoneUrl ?>" onclick="trackOutboundLink(this); return false;" data-behavior="archive.phone"><?php echo $org_main_phone; ?></a></li><?php
       endif;
       
     endif;
