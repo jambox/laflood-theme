@@ -2,7 +2,7 @@
 
   <?php while (have_posts()) : the_post(); ?>
     <div class="page-wrap row-fluid">
-      <div class="about-page--content col-md-7">
+      <div class="page--content col-md-7">
       	<?php the_content(); ?>
       </div>
       <?php get_sidebar(); ?>

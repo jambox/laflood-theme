@@ -1,4 +1,9 @@
 body.get-involved {
+  .page--content {
+    li {
+      line-height:1.6;
+    }
+  }
   .mailchimp-signup-form {
     background:$secondary-color;
     padding:1em 1.5em;

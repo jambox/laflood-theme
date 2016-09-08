@@ -5,7 +5,7 @@ body.about, body.who-we-are {
     padding-bottom:7rem;
   }
 
-  .about-page--content {
+  .page--content {
     h3:first-child {
       margin-top:0;
     }
@@ -53,7 +53,7 @@ body.about, body.who-we-are {
 }
 
 body.who-we-are {
-  .about-page--content {
+  .page--content {
     hr {
       border:0.4em solid $secondary-color;
     }
