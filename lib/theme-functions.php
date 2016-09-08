@@ -463,23 +463,4 @@ function is_recovery_resource() {
 } // END is_recovery_resource()
 
 
-function remove_featured_orgs_from_main_query( $query ) {
-  if( !$query->is_main_query() || !is_org_archive() ) {
-    return $query;
-  }
-  $tax_query = array(
-        array(
-            'taxonomy' => get_feature_tax_name(),
-            'field'    => 'term_id',
-            'terms'    => array( get_feature_tax_id() ),
-            'operator' => 'NOT IN',
-        )
-  );
-
-  $query->set( 'tax_query', $tax_query );
-  
-} // remove_featured_orgs_from_main_query()
-add_action( 'pre_get_posts', 'remove_featured_orgs_from_main_query' );
-
-
 ?>
