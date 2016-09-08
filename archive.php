@@ -23,7 +23,7 @@ $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
 
 <?php
 
-  if ( !is_client_page() && $queried_object ) :
+  if ( !is_client_page() && $queried_object && !get_query_var('paged', 0) ) :
 
     if( !empty($guidelines) ) :
       echo '<div class="intro col-md-9">', $guidelines, '</div>';
