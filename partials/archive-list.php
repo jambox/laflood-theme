@@ -4,16 +4,15 @@ $visitor_type_term = get_term_by('slug', $visitor_type, 'lfr_visitor_type');
 $queried_object = get_queried_object();
 $queried_object_id = $queried_object->term_id;
 $queried_object_tax = $queried_object->taxonomy;
-$children = get_terms( array(
-  'child_of' => $queried_object_id,
-  'taxonomy' => $queried_object_tax,
-  'hide_empty' => true
-) );
 
-if ( is_array($children) && count($children) > 0) : ?>
-  <ul class="sub-cat-list list-inline list-unstyled col-md-12">
-    <h5>Choose from one of the categories below to refine your search:</h5>
+$do_not_duplicate = array();
+
+$featured_query = featured_organizations();
+if( $featured_query->have_posts() ) :
+  ?>
+  <ul class="org-list featured-list col-md-12">
     <?php
+<<<<<<< HEAD
     $subcat_list = array();
   	foreach ( $children as $child ) {
       global $wpdb;
@@ -32,17 +31,32 @@ if ( is_array($children) && count($children) > 0) : ?>
       }
   	}
     echo implode('', $subcat_list);
+=======
+    while( $featured_query->have_posts() ) : $featured_query->the_post();
+      $do_not_duplicate[] = get_the_ID();
+      get_template_part('partials/featured-org-list-item');
+    endwhile;
+    wp_reset_postdata();
+>>>>>>> origin/master
     ?>
   </ul>
-<?php endif;
+  <?php
+endif;
 
-if( have_posts() ) :
-  if ( archive_layout_type($queried_object_id) === 'short' && $queried_object->slug !== 'recovery-resources' && !is_client_page() ) : ?>
-  <h3 class="top-orgs-header col-md-12">Some highly recommended ways to give in this category are listed below:</h3>
-  <?php endif; ?>
+// TODO : Figure out how to do this with pre_get_posts or something...
+$args = array(
+  'lfr_visitor_type' => get_query_var('lfr_visitor_type', ''),
+  'post__not_in' => $do_not_duplicate,
+  'paged' => get_query_var( 'paged', 0 ),
+  'category_name' => get_query_var( 'category_name', '' )
+);
+$reggy_orgs = new WP_Query( $args );
+
+if( $reggy_orgs->have_posts() ) :?>
   <ul class="org-list col-md-12">
     <?php    
-    while ( have_posts() ) : the_post();
+    while ( $reggy_orgs->have_posts() ) : $reggy_orgs->the_post();
+      if( in_array( get_the_ID(), $do_not_duplicate ) ) continue;
       get_template_part('partials/org-list-item');
     endwhile;?>
   <?php endif; ?>

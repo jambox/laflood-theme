@@ -173,6 +173,25 @@ function get_org_cpt_name() {
 } // END get_org_cpt_name()
 
 
+function featured_organizations() {
+
+  $args = array(
+    'post_type' => get_org_cpt_name(),
+    'paged' => get_query_var( 'paged', 0 ),
+    'category_name' => get_query_var( 'category_name', '' ),
+    'tax_query' => array(
+       array(
+          'taxonomy' => get_feature_tax_name(),
+          'field'    => 'term_id',
+          'terms'    => get_feature_tax_id(),
+       ),
+    )
+  );
+  return new WP_Query( $args );
+
+} // featured_organizations
+
+
 
 /*========================================
 =            Taxonomy Helpers            =
@@ -203,13 +222,10 @@ function get_feature_tax_name() {
   return THEME_PREFIX . '_' . FEATURE_TAX_NAME;
 } // END get_feature_tax_name()
 
-
-function loader_title() {
- $titles = array('Loading', 'One sec', 'Hold on', 'One Moment');
- shuffle( $titles );
- echo $titles[0];
-
-} // END loader_title()
+function get_feature_tax_id() {
+  $term = get_term_by( 'slug', 'featured', get_feature_tax_name() );
+  return $term->term_id;
+} // END get_feature_tax_id()
 
 
 function ajax_acf_save_new_org() {
@@ -435,13 +451,16 @@ function get_resources_cat_id() {
 
 
 function is_recovery_resource() {
+  $qo = get_queried_object();
+
+  if( !$qo ) return false;
+
   return
-    get_queried_object()->slug == "recovery-resources"
+    $qo->slug == "recovery-resources"
     ||
-    cat_is_ancestor_of( get_resources_cat_id(), get_queried_object()->term_id ) 
+    cat_is_ancestor_of( get_resources_cat_id(), $qo->term_id ) 
   ;
 } // END is_recovery_resource()
-
 
 
 ?>

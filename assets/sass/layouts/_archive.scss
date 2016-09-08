@@ -24,28 +24,59 @@ body.archive, body.search-results {
     }
   }
 
+  .archive-list-header {
+    display: inline-block;
+    position:relative;
+    // @include breakpoint(992px) {
+    //   min-width: 100%;
+    // }
+  }
+
   .sub-cat-list {
-    margin-left:0;
-    li {
-      margin-top:.3em;
-      margin-bottom:.5em;
-      @extend .Franklin--book;
+    @extend .Freight;
+    color:$light-gray;
+    padding-top:2rem;
+
+    // Positioning this on the bottom right of the list header
+    // Wasn't working when the header was smaller than the sub cat list
+    // @include breakpoint(992px) {
+    //   padding-left:0;
+    //   position: absolute;
+    //   bottom:0;
+    //   right:0;
+    // }
+
+    p {
+      @extend .p--small;
+      color:$gray;
+      font-style:italic;
+      line-height:1.3;
+    }
+
+    .list-header {
+      @extend .Franklin--demi;
       text-transform:uppercase;
-      color: $light-gray;
-      &:first-of-type {
-        margin-left:-5px;
+      letter-spacing:1px;
+      font-size:1.9rem;
+      margin-top:2.5rem;
+      margin-bottom:.7rem;
+    }
+
+    li {
+      font-size:1.9rem;
+      line-height:1.5;
+      display:inline-block;
+      width:50%;
+      &:before {
+        content: '\2022';
+        margin-right:.7em;
+        font-size:.7em;
       }
       a {
-        font-size:2.1rem;
-        letter-spacing:1px;
-        padding:0.1em .4em;
-        
-        border-width:2px;
-        border-style:solid;
+        border-bottom:none;
+        font-style:italic;
         &:hover, &:active, &:focus {
-          border-color:transparent;
-          color:white;
-          background-color: $secondary-color;
+          text-decoration:underline;
         }
 
       }
@@ -115,7 +146,7 @@ body.archive, body.search-results {
           content:'';
           display:block;
           height:0.3em;
-          border-bottom:2px solid $light-gray;
+          border-bottom:1px solid $light-gray;
         }
 
         &:hover, &:active, &:focus {
