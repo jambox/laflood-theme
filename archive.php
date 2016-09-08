@@ -69,9 +69,9 @@ $visitor_type = visitor_type();
           WHERE ( tr.term_taxonomy_id = $child->term_id AND tr2.term_taxonomy_id = $visitor_type_term->term_id ) AND p.post_status = 'publish'
           LIMIT 1 ");
         if ( intval($filtered_count) > 0 ){
-        $term = get_term( $child, $queried_object_tax );
-        $parent = get_term( $term->parent, $queried_object_tax );
-        $subcat_list[] = '<li><a class="sub-cat-link" href="/' . $visitor_type . '/' . $parent->slug . '/' . $term->slug . '">' . $term->name . '</a></li>';
+          $term = get_term( $child, $queried_object_tax );
+          $parent = get_term( $term->parent, $queried_object_tax );
+          $subcat_list[] = '<li><a class="sub-cat-link" href="/' . $visitor_type . '/' . $parent->slug . '/' . $term->slug . '">' . $term->name . '</a></li>';
         }
       }
       echo implode('', $subcat_list);
