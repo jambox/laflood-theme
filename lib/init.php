@@ -53,3 +53,10 @@ function laflood_custom_rewrite_rule() {
 }
 add_action('init', 'laflood_custom_rewrite_rule', 10, 0);
 
+
+// Fix conflict with ACF & Relevanssi
+function rlv_acf_related_search($search_ok) {
+    if (DOING_AJAX) $search_ok = false;
+    return $search_ok;
+}
+add_filter('relevanssi_admin_search_ok', 'rlv_acf_related_search');
