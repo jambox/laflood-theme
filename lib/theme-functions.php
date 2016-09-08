@@ -173,26 +173,6 @@ function get_org_cpt_name() {
 } // END get_org_cpt_name()
 
 
-function featured_organizations() {
-
-  $args = array(
-    'post_type' => get_org_cpt_name(),
-    'paged' => get_query_var( 'paged', 0 ),
-    'category_name' => get_query_var( 'category_name', '' ),
-    'tax_query' => array(
-       array(
-          'taxonomy' => get_feature_tax_name(),
-          'field'    => 'term_id',
-          'terms'    => get_feature_tax_id(),
-       ),
-    )
-  );
-  return new WP_Query( $args );
-
-} // featured_organizations
-
-
-
 /*========================================
 =            Taxonomy Helpers            =
 ========================================*/
