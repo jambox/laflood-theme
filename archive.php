@@ -20,7 +20,11 @@ $visitor_type = visitor_type();
               $parent = get_term($term_parent);
               echo '<div class="sub-cat-breadcrumbs">Back to <a href="/', $visitor_type, '/', $parent->slug, '">', $parent->name, '</a></div>';
             }
-            $find_or_give = is_client_page() ? "Find " : "Give ";
+            // TODO: Come up with better options for this.
+            // "Find/Give Legal" doesn't make sense
+            
+            // $find_or_give = is_client_page() ? "Find " : "Give ";
+            $find_or_give = "";
             ?>
             <h1 class="inline"><?php echo $find_or_give . $queried_object->name; ?></h1>
       <?php endif ?>
