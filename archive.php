@@ -6,19 +6,23 @@ $queried_object = get_queried_object();
 $queried_object_id = $queried_object->term_id; 
 $prompt = $queried_object->description;
 $guidelines = get_field('cat_guidelines', 'category_' . $queried_object_id );
+$need_help_subheader = get_field('cat_need_help_subheader', 'category_' . $queried_object_id );
 
 $visitor_type = visitor_type();
 ?>
 <div class="archive-list-header col-md-12">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
       <?php if ( $visitor_type ): ?>
           <?php
             $term_parent = $queried_object->parent;
             if ( $term_parent > 0 ) {
               $parent = get_term($term_parent);
               echo '<div class="sub-cat-breadcrumbs">Back to <a href="/', $visitor_type, '/', $parent->slug, '">', $parent->name, '</a></div>';
-            } ?><h1 class="inline"><?php echo $queried_object->name; ?></h1>
+            }
+            $find_or_give = is_client_page() ? "Find " : "Give ";
+            ?>
+            <h1 class="inline"><?php echo $find_or_give . $queried_object->name; ?></h1>
       <?php endif ?>
 
       <?php
@@ -43,6 +47,12 @@ $visitor_type = visitor_type();
 
         endif; 
       endif; // want-to-help
+
+      if ( is_client_page() && $queried_object && !get_query_var('paged', 0) ) :
+        if( !empty($need_help_subheader) ) :
+          echo '<div class="intro">', $need_help_subheader, '</div>';
+        endif;
+      endif;      
       ?>
     </div>
     <?php
@@ -54,12 +64,9 @@ $visitor_type = visitor_type();
     ) );
 
     if ( is_array($children) && count($children) > 0 && $visitor_type ) : ?>
-      <ul class="sub-cat-list col-md-4 col-md-offset-1">
-        <p>Choose from one of the categories below to refine your search:</p>
+      <ul class="sub-cat-list col-md-12">
+        <h5 class="list-header">Choose a category to refine your search:</h5>
 
-        <?php if ( isset( $queried_object->cat_name ) ): ?>
-          <h5 class="list-header">Types of <?php echo $queried_object->cat_name; ?></h5>
-        <?php endif ?>
         <?php
         $visitor_type_term = get_term_by('slug', $visitor_type, 'lfr_visitor_type');
         $subcat_list = array();

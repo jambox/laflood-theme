@@ -33,7 +33,6 @@ body.archive, body.search-results {
   }
 
   .sub-cat-list {
-    @extend .Freight;
     color:$light-gray;
     padding-top:2rem;
 
@@ -54,29 +53,33 @@ body.archive, body.search-results {
     }
 
     .list-header {
-      @extend .Franklin--demi;
+      @extend .Franklin--demi;      
       text-transform:uppercase;
       letter-spacing:1px;
-      font-size:1.9rem;
+      font-size:2rem;
       margin-top:2.5rem;
-      margin-bottom:.7rem;
+      margin-bottom:1.5rem;
     }
 
     li {
-      font-size:1.7rem;
-      line-height:1.5;
+      @extend .Franklin--medium;      
+      font-size:2rem;
+      letter-spacing:2px;
+      line-height:2.2;
       display:inline-block;
-      width:50%;
-      &:before {
-        content: '\2022';
-        margin-right:.7em;
-        font-size:.7em;
+      &:not(:last-child) {
+        margin-right:0.4em;
       }
       a {
-        border-bottom:none;
-        font-style:italic;
+        color:white;
+        text-transform:uppercase;
+        background-color:$secondary-color;
+        border:2px solid $secondary-color;
+        padding:.2em .5em;
         &:hover, &:active, &:focus {
-          text-decoration:underline;
+          text-decoration:none;
+          color:$secondary-color;
+          background-color:white;
         }
 
       }
