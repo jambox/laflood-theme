@@ -10,7 +10,7 @@
     @extend h3;
     margin-bottom: 10px;
     color: black;
-    
+
     $font-size-h: 5.2rem;
     font-size: $font-size-h * $font-ratio-sm;
     @include breakpoint(400px) {
@@ -35,6 +35,7 @@
     .acf-label {
       label {
         font-size:$font-size;
+        line-height:1.2;
       }
       p.description {
         font-size:$font-size-sm;
@@ -43,6 +44,25 @@
     input {
       font-family:monospace;
     }
+    ul.acf-checkbox-list, ul.acf-radio-list {
+       li {
+          font-size:$font-size-sm;
+          margin-bottom:.5em;
+          width:100%;
+
+          @include breakpoint(321px) {
+            width:auto;
+          }
+
+          input {
+            margin-right:0.5em;
+          }
+        }
+    }
+  }
+
+  .acf-google-map .canvas {
+    max-height: 50vh;
   }
 
 }
