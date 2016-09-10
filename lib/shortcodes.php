@@ -2,7 +2,7 @@
 function lfr_main_cats() {
   $type = visitor_type();
 
-  $cat_list = get_main_cat_list( $type, "." );
+  $cat_list = get_main_cat_list( $type, right_chevron() );
     
   ob_start();
 
