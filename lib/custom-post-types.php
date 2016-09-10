@@ -35,7 +35,17 @@ function bolt_custom_post_types() {
       'public' => true,
       'hierarchical' => true,
       'rewrite_slug' => 'resources'
-    )
+    ),
+    EVENT_CPT_NAME => array(
+      'singular' => 'Event',
+      'plural' => 'Events',
+      'show_in_menu' => true,
+      'supports' => array('excerpt', 'page-attributes'),
+      'has_archive' => true,
+      'public' => true,
+      'hierarchical' => true,
+      'rewrite_slug' => 'events'
+    ),
 
   );
 

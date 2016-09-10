@@ -21,6 +21,7 @@ define('GOOGLE_MAPS_API_KEY', 'AIzaSyDUC_JWLxIKRQbQbDJlV8qIYxLts0FGx2c');
 
 define('RESOURCES_CPT_NAME', 'resource');
 define('ORG_CPT_NAME', 'org');
+define('EVENT_CPT_NAME', 'event');
 
 
 /*=========================================
