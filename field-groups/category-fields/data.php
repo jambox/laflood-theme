@@ -21,8 +21,8 @@ $group = array (
       ),
       'choices' => 
       array (
-        'Short List' => 'Short List',
-        'Long List' => 'Long List',
+        'short' => 'Short List',
+        'long' => 'Long List',
       ),
       'allow_null' => 0,
       'other_choice' => 0,
@@ -38,7 +38,7 @@ $group = array (
       'name' => 'cat_visitor_type',
       'type' => 'checkbox',
       'instructions' => '',
-      'required' => 1,
+      'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => 
       array (
@@ -80,6 +80,38 @@ $group = array (
       'new_lines' => 'wpautop',
     ),
     3 => 
+    array (
+      'key' => 'field_57d22b471bd7e',
+      'label' => 'Need Help Subheader',
+      'name' => 'cat_need_help_subheader',
+      'type' => 'textarea',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'field' => 'field_57bd06d2b212b',
+            'operator' => '==',
+            'value' => 'need-help',
+          ),
+        ),
+      ),
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'maxlength' => '',
+      'rows' => 2,
+      'new_lines' => 'wpautop',
+    ),
+    4 => 
     array (
       'key' => 'field_57b7ed84dfef8',
       'label' => 'Items',
@@ -123,6 +155,39 @@ $group = array (
           'maxlength' => '',
         ),
       ),
+    ),
+    5 => 
+    array (
+      'key' => 'field_57d0f7aa702f6',
+      'label' => 'Featured Organizations & Resources',
+      'name' => 'cat_features',
+      'type' => 'relationship',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'post_type' => 
+      array (
+        0 => 'lfr_org',
+        1 => 'lfr_resource',
+      ),
+      'taxonomy' => 
+      array (
+      ),
+      'filters' => 
+      array (
+        0 => 'search',
+        1 => 'post_type',
+      ),
+      'elements' => '',
+      'min' => '',
+      'max' => '',
+      'return_format' => 'object',
     ),
   ),
   'location' => 

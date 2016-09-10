@@ -16,8 +16,8 @@
                 "id": ""
             },
             "choices": {
-                "Short List": "Short List",
-                "Long List": "Long List"
+                "short": "Short List",
+                "long": "Long List"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -32,7 +32,7 @@
             "name": "cat_visitor_type",
             "type": "checkbox",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -65,6 +65,33 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_57d22b471bd7e",
+            "label": "Need Help Subheader",
+            "name": "cat_need_help_subheader",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57bd06d2b212b",
+                        "operator": "==",
+                        "value": "need-help"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
             "new_lines": "wpautop"
         },
         {
@@ -106,6 +133,33 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_57d0f7aa702f6",
+            "label": "Featured Organizations & Resources",
+            "name": "cat_features",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "lfr_org",
+                "lfr_resource"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
         }
     ],
     "location": [

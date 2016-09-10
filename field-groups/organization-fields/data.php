@@ -20,12 +20,12 @@ $group = array (
         'id' => '',
       ),
       'taxonomy' => 'category',
-      'field_type' => 'select',
+      'field_type' => 'multi_select',
       'allow_null' => 0,
       'add_term' => 0,
-      'save_terms' => 1,
+      'save_terms' => 0,
       'load_terms' => 1,
-      'return_format' => 'id',
+      'return_format' => 'object',
       'multiple' => 0,
     ),
     1 => 
@@ -59,7 +59,7 @@ $group = array (
       'name' => 'org_services',
       'type' => 'taxonomy',
       'instructions' => 'Start typing to search for existing services. Enter as many as you\'d like.',
-      'required' => 1,
+      'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => 
       array (
@@ -67,22 +67,43 @@ $group = array (
         'class' => '',
         'id' => '',
       ),
-      'taxonomy' => 'post_tag',
+      'taxonomy' => 'lfr_service',
       'field_type' => 'multi_select',
       'allow_null' => 1,
       'add_term' => 1,
-      'save_terms' => 1,
+      'save_terms' => 0,
       'load_terms' => 1,
-      'return_format' => 'id',
+      'return_format' => 'object',
       'multiple' => 0,
     ),
     3 => 
     array (
+      'key' => 'field_57c047359f4d7',
+      'label' => 'Additional Services',
+      'name' => 'org_extra_services',
+      'type' => 'text',
+      'instructions' => 'If you can\'t find the services your organization provides above, enter comma seperated services <br/>(i.e. "First Aid, Clothing")',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => 
+      array (
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => 'First Aid, Clothing',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+    ),
+    4 => 
+    array (
       'key' => 'field_57bd3cc3f5343',
-      'label' => 'Visitor Type',
+      'label' => 'Which of the following groups does your organization serve?',
       'name' => 'org_visitor_type',
-      'type' => 'radio',
-      'instructions' => 'Tell us whether this Organization provides help for Clients (victims of the flood), for Volunteers to lend a hand, or both of those.',
+      'type' => 'taxonomy',
+      'instructions' => 'Does your organization: provide help for those in need (victims of the flood), organize those providing relief (volunteers), or does it provide services for both victims and volunteers (both)?',
       'required' => 1,
       'conditional_logic' => 0,
       'wrapper' => 
@@ -91,20 +112,16 @@ $group = array (
         'class' => '',
         'id' => '',
       ),
-      'choices' => 
-      array (
-        'volunteer' => 'Volunteer',
-        'client' => 'Client',
-        'both' => 'Both',
-      ),
+      'taxonomy' => 'lfr_visitor_type',
+      'field_type' => 'checkbox',
       'allow_null' => 0,
-      'other_choice' => 0,
-      'save_other_choice' => 0,
-      'default_value' => '',
-      'layout' => 'horizontal',
-      'return_format' => 'array',
+      'add_term' => 0,
+      'save_terms' => 1,
+      'load_terms' => 1,
+      'return_format' => 'object',
+      'multiple' => 0,
     ),
-    4 => 
+    5 => 
     array (
       'key' => 'field_57ba93dbe77a5',
       'label' => 'Location',
@@ -124,13 +141,13 @@ $group = array (
       'zoom' => 11,
       'height' => 400,
     ),
-    5 => 
+    6 => 
     array (
       'key' => 'field_57bcc4c77f58b',
       'label' => 'Does this organization accept and/or distribute goods and supplies?',
       'name' => 'org_handles_goods',
       'type' => 'true_false',
-      'instructions' => 'Check this off if the Organization offers or accepts food, cleaning supplies, clothing, etc.',
+      'instructions' => '',
       'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => 
@@ -139,10 +156,10 @@ $group = array (
         'class' => '',
         'id' => '',
       ),
-      'message' => '',
+      'message' => 'Check this off if the Organization offers or accepts food, cleaning supplies, clothing, etc.',
       'default_value' => 0,
     ),
-    6 => 
+    7 => 
     array (
       'key' => 'field_57ba96f045dad',
       'label' => 'Select the Type of Location',
@@ -181,7 +198,7 @@ $group = array (
       'layout' => 'horizontal',
       'return_format' => 'value',
     ),
-    7 => 
+    8 => 
     array (
       'key' => 'field_57bd3dbed4b3b',
       'label' => 'Website',
@@ -199,7 +216,7 @@ $group = array (
       'default_value' => '',
       'placeholder' => '',
     ),
-    8 => 
+    9 => 
     array (
       'key' => 'field_57ba942a7b8f7',
       'label' => 'Main Phone Number',
@@ -220,7 +237,7 @@ $group = array (
       'append' => '',
       'maxlength' => '',
     ),
-    9 => 
+    10 => 
     array (
       'key' => 'field_57ba94b54ae5c',
       'label' => 'Main Email Address',
@@ -240,13 +257,13 @@ $group = array (
       'prepend' => '',
       'append' => '',
     ),
-    10 => 
+    11 => 
     array (
       'key' => 'field_57ba950f57456',
       'label' => 'Contact Person(s)',
       'name' => 'org_contacts',
       'type' => 'repeater',
-      'instructions' => '',
+      'instructions' => 'If there are additional contacts for this organization, click "+ Add Contact Person" to add their info.',
       'required' => 0,
       'conditional_logic' => 0,
       'wrapper' => 
@@ -258,7 +275,7 @@ $group = array (
       'collapsed' => '',
       'min' => '',
       'max' => '',
-      'layout' => 'table',
+      'layout' => 'row',
       'button_label' => '+ Add Contact Person',
       'sub_fields' => 
       array (
@@ -367,9 +384,7 @@ $group = array (
   'instruction_placement' => 'label',
   'hide_on_screen' => 
   array (
-    0 => 'the_content',
-    1 => 'categories',
-    2 => 'tags',
+    0 => 'tags',
   ),
   'active' => 1,
   'description' => '',

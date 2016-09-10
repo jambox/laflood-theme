@@ -1,9 +1,9 @@
 {
     "key": "group_57c8646070e91",
-    "title": "Organization Internal Only Fields",
+    "title": "Organization Internal Use",
     "fields": [
         {
-            "key": "field_57cfb2035885f",
+            "key": "field_57cfb3d4eaa60",
             "label": "Featured?",
             "name": "featured",
             "type": "taxonomy",
@@ -19,8 +19,8 @@
             "field_type": "select",
             "allow_null": 0,
             "add_term": 0,
-            "save_terms": 0,
-            "load_terms": 1,
+            "save_terms": 1,
+            "load_terms": 0,
             "return_format": "object",
             "multiple": 0
         },
