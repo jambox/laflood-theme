@@ -8,9 +8,18 @@
   
   .page-title {
     @extend h3;
-    font-size: 5.2rem;
     margin-bottom: 10px;
     color: black;
+    
+    $font-size-h: 5.2rem;
+    font-size: $font-size-h * $font-ratio-sm;
+    @include breakpoint(400px) {
+      font-size: $font-size-h * $font-ratio;
+    }
+    @include breakpoint(700px) {
+      font-size: $font-size-h;
+    }
+
 
   }
 
