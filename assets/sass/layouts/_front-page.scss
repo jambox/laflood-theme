@@ -13,9 +13,13 @@ body.home {
     .home-page-ctas--list {
       @extend h2;
       @extend .Clarendon--light;
-      line-height:1.5 ;
+      line-height:1.5;
+      display:none;
       @include breakpoint($breakpoint-sm) {
         line-height:1.3;
+      }
+      @include breakpoint($breakpoint-md) {
+        display:block;
       }
 
       .large-link {
@@ -49,8 +53,14 @@ body.home {
 
     &--title {
       @extend h1;
-      font-size:6.5rem;
+      font-size:3.7rem;
+      @include breakpoint($breakpoint-xs) {
+        font-size:5rem;
+      }
       @include breakpoint($breakpoint-sm) {
+        font-size:6.5rem;
+      }
+      @include breakpoint($breakpoint-md) {
         font-size:8rem;
       }
 

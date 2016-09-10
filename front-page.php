@@ -33,13 +33,14 @@
 	
 				</div>
 			</div>
+      <div class="home-page-resources-cta">
       <?php if ( $slug == 'need-help' ): ?>
-        <div class="home-page-resources-cta">
-          <p class="intro">For next steps and help with long term recovery,</p>
+          <p class="intro">For next steps and help with long term recovery:</p>
           <h4><a href="<?php echo site_url( $slug . '/recovery-resources' ); ?>">view our recovery resources<i class="fa fa-fw fa-arrow-right"></i></a></h4>
-        </div>
-        
-      <?php endif ?>
+      <?php else: ?>
+          <p class="intro">Find the best ways to help those affected by the flooding.</p>
+      <?php endif; ?>
+      </div>
 		</section>
 	<?php
   endforeach;?>
