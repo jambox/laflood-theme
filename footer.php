@@ -17,7 +17,7 @@
           <div class="row">
             <div class="col-md-4"><p>This is a living directory of services that can assist the people and families who have been affected by the August 2016 flood disaster. <a href="<?php permalink_by_title('About'); ?>">Learn more</a>.</p></div>
             <div class="col-md-4 col-md-offset-1"><p>See something missing from our lists? Please help us expand this directory.<br/><a href="<?php permalink_by_title('Add An Organization'); ?>">Add an organization</a>.</p>
-            <p>If you see any problems with our organization info, please <a href="mailto:info@lafloodrecovery.org">let us know</a>.</p></div>
+            <p>If you see any problems with our info, please <a href="mailto:info@lafloodrecovery.org">let us know</a>.</p></div>
             <div class="col-md-2 col-md-offset-1">
               <nav class="nav-footer"><?php
                 if (has_nav_menu('footer_navigation')) {
