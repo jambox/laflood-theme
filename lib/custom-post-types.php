@@ -11,7 +11,7 @@ function bolt_custom_post_types() {
       'singular' => 'Organization',
       'plural' => 'Organizations',
       'show_in_menu' => true,
-      'supports' => array('excerpt', 'page-attributes'),
+      'supports' => array('excerpt', 'page-attributes', 'author'),
       'taxonomies' => array(
           'post_tag',
           'category',
