@@ -225,6 +225,7 @@ a {
     }
     .fa-chevron-left {
       padding-left:0;
+      padding-right: $arrow-padding-init;
       // padding-right: $arrow-padding-init + .3em;
       color: $arrow-gray-hover; 
     }
