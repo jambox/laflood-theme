@@ -16,6 +16,9 @@ if( $featured_posts ) :
   <ul class="org-list featured-list col-md-12">
     <?php
     foreach( $featured_posts as $post ) : setup_postdata( $post );
+      // Ignore non publicly-published posts
+      if( get_post_status() !== 'publish' ) continue;
+
       $do_not_duplicate[] = get_the_ID();
       get_template_part('partials/featured-org-list-item');
     endforeach;
