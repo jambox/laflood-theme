@@ -217,13 +217,15 @@ a {
     padding-right:$arrow-padding-init;
   }
   &:hover, &:focus, &:active {
-    .fa-chevron-right, .fa-chevron-left {
+    .fa-chevron-right,
+    .fa-chevron-left
+    {
       padding-left: $arrow-padding-init + .3em;
       color: $arrow-gray-hover; 
     }
     .fa-chevron-left {
       padding-left:0;
-      padding-right: $arrow-padding-init + .3em;
+      // padding-right: $arrow-padding-init + .3em;
       color: $arrow-gray-hover; 
     }
   }
