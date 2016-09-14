@@ -11,7 +11,7 @@ $featured_posts = isset( $queried_object_id )
                 ? get_field( 'cat_features', 'category_' . $queried_object_id )
                 : false;
 
-if( $featured_posts ) :
+if( $featured_posts && !get_query_var('paged') ) :
   ?>
   <ul class="org-list featured-list col-md-12">
     <?php
