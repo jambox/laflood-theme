@@ -384,17 +384,22 @@ function custom_excerpt($excerpt) {
     $org_website = get_field('org_website');
     $item_link = is_recovery_resource() ? $org_website : esc_url( get_permalink() );    
 
-    $excerpt_end = '&nbsp;<a href="'. $item_link.'" class="read-more">' . __('Learn More', $i18n_domain) . '</a>';
+    $excerpt_end = '&nbsp; <a href="'. $item_link.'" class="read-more">' . __('Learn More', $i18n_domain) . '</a>';
     $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_end);
 
     // Inside last HTML tag
     $pos = strrpos($excerpt, '</');
-    if ($pos !== false){
-      // Add "read more" next to last word
-      $excerpt = substr_replace($excerpt, $excerpt_end, $pos, 0);
-    } else {
+
+    // TODO uncomment this and figure whats up. the line above is returning the pos of embedded links only...
+    // I think this assumes the whole thing should be wrapped in some sort of tag
+    // and it would append it right inside, but we're not delivering the html wrapped in a tag so it's only picking up embedded html tags
+    
+    // if ($pos !== false){
+    //   // Add "read more" next to last word
+    //   $excerpt = substr_replace($excerpt, $excerpt_end, $pos, 0);
+    // } else {
       $excerpt = $excerpt . $excerpt_end;
-    }
+    // }
 
     // After the content
     //$excerpt .= $excerpt_more; /*Add read more in new paragraph */
