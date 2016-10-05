@@ -203,7 +203,9 @@ a {
   // Auto Chevron animation/colors
   //
   $arrow-padding-init:0.7em;
-  .fa-chevron-right, .fa-chevron-left {
+  .fa-chevron-right,
+  .fa-chevron-left,
+  .fa-arrow-right {
     transition:all $default-transition;
     padding-left: $arrow-padding-init;
     padding-bottom: 0.3em;
@@ -216,10 +218,13 @@ a {
     padding-left:0;
     padding-right:$arrow-padding-init;
   }
+  .fa-arrow-right {
+    font-size:0.9em;
+    padding-left:0.4em;
+  }  
   &:hover, &:focus, &:active {
     .fa-chevron-right,
-    .fa-chevron-left
-    {
+    .fa-chevron-left {
       padding-left: $arrow-padding-init + .3em;
       color: $arrow-gray-hover; 
     }
@@ -228,6 +233,38 @@ a {
       padding-right: $arrow-padding-init;
       // padding-right: $arrow-padding-init + .3em;
       color: $arrow-gray-hover; 
+    }
+    .fa-arrow-right {
+      padding-left: $arrow-padding-init;
+    }
+  }
+
+  &.has-arrow {
+    border-bottom-color:transparent;
+
+    &:hover, &:active, &:focus {
+      text-decoration:underline;
+      border-bottom-color:transparent;
+
+      .fa-arrow-right {
+        padding-left: 0.5em;
+      }
+    }
+
+    .fa-arrow-right {
+      color: inherit;
+    }
+
+    &.read-more {
+      .fa-arrow-right {
+        font-size: 0.7em;
+        padding-left:0.2em;
+      }
+      &:hover, &:active, &:focus {
+        .fa-arrow-right {
+          padding-left: $arrow-padding-init;
+        }
+      }
     }
   }
 

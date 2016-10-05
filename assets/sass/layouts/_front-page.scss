@@ -87,25 +87,9 @@ body.home {
   .home-page-resources-cta {
     margin-top:3rem;
     a {
-      &:link, &:visited {
-        color: $brand-color;
-        border-bottom-color:transparent;
-      }
+      &:link, &:visited,
       &:hover, &:active, &:focus {
         color: $brand-color;
-        text-decoration:underline;
-        border-bottom-color:transparent;
-        .fa {
-          padding-left:.7em;
-        }
-      }
-
-      .fa {
-        transition:all $default-transition;
-        font-size:.9em;
-        padding-bottom:.3em;
-        padding-left:.4em;
-        vertical-align:middle;
       }
     }
   }

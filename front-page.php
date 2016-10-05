@@ -36,7 +36,7 @@
       <div class="home-page-resources-cta">
       <?php if ( $slug == 'need-help' ): ?>
           <p class="intro">For next steps and help with long term recovery:</p>
-          <h4><a href="<?php echo site_url( $slug . '/recovery-resources' ); ?>">view our recovery resources<i class="fa fa-fw fa-arrow-right"></i></a></h4>
+          <h4><a href="<?php echo site_url( $slug . '/recovery-resources' ); ?>" class="has-arrow">view our recovery resources<i class="fa fa-fw fa-arrow-right"></i></a></h4>
       <?php else: ?>
           <p class="intro">Find the best ways to help those affected by the flooding.</p>
       <?php endif; ?>
