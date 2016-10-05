@@ -112,28 +112,40 @@ body.blog {
 
       .org-meta {
         color:$gray;
+        display:inline-block;
 
         .services-list {
-          margin-bottom:.8em;
+          margin-top:0.625em;
+          margin-bottom:1.375em;
           vertical-align: bottom;
           @include font-smoothing;
           h5 {
-            display: inline-block;
+            margin-top:0;
+            margin-bottom:0;
+            display:inline-block;
             font-size:1.6rem;
             color:black;
           }
           ul {
-            margin-left: 0;
+            margin-left:0;
           }
           li {
-            padding-right: 0;
-            font-style: italic;
+            padding-right:0;
+            font-style:italic;
           }
           a {
             color:$gray;
             font-size:1.6rem;
             &:hover, &:active, &:focus {
               color:$secondary-color;
+            }
+          }
+          .post-meta {
+            li {
+              padding-left: 0;
+            }
+            a {
+              border-bottom: none;
             }
           }
         }
@@ -165,7 +177,7 @@ body.blog {
       }
     }
 
-    .read-more {
+    .read-more:not(.has-arrow) {
       @extend .nowrap;
       border-bottom:2px solid transparent;
       &:hover, &:active, &:focus {
