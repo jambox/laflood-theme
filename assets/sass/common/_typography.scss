@@ -247,7 +247,7 @@ a {
       border-bottom-color:transparent;
 
       .fa-arrow-right {
-        padding-left: 0.5em;
+        padding-left: $arrow-padding-init;
       }
     }
 
@@ -262,7 +262,7 @@ a {
       }
       &:hover, &:active, &:focus {
         .fa-arrow-right {
-          padding-left: $arrow-padding-init;
+          padding-left: 0.5em;
         }
       }
     }
