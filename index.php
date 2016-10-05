@@ -32,7 +32,7 @@
                     // Add the arrow
                     $pos_arrow = strrpos($the_excerpt, '</a>');
                     if ($pos_arrow !== false) {
-                      $the_excerpt = substr_replace($the_excerpt, ' <i class="fa fa-fw fa-arrow-right"></i>', $pos_arrow, 0);
+                      $the_excerpt = substr_replace($the_excerpt, '<i class="fa fa-fw fa-arrow-right"></i>', $pos_arrow, 0);
                     }
                     echo $the_excerpt;
                   }
