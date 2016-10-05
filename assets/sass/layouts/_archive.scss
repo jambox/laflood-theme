@@ -1,4 +1,6 @@
-body.archive, body.search-results {
+body.archive,
+body.search-results,
+body.blog {
   .content-wrap {
     padding-top:7rem;
     padding-bottom:7rem;
@@ -171,5 +173,10 @@ body.archive, body.search-results {
       }
 
     }
+  }
+
+  .page--content {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
