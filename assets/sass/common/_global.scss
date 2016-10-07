@@ -63,3 +63,18 @@ body {
 input[type=search] {
   border:0;
 }
+
+.meta-list {
+  @extend .Franklin--medium;
+  text-transform:uppercase;
+  color:$light-gray;
+  font-size:2rem;
+  letter-spacing:1px;
+  margin-bottom:1em;
+  a {
+    border-bottom: 0;
+    &:hover, &:active, &:focus {
+      color:$link-hover-color;
+    }
+  }
+}

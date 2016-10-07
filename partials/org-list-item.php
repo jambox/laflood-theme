@@ -34,7 +34,7 @@ $item_link = get_permalink();
     str_no_wrap( get_the_title() );
     echo '</a>'; ?></h2>
   </header>
-  <ul class="list-unstyled list-inline contact-list"><?php
+  <ul class="list-unstyled list-inline meta-list contact-list"><?php
     if( !$is_recovery_resource ) :
 
       if ($org_website && !$is_recovery_resource ):

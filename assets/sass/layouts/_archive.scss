@@ -88,29 +88,14 @@ body.blog {
     }
   }
 
-  .org-list {
+  .org-list, .blog-list {
     margin-top:4rem;
-    .org-item {
+    .org-item, .blog-item {
       // border-bottom:1px solid $light-gray;
       padding-bottom:2rem;  
       margin-bottom:2rem;
 
-      .contact-list {
-        @extend .Franklin--medium;
-        text-transform:uppercase;
-        color:$light-gray;
-        font-size:2rem;
-        letter-spacing:1px;
-        margin-bottom:1em;
-        a {
-          border-bottom: 0;
-          &:hover, &:active, &:focus {
-            color:$link-hover-color;
-          }
-        }
-      }
-
-      .org-meta {
+      .org-meta, .blog-item-meta {
         color:$gray;
         display:inline-block;
 
@@ -152,7 +137,7 @@ body.blog {
       }
     }
 
-    .org-title {
+    .org-title, .blog-item-title {
       @extend h4;
       font-size:3.5rem;
       a {

@@ -5,15 +5,15 @@
       <div class="archive-list-header col-md-12">
         <h1 class="inline"><?php echo single_post_title(); ?></h1>
       </div>
-      <div class="org-list featured-list col-md-12">
+      <div class="blog-list featured-list col-md-12">
         <?php while ( have_posts()) : the_post(); ?>
-          <article class="org-item col-md-12">
+          <article class="blog-item col-md-12">
             <header>
-              <h2 class="org-title"><a href="<?php echo get_permalink(); ?>"><?php echo str_no_wrap( get_the_title() ); ?></a></h2>
+              <h2 class="blog-item-title"><a href="<?php echo get_permalink(); ?>"><?php echo str_no_wrap( get_the_title() ); ?></a></h2>
             </header>
             <?php if(get_the_tag_list()) : ?>
               <?php echo get_the_tag_list(
-                '<ul class="list-unstyled list-inline contact-list"><li>', // Before
+                '<ul class="list-unstyled list-inline meta-list contact-list"><li>', // Before
                   '</li>&middot;<li>', // Seperator
                 '</li></ul>' // After
               ); ?>
@@ -39,7 +39,7 @@
                 ?>
               </p>
             </div>
-            <div class="org-meta">
+            <div class="blog-item-meta">
               <div class="services-list">
                 <ul class="list-unstyled list-inline post-meta">
                   <li><time datetime="<?php echo get_post_time('c', true); ?>"><?php echo get_the_date(); ?></time></li>
