@@ -20,7 +20,8 @@ $org_contacts = get_field('org_contacts');
 
 $is_recovery_resource = is_recovery_resource();
 
-$item_link = $is_recovery_resource ? $org_website : get_permalink();
+$item_link = get_permalink();
+// $item_link = $is_recovery_resource ? $org_website : get_permalink();
 
 ?>
 <li class="org-item col-md-12">

@@ -382,7 +382,8 @@ function custom_excerpt($excerpt) {
     $excerpt = trim(force_balance_tags($excerptOutput));
 
     $org_website = get_field('org_website');
-    $item_link = is_recovery_resource() ? $org_website : esc_url( get_permalink() );    
+    $item_link = esc_url( get_permalink() );    
+    // $item_link = is_recovery_resource() ? $org_website : esc_url( get_permalink() );    
 
     $excerpt_end = '&nbsp; <a href="'. $item_link.'" class="read-more">' . __('Learn More', $i18n_domain) . '</a>';
     $excerpt_more = apply_filters('excerpt_more', ' ' . $excerpt_end);
