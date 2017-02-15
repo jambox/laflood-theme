@@ -41,7 +41,10 @@
       </nav>
     </header>
 
-   <?php include_once 'partials/content-inactive-splash.php'; ?>
+   <?php
+   if( is_front_page() ) {
+     include_once 'partials/content-inactive-splash.php';
+   } ?>
 
    <div class="content-wrap"><?php
     if (
