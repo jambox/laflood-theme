@@ -41,6 +41,8 @@
       </nav>
     </header>
 
+   <?php include_once 'partials/content-inactive-splash.php'; ?>
+
    <div class="content-wrap"><?php
     if (
       is_singular(get_org_cpt_name()) ||
