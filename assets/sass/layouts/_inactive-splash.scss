@@ -1,6 +1,11 @@
 .inactive-splash--wrap {
   background:$blue;
   padding:2rem 0 3rem;
+
+  .intro--wrap {
+    padding-left:0;
+  }
+
   h1, h2, h3, p {
     color:white;
     letter-spacing:.02em;
