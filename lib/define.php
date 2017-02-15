@@ -6,6 +6,7 @@
  */
 define('THEME_PREFIX', 'lfr');
 define('THEME_URL', get_bloginfo('stylesheet_directory').'/');
+define('THEME_VERSION', '1.0.1');
 
 
 /**

@@ -61,7 +61,7 @@ function client_styles() {
     global $wp_styles;
 
     // Main Stylesheet
-    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'dist/styles/laflood.css' );
+    wp_register_style( THEME_PREFIX . '-theme', THEME_URL . 'dist/styles/laflood.css', null, THEME_VERSION );
     wp_enqueue_style( THEME_PREFIX . '-theme' );
 
     // Icomoon
